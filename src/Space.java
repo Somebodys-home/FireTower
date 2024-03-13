@@ -1,8 +1,11 @@
 public class Space {
-    String spaceEmoji = "\uD83C\uDF32";
-    public Space() {}
+    String spaceEmoji;
+    public Space(String spaceEmoji) {
+        this.spaceEmoji = spaceEmoji;
+    }
 
     public String getSpaceEmoji() {
         return spaceEmoji;
     }
+
 }
