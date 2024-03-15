@@ -1,5 +1,5 @@
 public class BucketCard extends Card {
-    public BucketCard(String name, Space[][] board) {
+    public BucketCard(String name, Board board) {
         super(name, board);
     }
 

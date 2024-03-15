@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="Made some decent progress with the different spaces!&#10;- Gabriel">
+      <change afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FireTowerGameRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
     </list>
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
     <list id="5bfa8471-7dde-48c6-9c32-e6d8454c4c27" name="Changes by BT_2N2_04" comment="" />
@@ -53,6 +56,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.FireTowerGameRunner.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -61,7 +65,14 @@
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/hypix/IdeaProjects/Fire Tower/src/Main.java&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.FireTowerGameRunner">
+    <configuration name="FireTowerGameRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FireTowerGameRunner" />
+      <module name="Fire Tower" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Fire Tower" />
@@ -71,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FireTowerGameRunner" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -107,12 +119,30 @@
       <option name="project" value="LOCAL" />
       <updated>1710367888414</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Isfar fix ur cards&#10;- Gabriel">
+      <option name="closed" value="true" />
+      <created>1710522307492</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710522307492</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ateif do the spreadFire thing&#10;- Gabriel">
+      <option name="closed" value="true" />
+      <created>1710522488801</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710522488801</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I tried.&#10;- Gabriel" />
     <MESSAGE value="Made some decent progress with the different spaces!&#10;- Gabriel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some decent progress with the different spaces!&#10;- Gabriel" />
+    <MESSAGE value="Isfar fix ur cards&#10;- Gabriel" />
+    <MESSAGE value="Ateif do the spreadFire thing&#10;- Gabriel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ateif do the spreadFire thing&#10;- Gabriel" />
   </component>
 </project>
