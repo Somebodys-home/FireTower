@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="Made some decent progress with the different spaces!&#10;- Gabriel">
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BucketCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BucketCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FireCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirebreakCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirebreakCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WindCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindCard.java" afterDir="false" />
     </list>
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
     <list id="5bfa8471-7dde-48c6-9c32-e6d8454c4c27" name="Changes by BT_2N2_04" comment="" />

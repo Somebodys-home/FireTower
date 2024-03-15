@@ -1,10 +1,10 @@
 public class FirebreakCard extends Card {
-    public FirebreakCard(String name) {
-        super(name);
+    public FirebreakCard(String name, Space[][] board) {
+        super(name, board);
     }
 
     @Override
-    public void cardEffect(Card[] hand, Card[] deck, Card[] discard, Space[] board) {
+    public void cardEffect() {
 
     }
 }
