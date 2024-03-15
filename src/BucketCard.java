@@ -1,10 +1,10 @@
 public class BucketCard extends Card {
-    public BucketCard(String name) {
-        super(name);
+    public BucketCard(String name, String[][] board) {
+        super(name, board);
     }
 
     @Override
-    public void cardEffect(Card[] hand, Card[] deck, Card[] discard, Space[] board) {
+    public void cardEffect(Card[] hand, Card[] deck, Card[] discard) {
 
     }
 }

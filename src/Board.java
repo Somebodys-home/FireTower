@@ -72,7 +72,7 @@ public class Board {
     }
 
     public void setWindDirection() {
-        int direction = (int) (Math.random() * 3);
+        int direction = (int) (Math.random() * 4);
         if (direction == 0) {
             windDirection = WindDirection.NORTH;
         } else if (direction == 1) {
