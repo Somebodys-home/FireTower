@@ -84,7 +84,9 @@ public class Board {
         }
     }
 
-    public void spreadFire() {
-
+    public void spreadFire(Space space) {
+        // given a space, check if its an instance of fire
+        // if it is, then set the space adjancent to it to a fire space depending on what windDirection is
+        // also check for otb
     }
 }
