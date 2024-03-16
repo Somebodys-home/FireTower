@@ -5,6 +5,9 @@ public abstract class Card {
         this.name = name;
         this.board = board;
     }
+    public Board getBoard() {
+        return board;
+    }
 
     public abstract void cardEffect();
 }

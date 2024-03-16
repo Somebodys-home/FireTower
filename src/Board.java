@@ -1,7 +1,9 @@
+import java.util.ArrayList;
 public class Board {
     Space[][] board;
     String[][] weatherVane;
     WindDirection windDirection;
+
     public Board() {
         board = new Space[16][16];
         weatherVane = new String[4][4];
@@ -124,6 +126,10 @@ public class Board {
         }
     }
 
+    public WindDirection getWindDirection() {
+        return windDirection;
+    }
+
     public void setWindDirection() {
         int direction = (int) (Math.random() * 4);
         if (direction == 0) {
@@ -166,4 +172,48 @@ public class Board {
         // if it is, then set the space adjancent to it to a fire space depending on what windDirection is
         // also check for otb
     }
+
+    public void placeFireGemInWindDirection() {
+        // Get the current wind direction from the board
+        WindDirection windDirection = getWindDirection();
+
+        // Define the row and column offsets based on the wind direction
+        int rowOffset = 0;
+        int colOffset = 0;
+        if (windDirection == WindDirection.NORTH) {
+            rowOffset = -1;
+        } else if (windDirection == WindDirection.SOUTH) {
+            rowOffset = 1;
+        } else if (windDirection == WindDirection.EAST) {
+            colOffset = 1;
+        } else if (windDirection == WindDirection.WEST) {
+            colOffset = -1;
+        }
+
+        // Iterate through the board to find fire spaces
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j] instanceof Fire) {
+                    // Calculate the adjacent position
+                    int newRow = i + rowOffset;
+                    int newCol = j + colOffset;
+                    // Check if the adjacent position is valid and empty
+                    if (isValidPosition(newRow, newCol) && board[newRow][newCol].getSpaceEmoji().equals("\uD83C\uDF32")) {
+                        // Place the fire symbol and return
+                        board[newRow][newCol] = new Space("\uD83D\uDD25"); // should be fire symbol
+                        System.out.println("Placed a fire gem in the wind direction.");
+                        return;
+                    }
+                }
+            }
+        }
+
+        // If no empty adjacent space was found, print a message
+        System.out.println("No empty adjacent space found to place the fire gem.");
+    }
+
+    private boolean isValidPosition(int row, int col) {
+        return row >= 0 && row < board.length && col >= 0 && col < board[0].length;
+    }
+
 }

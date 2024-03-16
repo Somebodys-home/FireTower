@@ -8,4 +8,13 @@ public class Space {
         return spaceEmoji;
     }
 
+    public void setSpaceEmoji(String newEmoji) {
+        if (newEmoji != null && !newEmoji.isEmpty()) {
+            spaceEmoji = newEmoji;
+        } else {
+            System.out.println("Error: Invalid emoji");
+        }
+    }
+
+
 }

@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="Made some decent progress with the different spaces!&#10;- Gabriel">
+    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="Made some progress on WindCard method. Need to add parameters for setWindDirection.&#10;-Atif">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FireCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FirebreakCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirebreakCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Space.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Space.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WindCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindCard.java" afterDir="false" />
     </list>
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
@@ -63,9 +60,15 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/hypix/IdeaProjects/Fire Tower/src/Main.java&quot;
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/hypix/IdeaProjects/Fire Tower/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager">
@@ -97,6 +100,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710264336734</updated>
+      <workItem from="1710623739441" duration="140000" />
+      <workItem from="1710624005548" duration="322000" />
+      <workItem from="1710624331939" duration="4880000" />
     </task>
     <task id="LOCAL-00001" summary="I tried.&#10;- Gabriel">
       <option name="closed" value="true" />
@@ -117,9 +123,13 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I tried.&#10;- Gabriel" />
     <MESSAGE value="Made some decent progress with the different spaces!&#10;- Gabriel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some decent progress with the different spaces!&#10;- Gabriel" />
+    <MESSAGE value="Made some progress on WindCard method. Need to add parameters for setWindDirection.&#10;-Atif" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made some progress on WindCard method. Need to add parameters for setWindDirection.&#10;-Atif" />
   </component>
 </project>
