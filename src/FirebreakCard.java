@@ -1,5 +1,5 @@
 public class FirebreakCard extends Card {
-    public FirebreakCard(String name, Space[][] board) {
+    public FirebreakCard(String name, Board board) {
         super(name, board);
     }
 
