@@ -3,6 +3,8 @@ public class Board {
     Space[][] board;
     String[][] weatherVane;
     WindDirection windDirection;
+    ArrayList<Card> deck = new ArrayList<>(60);
+    ArrayList<Card> discard = new ArrayList<>();
 
     public Board() {
         board = new Space[16][16];
@@ -216,4 +218,10 @@ public class Board {
         return row >= 0 && row < board.length && col >= 0 && col < board[0].length;
     }
 
+    public void setDeck() {
+        Card card = new FireCard("test", board);
+        for (int i = 60; i > 0; i--) {
+            deck.add(Card);
+        }
+    }
 }

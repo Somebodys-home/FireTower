@@ -1,11 +1,16 @@
+import java.util.ArrayList;
+
 public class Player {
+    String name;
     Board board;
     BucketCard bucketCard;
     boolean burned;
     Card[] playerHand;
-    public Player() {
+    public Player(String name, Board board) {
+        this.name = name;
+        this.board = board;
         playerHand = new Card[5];
-        // thats on u buddy >:)
+        bucketCard = new BucketCard("Bucket", board);
         burned = false;
     }
 }
