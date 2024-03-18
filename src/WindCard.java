@@ -1,9 +1,11 @@
 import java.util.Random;
+import java.util.Scanner;
+
 public class WindCard extends Card {
     private WindDirection windDirection;
 
-    public WindCard(String name, WindDirection direction, Board board) {
-        super(name, board);
+    public WindCard(String name, WindDirection direction, Board board, Scanner scan) {
+        super(name, board, scan);
         windDirection = direction;
     }
 
@@ -12,6 +14,7 @@ public class WindCard extends Card {
     public void cardEffect() {
         Board board = getBoard();
         WindDirection currentDirection = board.getWindDirection();
+        System.out.println();
         int option = (int) (Math.random() * 3) + 1;
 
         // Perform action based on the chosen option using if statements
@@ -34,7 +37,7 @@ public class WindCard extends Card {
 
     private WindDirection rollForNewDirection(WindDirection currentDirection) {
         WindDirection newDirection = currentDirection;
-        int direction = (int) (Math.random() * 4);
+        int direction = (int) (Math.random() * 4);       //TODO: POSSIBLE RE-ROLL?
 
         // Ensure the new direction is different from the current direction
         if (direction == 0 && currentDirection != WindDirection.NORTH) {

@@ -73,7 +73,7 @@ public class Board {
         }
         for (int i = 0; i < 6; i++) {
             System.out.print("1\uFE0F⃣");
-        }
+        }                                        //TODO: MAKE IT LOOK BETTER
         System.out.println();
         for (int i = 0; i < 10; i++) {
             System.out.print(i + "\uFE0F⃣");
@@ -92,6 +92,13 @@ public class Board {
                 System.out.print("1\uFE0F⃣");
             }
             System.out.print((i % 10) + "\uFE0F⃣");
+            if (i >= 6 && i  <= 9) {
+                int j = i - 6;
+                System.out.print("       ");
+                for (int k = 0; k < weatherVane[j].length; k++) {
+                    System.out.print(weatherVane[j][k]);
+                }
+            }
             System.out.println();
         }
 
@@ -118,16 +125,6 @@ public class Board {
         weatherVane[2][2] = "\uD83D\uDCA5";
     }
 
-    public void printWeatherVane() {
-        for (String[] row : weatherVane) {
-            System.out.print("             ");
-            for (String block : row) {
-                System.out.print(block);
-            }
-            System.out.println();
-        }
-    }
-
     public WindDirection getWindDirection() {
         return windDirection;
     }
@@ -145,24 +142,28 @@ public class Board {
         }
     }
 
-    public Space checkFireSpreadable(Space space) {
+    public Space checkOrthogonallyAdjacent(Space space) {
+        return checkOrthogonallyAdjacent(space, windDirection);
+    }
+
+    public Space checkOrthogonallyAdjacent(Space space, WindDirection direction) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 if (board[i][j] == space) {
-                    if (windDirection == WindDirection.NORTH) {
+                    if (direction == WindDirection.NORTH) {
                         if (i - 1 >= 0 && board[i - 1][j].getSpaceEmoji().equals("\uD83C\uDF32")) {
                             return board[i - 1][j];
                         }
-                    } else if (windDirection == WindDirection.SOUTH) {
-                        if (i + 1 < board.length && board[i + 1][j].getSpaceEmoji().equals("\uD83C\uDF32")) {
+                    } else if (direction == WindDirection.SOUTH) {
+                        if (i + 1 < board.length && board[i + 1][j].getSpaceEmoji().equals("\uD83C\uDF32")) {   //TODO: CHANGE EVERYTHING TO INSTANCE OF
                             return board[i + 1][j];
                         }
-                    } else if (windDirection == WindDirection.EAST) {
-                        if (j + 1 < board[0].length && board[i][j + 1].getSpaceEmoji().equals("\uD83C\uDF32")) {
+                    } else if (direction == WindDirection.EAST) {
+                        if (!(j + 1 < board[0].length && board[i][j + 1] instanceof EternalFlame) && !(j + 1 < board[0].length && board[i][j + 1] instanceof EternalFlame)) {
                             return board[i][j + 1];
                         }
                     } else {
-                        if (j - 1 >= 0 && board[i][j - 1].getSpaceEmoji().equals("\uD83C\uDF32")) {
+                        if (!(j - 1 >= 0 && board[i][j - 1] instanceof Firebreak) && !(j - 1 >= 0 && board[i][j - 1] instanceof EternalFlame)) {
                             return board[i][j - 1];
                         }
                     }
@@ -170,9 +171,6 @@ public class Board {
             }
         }
         return null;
-        // given a space, check if its an instance of fire
-        // if it is, then set the space adjancent to it to a fire space depending on what windDirection is
-        // also check for otb
     }
 
     public void placeFireGemInWindDirection() {

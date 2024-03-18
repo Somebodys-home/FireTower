@@ -8,6 +8,8 @@ public class Space {
         return spaceEmoji;
     }
 
+    //POSSIBLE PRECONDITION?? -Isfar
+
     public void setSpaceEmoji(String newEmoji) {
         if (newEmoji != null && !newEmoji.isEmpty()) {
             spaceEmoji = newEmoji;
