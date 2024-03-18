@@ -1,4 +1,4 @@
-public class EventCard extends Card {
+public abstract class EventCard extends Card {
     private Card[] deck;
     private Card[] discard;
     private Player[] turnOrder;
@@ -10,7 +10,5 @@ public class EventCard extends Card {
     }
 
     @Override
-    public void cardEffect() {
-        return;                   //use turn order to obtain hand
-    }
+    public abstract void cardEffect();
 }

@@ -1,10 +1,10 @@
-public class FireCard extends Card {
-    public FireCard(String name, Board board) {
-        super(name, board);
+import java.util.Scanner;
+
+public abstract class FireCard extends Card {
+    public FireCard(String name, Board board, Scanner scan) {
+        super(name, board, scan);
     }
 
     @Override
-    public void cardEffect() {
-
-    }
+    public abstract void cardEffect();
 }
