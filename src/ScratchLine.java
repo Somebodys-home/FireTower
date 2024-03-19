@@ -1,6 +1,6 @@
 public class ScratchLine extends FirebreakCard {
-    public ScratchLine(String name, Board board) {
-        super(name, board);
+    public ScratchLine(Board board) {
+        super("Scratch Line", board);
     }
 
     @Override

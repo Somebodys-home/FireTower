@@ -4,8 +4,12 @@ public class FireTowerGame {
     Board board = new Board();
     Player[] players;
     Scanner scan = new Scanner(System.in);
-    // insert players
-    // insert deck / discard here
+//    public void setDeck() {
+//        Card card = new FireCard("test", board);
+//        for (int i = 60; i > 0; i--) {
+//            deck.add(Card);
+//        }
+//    }
     public void start() {
         board.setBoard();
         board.setWeatherVane();

@@ -1,6 +1,6 @@
 public class DozerLine extends FirebreakCard {
-    public DozerLine(String name, Board board) {
-        super(name, board);
+    public DozerLine(Board board) {
+        super("Dozer Line", board);
     }
 
     @Override

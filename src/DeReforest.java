@@ -1,6 +1,6 @@
 public class DeReforest extends FirebreakCard {
-    public DeReforest(String name, Board board) {
-        super(name, board);
+    public DeReforest(Board board) {
+        super("De / Reforest", board);
     }
 
     @Override

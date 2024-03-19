@@ -1,7 +1,9 @@
+import java.util.Scanner;
+
 public class BucketCard extends Card {
     private boolean hasWater;
-    public BucketCard(String name, Board board) {
-        super(name, board);
+    public BucketCard(Board board, Scanner scanner) {
+        super("Bucket", board, scanner);
         hasWater = true;
     }
 

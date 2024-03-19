@@ -215,11 +215,4 @@ public class Board {
     private boolean isValidPosition(int row, int col) {
         return row >= 0 && row < board.length && col >= 0 && col < board[0].length;
     }
-
-    public void setDeck() {
-        Card card = new FireCard("test", board);
-        for (int i = 60; i > 0; i--) {
-            deck.add(Card);
-        }
-    }
 }

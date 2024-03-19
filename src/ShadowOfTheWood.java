@@ -1,6 +1,6 @@
 public class ShadowOfTheWood extends EventCard {
-    public ShadowOfTheWood(String name, Board board, Card[] deck, Card[] discard, Player[] turnOrder) {
-        super(name, board, deck, discard, turnOrder);
+    public ShadowOfTheWood(Board board, Card[] deck, Card[] discard, Player[] turnOrder) {
+        super("Shadow of The Wood", board, deck, discard, turnOrder);
     }
 
     @Override

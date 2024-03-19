@@ -10,7 +10,7 @@ public class Player {
         this.name = name;
         this.board = board;
         playerHand = new Card[5];
-        bucketCard = new BucketCard("Bucket", board);
+        bucketCard = new BucketCard(board);
         burned = false;
     }
 }

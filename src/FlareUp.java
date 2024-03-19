@@ -1,6 +1,6 @@
 public class FlareUp extends FireCard {
-    public FlareUp(String name, Board board) {
-        super(name, board);
+    public FlareUp( Board board) {
+        super("Flare Up", board);
     }
 
     @Override

@@ -1,6 +1,6 @@
 public class Airdrop extends WaterCard{
-    public Airdrop(String name, Board board) {
-        super(name, board);
+    public Airdrop(Board board) {
+        super("Airdrop", board);
     }
 
     @Override

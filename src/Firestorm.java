@@ -1,6 +1,6 @@
 public class Firestorm extends EventCard {
-    public Firestorm(String name, Board board, Card[] deck, Card[] discard, Player[] turnOrder) {
-        super(name, board, deck, discard, turnOrder);
+    public Firestorm( Board board, Card[] deck, Card[] discard, Player[] turnOrder) {
+        super("Fire Storm", board, deck, discard, turnOrder);
     }
 
     @Override
