@@ -13,4 +13,8 @@ public class Player {
         this.bucketCard = bucketCard;
         burned = false;
     }
+
+    public String getName() {
+        return name;
+    }
 }

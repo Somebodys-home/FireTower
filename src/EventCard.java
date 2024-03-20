@@ -1,3 +1,4 @@
+
 public abstract class EventCard extends Card {
     private Card[] deck;
     private Card[] discard;
