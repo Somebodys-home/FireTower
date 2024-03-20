@@ -1,10 +1,9 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class WindCard extends Card {
     private WindDirection windDirection;
 
-    public WindCard(String name, WindDirection direction, Board board, Scanner scan) {
+    public WindCard(String name, WindDirection direction, GameBoard board, Scanner scan) {
         super(name, board, scan);
         windDirection = direction;
     }
@@ -12,7 +11,7 @@ public class WindCard extends Card {
 
     @Override
     public void cardEffect() {
-        Board board = getBoard();
+        GameBoard board = getBoard();
         WindDirection currentDirection = board.getWindDirection();
         System.out.println();
         int option = (int) (Math.random() * 3) + 1;

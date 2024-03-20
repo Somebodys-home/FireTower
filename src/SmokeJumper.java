@@ -1,5 +1,5 @@
 public class SmokeJumper extends WaterCard{
-    public SmokeJumper(Board board) {
+    public SmokeJumper(GameBoard board) {
         super("Smoke Jumper", board);
     }
 

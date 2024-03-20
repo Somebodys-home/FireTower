@@ -1,5 +1,5 @@
 public class FireEngine extends WaterCard{
-    public FireEngine(Board board) {
+    public FireEngine(GameBoard board) {
         super("Fire Engine", board);
     }
 

@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class Deck {
     ArrayList<Card> deck = new ArrayList<>(52);
-    public Deck(Board board, Scanner scanner) {
+    public Deck(GameBoard board, Scanner scanner) {
         addCard(new Ember(board, scanner), 2);
         addCard(new Explosion(board, scanner), 4);
         addCard(new BurningSnag(board, scanner), 4);
-        addCard(new FlareUp(board), 4);
+        addCard(new FlareUp(board, scanner), 4);
         addCard(new Airdrop(board), 4);
         addCard(new FireEngine(board), 4);
         addCard(new SmokeJumper(board), 4);

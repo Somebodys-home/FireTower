@@ -1,5 +1,5 @@
 public class DeReforest extends FirebreakCard {
-    public DeReforest(Board board) {
+    public DeReforest(GameBoard board) {
         super("De / Reforest", board);
     }
 

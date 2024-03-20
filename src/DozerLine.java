@@ -1,5 +1,5 @@
 public class DozerLine extends FirebreakCard {
-    public DozerLine(Board board) {
+    public DozerLine(GameBoard board) {
         super("Dozer Line", board);
     }
 

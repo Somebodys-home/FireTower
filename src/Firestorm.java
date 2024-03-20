@@ -1,7 +1,6 @@
-import java.util.ArrayList;
 import java.util.Random;
 public class Firestorm extends EventCard {
-    public Firestorm( Board board, Card[] deck, Card[] discard, Player[] turnOrder) {
+    public Firestorm(GameBoard board, Card[] deck, Card[] discard, Player[] turnOrder) {
         super("Fire Storm", board, deck, discard, turnOrder);
     }
 
@@ -23,17 +22,17 @@ public class Firestorm extends EventCard {
         WindDirection newWindDirection = rollForNewDirection();
 
         // Step 5: Each player may discard and draw cards
-        for (Player player : turnOrder) {
+        for (Player player : getTurnOrder()) {
             playerDiscardAndDraw(player);
         }
 
         // Step 6: Resume normal play with the new wind direction
         System.out.println("Resuming normal play with the new wind direction: " + newWindDirection);
-        board.setWindDirection(newWindDirection);
+        getBoard().setWindDirection(newWindDirection);
     }
 
     private void discardCard() {
-        discard.add(this);
+        getDiscard().add(this);    //TODO: ATIF WHERE IS THE ADD METHOD
     }
 
     private WindDirection rollForNewDirection() {
@@ -42,11 +41,11 @@ public class Firestorm extends EventCard {
     }
 
     private void placeFireGemsInWindDirection(WindDirection windDirection) {
-        for (int i = 0; i < board.getBoard().length; i++) {
-            for (int j = 0; j < board.getBoard()[0].length; j++) {
-                if (board.getBoard()[i][j] instanceof Fire) {
+        for (int i = 0; i < getBoard().obtainBoard().length; i++) {
+            for (int j = 0; j < getBoard().obtainBoard()[0].length; j++) {
+                if (getBoard().obtainBoard()[i][j] instanceof Fire) {
                     // Place a fire gem on every empty space orthogonally adjacent to the current fire gem
-                    board.placeFireGemInWindDirection(i, j, windDirection);
+                    getBoard().placeFireGemInWindDirection();
                 }
             }
         }

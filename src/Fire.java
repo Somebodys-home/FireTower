@@ -1,5 +1,5 @@
 public class Fire extends Space {
-    public Fire() {
-        super("\uD83D\uDD25");
+    public Fire(int x, int y) {
+        super("\uD83D\uDD25", x, y);
     }
 }

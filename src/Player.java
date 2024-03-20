@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 public class Player {
     String name;
-    Board board;
+    GameBoard board;
     BucketCard bucketCard;
     boolean burned;
     Card[] playerHand;
-    public Player(String name, Board board) {
+    public Player(String name, GameBoard board) {
         this.name = name;
         this.board = board;
         playerHand = new Card[5];

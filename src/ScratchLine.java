@@ -1,5 +1,5 @@
 public class ScratchLine extends FirebreakCard {
-    public ScratchLine(Board board) {
+    public ScratchLine(GameBoard board) {
         super("Scratch Line", board);
     }
 

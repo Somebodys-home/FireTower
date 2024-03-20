@@ -1,27 +1,44 @@
 import java.util.ArrayList;
-public class Board {
+public class GameBoard {
     Space[][] board;
     String[][] weatherVane;
     WindDirection windDirection;
     ArrayList<Card> deck = new ArrayList<>(60);
     ArrayList<Card> discard = new ArrayList<>();
 
-    public Board() {
+    public GameBoard() {
         board = new Space[16][16];
         weatherVane = new String[4][4];
     }
 
-    public void setBoard() {
+    public void setBoard(Space[][] space)  {
+
+    }
+
+    public Space[][] obtainBoard() {
+        return board;
+    }
+
+    public void initializeBoard() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                board[i][j] = new Space("\uD83C\uDF32");
+                board[i][j] = new Space("\uD83C\uDF32", j, i);
             }
         }
-        board[7][7] = new EternalFlame();
-        board[8][7] = new EternalFlame();
-        board[7][8] = new EternalFlame();
-        board[8][8] = new EternalFlame();
+        board[7][7] = new EternalFlame(7, 7);
+        board[8][7] = new EternalFlame(8,  7);
+        board[7][8] = new EternalFlame(7, 8);
+        board[8][8] = new EternalFlame(8, 8);
         // top left
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i == 0 && j == 0) {
+                    board[i][j] = new WinCondition("\uD83D\uDC9B", j, i);
+                }  else {
+                    board[i][j] = new FireTower(j, i);
+                }
+            }
+        }
         board[0][0] = new WinCondition("\uD83D\uDC9B");
         board[1][0] = new FireTower();
         board[2][0] = new FireTower();
@@ -142,30 +159,43 @@ public class Board {
         }
     }
 
+    public void setWindDirection(WindDirection direction) {
+        if (direction == WindDirection.NORTH) {
+            windDirection = WindDirection.NORTH;
+        } else if (direction == WindDirection.SOUTH) {
+            windDirection = WindDirection.SOUTH;
+        } else if (direction == WindDirection.EAST) {
+            windDirection = WindDirection.EAST;
+        } else if (direction == WindDirection.WEST) {
+            windDirection = WindDirection.WEST;
+        }
+    }
+
     public Space checkOrthogonallyAdjacent(Space space) {
         return checkOrthogonallyAdjacent(space, windDirection);
     }
 
     public Space checkOrthogonallyAdjacent(Space space, WindDirection direction) {
+        int rowOffset = 0;
+        int colOffset = 0;
+        if (windDirection == WindDirection.NORTH) {
+            rowOffset = -1;
+        } else if (windDirection == WindDirection.SOUTH) {
+            rowOffset = 1;
+        } else if (windDirection == WindDirection.EAST) {
+            colOffset = 1;
+        } else if (windDirection == WindDirection.WEST) {
+            colOffset = -1;
+        }
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                if (board[i][j] == space) {
-                    if (direction == WindDirection.NORTH) {
-                        if (i - 1 >= 0 && board[i - 1][j].getSpaceEmoji().equals("\uD83C\uDF32")) {
-                            return board[i - 1][j];
-                        }
-                    } else if (direction == WindDirection.SOUTH) {
-                        if (i + 1 < board.length && board[i + 1][j].getSpaceEmoji().equals("\uD83C\uDF32")) {   //TODO: CHANGE EVERYTHING TO INSTANCE OF
-                            return board[i + 1][j];
-                        }
-                    } else if (direction == WindDirection.EAST) {
-                        if (!(j + 1 < board[0].length && board[i][j + 1] instanceof EternalFlame) && !(j + 1 < board[0].length && board[i][j + 1] instanceof EternalFlame)) {
-                            return board[i][j + 1];
-                        }
-                    } else {
-                        if (!(j - 1 >= 0 && board[i][j - 1] instanceof Firebreak) && !(j - 1 >= 0 && board[i][j - 1] instanceof EternalFlame)) {
-                            return board[i][j - 1];
-                        }
+                if (board[i][j] instanceof Fire) {
+                    // Calculate the adjacent position
+                    int newRow = i + rowOffset;
+                    int newCol = j + colOffset;
+                    // Check if the adjacent position is valid
+                    if (isValidPosition(newRow, newCol)) {
+                        return board[newRow][newCol];
                     }
                 }
             }
@@ -200,7 +230,7 @@ public class Board {
                     // Check if the adjacent position is valid and empty
                     if (isValidPosition(newRow, newCol) && board[newRow][newCol].getSpaceEmoji().equals("\uD83C\uDF32")) {
                         // Place the fire symbol and return
-                        board[newRow][newCol] = new Space("\uD83D\uDD25"); // should be fire symbol
+                        board[newRow][newCol] = new Space("\uD83D\uDD25", newCol, newRow); // should be fire symbol
                         System.out.println("Placed a fire gem in the wind direction.");
                         return;
                     }
@@ -214,5 +244,9 @@ public class Board {
 
     private boolean isValidPosition(int row, int col) {
         return row >= 0 && row < board.length && col >= 0 && col < board[0].length;
+    }
+
+    private boolean isValidFire(int row, int col) {
+        return board[row][col] instanceof Firebreak || board[row][col] instanceof EternalFlame;
     }
 }
