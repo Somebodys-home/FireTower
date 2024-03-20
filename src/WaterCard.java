@@ -1,5 +1,5 @@
 public abstract class WaterCard extends Card {
-    public WaterCard(String name, Board board) {
+    public WaterCard(String name, GameBoard board) {
         super(name, board);
     }
 

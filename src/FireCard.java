@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public abstract class FireCard extends Card {
-    public FireCard(String name, Board board, Scanner scan) {
+    public FireCard(String name, GameBoard board, Scanner scan) {
         super(name, board, scan);
     }
 

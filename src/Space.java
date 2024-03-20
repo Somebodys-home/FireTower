@@ -1,11 +1,24 @@
 public class Space {
-    String spaceEmoji;
-    public Space(String spaceEmoji) {
+    private String spaceEmoji;
+    private int x;
+    private int y;
+
+    public Space(String spaceEmoji, int x, int y) {
         this.spaceEmoji = spaceEmoji;
+        this.x = x;
+        this.y = y;
     }
 
     public String getSpaceEmoji() {
         return spaceEmoji;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     //POSSIBLE PRECONDITION?? -Isfar

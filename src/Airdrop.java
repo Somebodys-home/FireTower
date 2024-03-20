@@ -1,5 +1,5 @@
 public class Airdrop extends WaterCard{
-    public Airdrop(Board board) {
+    public Airdrop(GameBoard board) {
         super("Airdrop", board);
     }
 

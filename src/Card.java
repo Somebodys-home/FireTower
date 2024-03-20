@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public abstract class Card {
     private String name;
-    private Board board;
+    private GameBoard board;
     private Scanner scan;
-    public Card(String name, Board board, Scanner scan) {
+    public Card(String name, GameBoard board, Scanner scan) {
         this.name = name;
         this.board = board;
         this.scan = scan;
@@ -22,7 +22,7 @@ public abstract class Card {
         return scan;
     }
 
-    public Board getBoard() {
+    public GameBoard getBoard() {
         return board;
     }
 

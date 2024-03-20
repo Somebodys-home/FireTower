@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class FireTowerGame {
-    Board board = new Board();
+    GameBoard board = new GameBoard();
     Player[] players;
     Scanner scan = new Scanner(System.in);
 //    public void setDeck() {
@@ -11,7 +11,7 @@ public class FireTowerGame {
 //        }
 //    }
     public void start() {
-        board.setBoard();
+        board.initializeBoard();
         board.setWeatherVane();
         board.printBoard();
         System.out.println("How many players would like to play? ");

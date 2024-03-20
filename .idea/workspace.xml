@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="tried to make deck and discard, and finished player class&#10;- Gabriel">
-      <change afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Airdrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Airdrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BucketCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BucketCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurningSnag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurningSnag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChampionOfTheWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChampionOfTheWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DeReforest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeReforest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DozerLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DozerLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Explosion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FireEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Firestorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Firestorm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FlareUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FlareUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScratchLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScratchLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShadowOfTheWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShadowOfTheWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SmokeJumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SmokeJumper.java" afterDir="false" />
-    </list>
+    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="Tried to make some progress on the Firestorm event class.&#10;-Atif Ali" />
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
     <list id="5bfa8471-7dde-48c6-9c32-e6d8454c4c27" name="Changes by BT_2N2_04" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,6 +97,7 @@
       <workItem from="1710623739441" duration="140000" />
       <workItem from="1710624005548" duration="322000" />
       <workItem from="1710624331939" duration="5165000" />
+      <workItem from="1710886985609" duration="3461000" />
     </task>
     <task id="LOCAL-00001" summary="I tried.&#10;- Gabriel">
       <option name="closed" value="true" />
@@ -142,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710629621958</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Tried to make some progress on the Firestorm event class.&#10;-Atif Ali">
+      <option name="closed" value="true" />
+      <created>1710892090723</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710892090723</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +154,7 @@
     <MESSAGE value="Made some progress on WindCard method. Need to add parameters for setWindDirection.&#10;-Atif" />
     <MESSAGE value="Made some progress on WindCard method. Also tried to make spread fire.&#10;-Atif" />
     <MESSAGE value="Made some progress on WindCard method. Also tried to make a place fire gem in wind direction method&#10;-Atif" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some progress on WindCard method. Also tried to make a place fire gem in wind direction method&#10;-Atif" />
+    <MESSAGE value="Tried to make some progress on the Firestorm event class.&#10;-Atif Ali" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried to make some progress on the Firestorm event class.&#10;-Atif Ali" />
   </component>
 </project>
