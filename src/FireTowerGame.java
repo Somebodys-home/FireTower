@@ -16,8 +16,8 @@ public class FireTowerGame {
         board.printBoard();
         System.out.println("How many players would like to play? ");
         int playerNum = 0;
-        while (playerNum <= 0 || playerNum > 4) {
-            System.out.println("Please select an amount between 1 and 4 inclusive.");
+        while (playerNum <= 1 || playerNum > 4) {
+            System.out.println("Please select an amount between 2 and 4 inclusive.");
             playerNum = scan.nextInt();
             scan.nextLine();
         }

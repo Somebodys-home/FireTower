@@ -47,29 +47,19 @@ public class GameBoard {
     }
 
     public void printBoard() {
-        for (int i = 0; i < 10; i++) {
-            System.out.print("0\uFE0F⃣");
+        for (int i = 0; i < 16; i++) {
+            System.out.print((i / 10) + "\uFE0F⃣");
         }
-        for (int i = 0; i < 6; i++) {
-            System.out.print("1\uFE0F⃣");
-        }                                        //TODO: MAKE IT LOOK BETTER
         System.out.println();
-        for (int i = 0; i < 10; i++) {
-            System.out.print(i + "\uFE0F⃣");
-        }
-        for (int i = 0; i < 6; i++) {
-            System.out.print(i + "\uFE0F⃣");
+        for (int i = 0; i < 16; i++) {
+            System.out.print((i % 10) + "\uFE0F⃣");
         }
         System.out.println();
         for (int i = 0; i < 16; i++) {
             for (Space space1 : board[i]) {
                 System.out.print(space1.getSpaceEmoji());
             }
-            if (i < 10) {
-                System.out.print("0\uFE0F⃣");
-            } else {
-                System.out.print("1\uFE0F⃣");
-            }
+            System.out.print((i / 10) + "\uFE0F⃣");
             System.out.print((i % 10) + "\uFE0F⃣");
             if (i >= 6 && i  <= 9) {
                 int j = i - 6;
