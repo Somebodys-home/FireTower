@@ -8,12 +8,12 @@ public class Deck {
         addCard(new Explosion(board, scanner), 4);
         addCard(new BurningSnag(board, scanner), 4);
         addCard(new FlareUp(board, scanner), 4);
-        addCard(new Airdrop(board), 4);
-        addCard(new FireEngine(board), 4);
-        addCard(new SmokeJumper(board), 4);
-        addCard(new DozerLine(board), 3);
-        addCard(new SmokeJumper(board), 3);
-        addCard(new DeReforest(board), 4);
+        addCard(new Airdrop(board, scanner), 4);
+        addCard(new FireEngine(board, scanner), 4);
+        addCard(new SmokeJumper(board, scanner), 4);
+        addCard(new DozerLine(board, scanner), 3);
+        addCard(new SmokeJumper(board, scanner), 3);
+        addCard(new DeReforest(board, scanner), 4);
 //        addCard(); for the wind cards
 //        addCard();
 //        addCard();

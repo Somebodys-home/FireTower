@@ -1,6 +1,8 @@
+import java.util.Scanner;
+
 public class DeReforest extends FirebreakCard {
-    public DeReforest(GameBoard board) {
-        super("De / Reforest", board);
+    public DeReforest(GameBoard board, Scanner scan) {
+        super("De / Reforest", board, scan);
     }
 
     @Override

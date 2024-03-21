@@ -1,7 +1,9 @@
 import java.util.Random;
+import java.util.Scanner;
+
 public class Firestorm extends EventCard {
-    public Firestorm(GameBoard board, Card[] deck, Card[] discard, Player[] turnOrder) {
-        super("Fire Storm", board, deck, discard, turnOrder);
+    public Firestorm(GameBoard board, Card[] deck, Card[] discard, Player[] turnOrder, Scanner scan) {
+        super("Fire Storm", board, deck, discard, turnOrder, scan);
     }
 
     @Override
@@ -9,7 +11,7 @@ public class Firestorm extends EventCard {
         System.out.println("A Firestorm event has occurred!");
 
         // Step 1: Discard the Firestorm card and draw back up to hand size
-        discardCard();
+        //discardCard();  TODO: IMPLEMENTATION PLEASE
 
         // Step 2: Roll the die for the firestorm wind direction
         WindDirection firestormWindDirection = rollForNewDirection();
@@ -31,9 +33,9 @@ public class Firestorm extends EventCard {
         getBoard().setWindDirection(newWindDirection);
     }
 
-    private void discardCard() {
+    /*private void discardCard() {
         getDiscard().add(this);    //TODO: ATIF WHERE IS THE ADD METHOD
-    }
+    }*/
 
     private WindDirection rollForNewDirection() {
         Random random = new Random();

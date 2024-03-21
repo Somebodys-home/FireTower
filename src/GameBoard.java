@@ -29,58 +29,22 @@ public class GameBoard {
         board[8][7] = new EternalFlame(8,  7);
         board[7][8] = new EternalFlame(7, 8);
         board[8][8] = new EternalFlame(8, 8);
+
+        int[] x = {0, 0, 13, 13};
+        int[] y = {0, 13, 0, 13};
         // top left
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (i == 0 && j == 0) {
-                    board[i][j] = new WinCondition("\uD83D\uDC9B", j, i);
-                }  else {
-                    board[i][j] = new FireTower(j, i);
+        for (int h = 0; h < 4; h++) {
+            for (int i = y[h]; i < y[h] + 3; i++) {
+                for (int j = x[h]; j < x[h] + 3; j++) {
+                    if (i == 0 && j == 0) {
+                        board[i][j] = new WinCondition("\uD83D\uDC9B", j, i); //NOTE: i refers to y since it dictates rows which is y-axis
+                    }  else {
+                        board[i][j] = new FireTower(j, i);        //NOTE: j refers to x since it dictates columns which is x-axis
+                    }
                 }
             }
         }
-        board[0][0] = new WinCondition("\uD83D\uDC9B");
-        board[1][0] = new FireTower();
-        board[2][0] = new FireTower();
-        board[0][1] = new FireTower();
-        board[1][1] = new FireTower();
-        board[2][1] = new FireTower();
-        board[0][2] = new FireTower();
-        board[1][2] = new FireTower();
-        board[2][2] = new FireTower();
 
-        //top right
-        board[0][15] = new WinCondition("❤\uFE0F");
-        board[1][15] = new FireTower();
-        board[2][15] = new FireTower();
-        board[0][14] = new FireTower();
-        board[1][14] = new FireTower();
-        board[2][14] = new FireTower();
-        board[0][13] = new FireTower();
-        board[1][13] = new FireTower();
-        board[2][13] = new FireTower();
-
-        //bottom left
-        board[15][0] = new WinCondition("\uD83D\uDC99");
-        board[14][0] = new FireTower();
-        board[13][0] = new FireTower();
-        board[15][1] = new FireTower();
-        board[14][1] = new FireTower();
-        board[13][1] = new FireTower();
-        board[15][2] = new FireTower();
-        board[14][2] = new FireTower();
-        board[13][2] = new FireTower();
-
-        //bottom right
-        board[15][15] = new WinCondition("\uD83D\uDC9A");
-        board[14][15] = new FireTower();
-        board[13][15] = new FireTower();
-        board[15][14] = new FireTower();
-        board[14][14] = new FireTower();
-        board[13][14] = new FireTower();
-        board[15][13] = new FireTower();
-        board[14][13] = new FireTower();
-        board[13][13] = new FireTower();
 
     }
 

@@ -4,11 +4,11 @@ public class Player {
     BucketCard bucketCard;
     boolean burned;
     Card[] playerHand;
-    public Player(String name, GameBoard board) {
+    public Player(String name, GameBoard board, BucketCard bucket) {
         this.name = name;
         this.board = board;
         playerHand = new Card[5];
-        bucketCard = new BucketCard(board);
+        bucketCard = bucket;
         burned = false;
     }
 
