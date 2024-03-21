@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="privated Player instance variables" />
+    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="random commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
     <list id="5bfa8471-7dde-48c6-9c32-e6d8454c4c27" name="Changes by BT_2N2_04" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710984865791</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="random commit">
+      <option name="closed" value="true" />
+      <created>1710985124077</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710985124077</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +182,7 @@
     <MESSAGE value="not complete changes -Isfar" />
     <MESSAGE value="major bugs possibly fixed by Esta Lejos (gabriel translate that)" />
     <MESSAGE value="privated Player instance variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="privated Player instance variables" />
+    <MESSAGE value="random commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="random commit" />
   </component>
 </project>
