@@ -1,0 +1,27 @@
+Index: src/Player.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Player {\r\n    Board board;\r\n    BucketCard bucketCard;\r\n    boolean burned;\r\n    Card[] playerHand;\r\n    public Player() {\r\n        playerHand = new Card[5];\r\n        // thats on u buddy >:)\r\n        burned = false;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Player.java b/src/Player.java
+--- a/src/Player.java	(revision 58d94379ea1793377c11bc156033ab7d6ec02dce)
++++ b/src/Player.java	(date 1710639934835)
+@@ -1,11 +1,13 @@
++import java.util.ArrayList;
++
+ public class Player {
+     Board board;
+     BucketCard bucketCard;
+     boolean burned;
+-    Card[] playerHand;
++    ArrayList<Card> playerHand;
++
+     public Player() {
+-        playerHand = new Card[5];
+-        // thats on u buddy >:)
++        playerHand = new ArrayList<>();
+         burned = false;
+     }
+ }

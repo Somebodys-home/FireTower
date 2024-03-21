@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="major bugs possibly fixed by Esta Lejos (gabriel translate that)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="privated Player instance variables" />
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
     <list id="5bfa8471-7dde-48c6-9c32-e6d8454c4c27" name="Changes by BT_2N2_04" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710984035945</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="privated Player instance variables">
+      <option name="closed" value="true" />
+      <created>1710984865791</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710984865791</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +171,7 @@
     <MESSAGE value="Made some progress on WindCard method. Also tried to make a place fire gem in wind direction method&#10;-Atif" />
     <MESSAGE value="not complete changes -Isfar" />
     <MESSAGE value="major bugs possibly fixed by Esta Lejos (gabriel translate that)" />
-    <option name="LAST_COMMIT_MESSAGE" value="major bugs possibly fixed by Esta Lejos (gabriel translate that)" />
+    <MESSAGE value="privated Player instance variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="privated Player instance variables" />
   </component>
 </project>
