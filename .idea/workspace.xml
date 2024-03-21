@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="not complete changes -Isfar">
+    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="major bugs possibly fixed by Esta Lejos (gabriel translate that)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Airdrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Airdrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChampionOfTheWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChampionOfTheWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DeReforest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeReforest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DozerLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DozerLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FireEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FirebreakCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirebreakCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Firestorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Firestorm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShadowOfTheWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShadowOfTheWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SmokeJumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SmokeJumper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaterCard.java" afterDir="false" />
     </list>
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
     <list id="5bfa8471-7dde-48c6-9c32-e6d8454c4c27" name="Changes by BT_2N2_04" comment="" />
@@ -146,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710910169524</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="major bugs possibly fixed by Esta Lejos (gabriel translate that)">
+      <option name="closed" value="true" />
+      <created>1710984035945</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710984035945</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +164,7 @@
     <MESSAGE value="Made some progress on WindCard method. Also tried to make spread fire.&#10;-Atif" />
     <MESSAGE value="Made some progress on WindCard method. Also tried to make a place fire gem in wind direction method&#10;-Atif" />
     <MESSAGE value="not complete changes -Isfar" />
-    <option name="LAST_COMMIT_MESSAGE" value="not complete changes -Isfar" />
+    <MESSAGE value="major bugs possibly fixed by Esta Lejos (gabriel translate that)" />
+    <option name="LAST_COMMIT_MESSAGE" value="major bugs possibly fixed by Esta Lejos (gabriel translate that)" />
   </component>
 </project>
