@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+
 public class GameBoard {
     Space[][] board;
     String[][] weatherVane;
@@ -210,5 +212,14 @@ public class GameBoard {
 
     private boolean isValidFire(int row, int col) {
         return board[row][col] instanceof Firebreak || board[row][col] instanceof EternalFlame;
+    }
+
+    public Space getSpace(Scanner scan) {
+        System.out.println("Enter x coordinate:");
+        int scanX = scan.nextInt();
+        System.out.println("Enter y coordinate:");
+        int scanY = scan.nextInt();
+
+        return obtainBoard()[scanX][scanY];
     }
 }
