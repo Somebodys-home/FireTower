@@ -14,10 +14,7 @@ public class Deck {
         addCard(new DozerLine(board, scanner), 3);
         addCard(new SmokeJumper(board, scanner), 3);
         addCard(new DeReforest(board, scanner), 4);
-//        addCard(); for the wind cards
-//        addCard();
-//        addCard();
-//        addCard();
+        // how do you add wind cards?
     }
 
     public void addCard(Card card, int count) {
