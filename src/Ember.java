@@ -13,9 +13,9 @@ public class Ember extends FireCard {
         } while (!(targettedSpace instanceof Fire));
 
         Space ember;
-        do {
+        /*do {
 
-        } while (ember instanceof )
+        } while (ember instanceof )*/ //TODO: GABRIEL THIS FOR U
         System.out.println("What x coordinate do you want this fire space at?");
         int scanX = getScan().nextInt();
         System.out.println("What y coordinate do you want this fire space at?");
