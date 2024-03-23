@@ -7,9 +7,7 @@ public class DozerLine extends FirebreakCard {
 
     @Override
     public void cardEffect() {
-        Space space = getBoard().getSpace(getScan());
-        int scanX = space.getX();
-        Firebreak firebreak = new Firebreak(getBoard().getSpace(getScan()).getX(), getBoard().getSpace(getScan()).getY());
+        setSpace(getScan(), new Firebreak(getX(), getY()));
 
         String answer;
         do {
@@ -20,7 +18,7 @@ public class DozerLine extends FirebreakCard {
                 answer.equals("W") || answer.equals("NW")));
 
         if (answer.equals("N")) {
-            getBoard().board
+            getBoard().board[]
         }
     }
 
