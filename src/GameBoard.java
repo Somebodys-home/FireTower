@@ -33,7 +33,7 @@ public class GameBoard {
         board[8][8] = new EternalFlame(8, 8);
 
         int[] x = {0, 0, 13, 13};
-        int[] y = {0, 13, 0, 13};
+        int[] y = {0, 13, 0, 13}; //TODO: ADD BACK WIN CON
         // top left
         for (int h = 0; h < 4; h++) {
             for (int i = y[h]; i < y[h] + 3; i++) {
@@ -158,7 +158,7 @@ public class GameBoard {
                     int newRow = i + rowOffset;
                     int newCol = j + colOffset;
                     // Check if the adjacent position is valid
-                    if (isValidPosition(newRow, newCol)) {
+                    if (isValidPosition(board[newRow][newCol])) {
                         return board[newRow][newCol];
                     }
                 }
@@ -167,6 +167,33 @@ public class GameBoard {
         return null;
     }
 
+    public void placeFireInWindDirection(Scanner scan) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                Space targetSpace = checkOrthogonallyAdjacent(board[j][i], windDirection);
+                if (targetSpace != null && isValidFire(targetSpace)) {
+                    targetSpace.setSpaceEmoji("⭕");
+                }
+            }
+        }
+        selectFirePlacement(scan);
+    }
+
+    public void placeFireAnyWhere(Scanner scan) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                WindDirection[] winds = new WindDirection[]{WindDirection.NORTH, WindDirection.EAST, WindDirection.SOUTH, WindDirection.WEST};
+                for (int k = 0; k < winds.length; k++) {
+                    Space targetSpace = checkOrthogonallyAdjacent(board[j][i], windDirection);
+                    if (targetSpace != null && isValidFire(targetSpace)) {
+                        targetSpace.setSpaceEmoji("⭕");
+                    }
+                }
+            }
+        }
+        selectFirePlacement(scan);
+    }
+    
     public void placeFireGemInWindDirection() {
         // Get the current wind direction from the board
         WindDirection windDirection = getWindDirection();
@@ -192,7 +219,7 @@ public class GameBoard {
                     int newRow = i + rowOffset;
                     int newCol = j + colOffset;
                     // Check if the adjacent position is valid and empty
-                    if (isValidPosition(newRow, newCol) && board[newRow][newCol].getSpaceEmoji().equals("\uD83C\uDF32")) {
+                    if (isValidPosition(board[newRow][newCol]) && board[newRow][newCol].getSpaceEmoji().equals("\uD83C\uDF32")) {
                         // Place the fire symbol and return
                         board[newRow][newCol] = new Space("\uD83D\uDD25", newCol, newRow); // should be fire symbol
                         System.out.println("Placed a fire gem in the wind direction.");
@@ -206,12 +233,30 @@ public class GameBoard {
         System.out.println("No empty adjacent space found to place the fire gem.");
     }
 
-    private boolean isValidPosition(int row, int col) {
-        return row >= 0 && row < board.length && col >= 0 && col < board[0].length;
+    private boolean isValidPosition(Space focus) {
+        return focus.getY() >= 0 && focus.getY() < board.length && focus.getX() >= 0 && focus.getX() < board[0].length;
     }
 
-    private boolean isValidFire(int row, int col) {
-        return board[row][col] instanceof Firebreak || board[row][col] instanceof EternalFlame;
+    public boolean isValidFire(Space focus) {
+        return !(focus instanceof Firebreak) && !(focus instanceof EternalFlame);
+    }
+
+    private void selectFirePlacement(Scanner scan) {
+        printBoard();
+        Space selectedSpace = new Space("", -1, -1);
+        while (!selectedSpace.getSpaceEmoji().equals("⭕")) {
+            System.out.println("Please select a space with a \"⭕\" to spread the fire to.");
+            selectedSpace = getSpace(scan);
+        }
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[j][i].getSpaceEmoji().equals("⭕") && board[j][i] != selectedSpace) {
+                    selectedSpace.setSpaceEmoji("\uD83C\uDF32");
+                } else if (board[j][i] == selectedSpace) {
+                    selectedSpace.setSpaceEmoji("\uD83D\uDD25");
+                }
+            }
+        }
     }
 
     public Space getSpace(Scanner scan) {
