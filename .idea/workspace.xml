@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="random commit">
+    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="Please no trouble&#10;Especially not double&#10;- Gabriel &amp; Isfar">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2024_9_54_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2024_9_54_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FlareUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FlareUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeReforest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeReforest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DozerLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DozerLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ember.java" afterDir="false" />
     </list>
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
     <list id="5bfa8471-7dde-48c6-9c32-e6d8454c4c27" name="Changes by BT_2N2_04" comment="" />
@@ -157,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710985124077</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Please no trouble&#10;Especially not double&#10;- Gabriel &amp; Isfar">
+      <option name="closed" value="true" />
+      <created>1711073678119</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711073678119</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +196,7 @@
     <MESSAGE value="major bugs possibly fixed by Esta Lejos (gabriel translate that)" />
     <MESSAGE value="privated Player instance variables" />
     <MESSAGE value="random commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="random commit" />
+    <MESSAGE value="Please no trouble&#10;Especially not double&#10;- Gabriel &amp; Isfar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Please no trouble&#10;Especially not double&#10;- Gabriel &amp; Isfar" />
   </component>
 </project>
