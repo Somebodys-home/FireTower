@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="orthagonal method updated">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2024_9_54_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2024_9_54_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="flare up complete by Isfar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Explosion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
     </list>
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
@@ -167,15 +166,7 @@
       <option name="project" value="LOCAL" />
       <updated>1711084063932</updated>
     </task>
-    <task id="LOCAL-00009" summary="orthagonal method updated">
-      <option name="closed" value="true" />
-      <created>1711168635813</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1711168635813</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +194,6 @@
     <MESSAGE value="privated Player instance variables" />
     <MESSAGE value="random commit" />
     <MESSAGE value="flare up complete by Isfar" />
-    <MESSAGE value="orthagonal method updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="orthagonal method updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="flare up complete by Isfar" />
   </component>
 </project>

@@ -4,6 +4,8 @@ public abstract class Card {
     private String name;
     private GameBoard board;
     private Scanner scan;
+    private int x;
+    private int y;
     public Card(String name, GameBoard board, Scanner scan) {
         this.name = name;
         this.board = board;
@@ -27,4 +29,21 @@ public abstract class Card {
     }
 
     public abstract void cardEffect();
+
+    public void setSpace(Scanner scan, Space space) {
+        System.out.println("Enter x coordinate:");
+        x = getScan().nextInt();
+        System.out.println("Enter y coordinate:");
+        y = getScan().nextInt();
+
+        getBoard().board[x][y] = space;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 }
