@@ -33,13 +33,16 @@ public class GameBoard {
         board[8][8] = new EternalFlame(8, 8);
 
         int[] x = {0, 0, 13, 13};
-        int[] y = {0, 13, 0, 13}; //TODO: ADD BACK WIN CON
+        int[] y = {0, 13, 0, 13};
+        int[] xWin = {0, 15, 0, 15};
+        int[] yWin = {0, 0, 15, 15};
+        String[] hearts = {"❤\uFE0F", "\uD83D\uDC9A", "\uD83D\uDC9C", "\uD83D\uDC99"};
         // top left
         for (int h = 0; h < 4; h++) {
             for (int i = y[h]; i < y[h] + 3; i++) {
                 for (int j = x[h]; j < x[h] + 3; j++) {
-                    if (i == 0 && j == 0) {
-                        board[i][j] = new WinCondition("\uD83D\uDC9B", j, i); //NOTE: i refers to y since it dictates rows which is y-axis
+                    if (i == xWin[h] && j == yWin[h]) {
+                        board[i][j] = new WinCondition(hearts[h], j, i); //NOTE: i refers to y since it dictates rows which is y-axis
                     }  else {
                         board[i][j] = new FireTower(j, i);        //NOTE: j refers to x since it dictates columns which is x-axis
                     }
