@@ -154,28 +154,20 @@ public class GameBoard {
         } else if (windDirection == WindDirection.WEST) {
             colOffset = -1;
         }
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                if (board[i][j] instanceof Fire) {
-                    // Calculate the adjacent position
-                    int newRow = i + rowOffset;
-                    int newCol = j + colOffset;
-                    // Check if the adjacent position is valid
-                    if (isValidPosition(board[newRow][newCol])) {
-                        return board[newRow][newCol];
-                    }
-                }
-            }
+        int newRow = space.getY() + rowOffset;
+        int newCol = space.getX() + colOffset;
+        if (isValidPosition(board[newRow][newCol])) {
+            return board[newRow][newCol];
         }
         return null;
     }
 
-    public void placeFireInWindDirection(Scanner scan) {
+    public void placeFireInWindDirection(Scanner scan) {   //does step 1 of a turn
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 Space targetSpace = checkOrthogonallyAdjacent(board[j][i], windDirection);
                 if (targetSpace != null && isValidFire(targetSpace)) {
-                    targetSpace.setSpaceEmoji("⭕");
+                    targetSpace.setSpaceEmoji("⭕");  //still a tree
                 }
             }
         }
@@ -189,12 +181,30 @@ public class GameBoard {
                 for (int k = 0; k < winds.length; k++) {
                     Space targetSpace = checkOrthogonallyAdjacent(board[j][i], windDirection);
                     if (targetSpace != null && isValidFire(targetSpace)) {
-                        targetSpace.setSpaceEmoji("⭕");
+                        targetSpace.setSpaceEmoji("⭕");  //still a tree
                     }
                 }
             }
         }
         selectFirePlacement(scan);
+    }
+
+    private void selectFirePlacement(Scanner scan) {
+        printBoard();
+        Space selectedSpace = new Space("", -1, -1);
+        while (!selectedSpace.getSpaceEmoji().equals("⭕")) {
+            System.out.println("Please select a space with a \"⭕\" to spread the fire to.");
+            selectedSpace = getSpace(scan);
+        }
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[j][i].getSpaceEmoji().equals("⭕") && board[j][i] != selectedSpace) {
+                    selectedSpace.setSpaceEmoji("\uD83C\uDF32"); //goes back to displaying a tree
+                } else if (board[j][i] == selectedSpace) {
+                    selectedSpace = new Fire(selectedSpace.getX(), selectedSpace.getY());  //evolves into fire
+                }
+            }
+        }
     }
     
     public void placeFireGemInWindDirection() {
@@ -241,25 +251,11 @@ public class GameBoard {
     }
 
     public boolean isValidFire(Space focus) {
-        return !(focus instanceof Firebreak) && !(focus instanceof EternalFlame);
+        return isValidFireBreak(focus) && !(focus instanceof EternalFlame);
     }
 
-    private void selectFirePlacement(Scanner scan) {
-        printBoard();
-        Space selectedSpace = new Space("", -1, -1);
-        while (!selectedSpace.getSpaceEmoji().equals("⭕")) {
-            System.out.println("Please select a space with a \"⭕\" to spread the fire to.");
-            selectedSpace = getSpace(scan);
-        }
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                if (board[j][i].getSpaceEmoji().equals("⭕") && board[j][i] != selectedSpace) {
-                    selectedSpace.setSpaceEmoji("\uD83C\uDF32");
-                } else if (board[j][i] == selectedSpace) {
-                    selectedSpace.setSpaceEmoji("\uD83D\uDD25");
-                }
-            }
-        }
+    public boolean isValidFireBreak(Space focus) {
+        return !(focus instanceof Firebreak);
     }
 
     public Space getSpace(Scanner scan) {
@@ -269,5 +265,24 @@ public class GameBoard {
         int scanY = scan.nextInt();
 
         return obtainBoard()[scanX][scanY];
+    }
+
+    public WindDirection chooseDirection(Scanner scan) {
+        String choice = "";
+        while (!choice.equals("NORTH") && !choice.equals("EAST") && !choice.equals("SOUTH") && !choice.equals("WEST")) {
+            System.out.print("In which direction would you like to build your flare in(NORTH, EAST, SOUTH, WEST)? ");
+            choice = scan.nextLine();
+        }
+        WindDirection targetWind;
+        if (choice.equalsIgnoreCase("NORTH")) {
+            targetWind = WindDirection.NORTH;
+        } else if (choice.equalsIgnoreCase("SOUTH")) {
+            targetWind = WindDirection.SOUTH;
+        } else if (choice.equalsIgnoreCase("EAST")) {
+            targetWind = WindDirection.EAST;
+        } else {
+            targetWind = WindDirection.WEST;
+        }
+        return targetWind;
     }
 }

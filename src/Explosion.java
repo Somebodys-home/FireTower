@@ -19,7 +19,7 @@ public class Explosion extends FireCard {
             if (targettedSpace.getX() + offsetX[i] >= 0 || targettedSpace.getX() + offsetX[i] < getBoard().obtainBoard().length || targettedSpace.getY() + offsetY[i] >= 0 || targettedSpace.getY() + offsetY[i] < getBoard().obtainBoard().length) {
                 Space adjacentSpace = getBoard().obtainBoard()[targettedSpace.getY() + offsetX[i]][targettedSpace.getX() + offsetY[i]];
                 if (getBoard().isValidFire(adjacentSpace)) {
-                    adjacentSpace = new Fire(adjacentSpace.getX(), adjacentSpace.getY());        //TODO: MARKED FOR REVIEW
+                    getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Fire(adjacentSpace.getX(), adjacentSpace.getY());
                 }
             }
         }

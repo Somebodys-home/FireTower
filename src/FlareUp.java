@@ -11,7 +11,7 @@ public class FlareUp extends FireCard {
         System.out.println("This space must build off of an existing fire space.");
         Space targettedSpace;
         do {
-            targettedSpace = getBoard().getSpace(getScan());
+            targettedSpace = getSpace();
         } while (targettedSpace instanceof Fire || targettedSpace instanceof Firebreak);
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Fire(targettedSpace.getX(), targettedSpace.getY());
         String choice = "";

@@ -7,19 +7,15 @@ public class DozerLine extends FirebreakCard {
 
     @Override
     public void cardEffect() {
-        setSpace(getScan(), new Firebreak(getX(), getY()));
-
-        String answer;
-        do {
-            System.out.println("Input a direction (N/NE/E/SE/S/SW/W/NW):");
-            answer = getScan().nextLine();
-        } while (!(answer.equals("N") || answer.equals("NE") || answer.equals("E") ||
-                answer.equals("SE") || answer.equals("S") || answer.equals("SW") ||
-                answer.equals("W") || answer.equals("NW")));
-
-        if (answer.equals("N")) {
-            getBoard().board[]
+        Space target = getSpace();
+        while (getBoard().isValidFireBreak(target)) {
+            System.out.println("Select a valid square!");
+            target = getSpace();
         }
+
+        WindDirection windDir = getBoard().chooseDirection(getScan());
+        Space adjacentSpace = getBoard().checkOrthogonallyAdjacent(target, windDir);
+        getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Firebreak(adjacentSpace.getX(), adjacentSpace.getY());
     }
 
 }
