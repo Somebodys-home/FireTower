@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="orthagonal method updated">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_10_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_10_26_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_12_49_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_12_49_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_12_49_AM__Changes_by_hypix_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_12_49_AM__Changes_by_hypix_.xml" afterDir="false" />
+    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="Made some progress on the BucketCard class.&#10;-Atif Ali">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BucketCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BucketCard.java" afterDir="false" />
     </list>
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
     <list id="5bfa8471-7dde-48c6-9c32-e6d8454c4c27" name="Changes by BT_2N2_04" comment="" />
@@ -106,7 +101,8 @@
       <workItem from="1710624005548" duration="322000" />
       <workItem from="1710624331939" duration="5165000" />
       <workItem from="1711246562174" duration="10000" />
-      <workItem from="1711246743060" duration="943000" />
+      <workItem from="1711246743060" duration="1102000" />
+      <workItem from="1711407563085" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="I tried.&#10;- Gabriel">
       <option name="closed" value="true" />
@@ -172,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711084063932</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Made some progress on the BucketCard class.&#10;-Atif Ali">
+      <option name="closed" value="true" />
+      <created>1711247712031</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711247712031</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +204,7 @@
     <MESSAGE value="privated Player instance variables" />
     <MESSAGE value="random commit" />
     <MESSAGE value="flare up complete by Isfar" />
-    <option name="LAST_COMMIT_MESSAGE" value="flare up complete by Isfar" />
+    <MESSAGE value="Made some progress on the BucketCard class.&#10;-Atif Ali" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made some progress on the BucketCard class.&#10;-Atif Ali" />
   </component>
 </project>
