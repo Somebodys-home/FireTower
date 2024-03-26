@@ -7,4 +7,15 @@ public abstract class WaterCard extends Card {
 
     @Override
     public abstract void cardEffect();
+
+    public Space initialStep() {
+        System.out.println("Select a space on the board that is occupied by fire not in the fire tower area.");
+        System.out.println("Extinguish the fires in the desired direction which can pass through firebreaks.");
+        Space targettedSpace;
+        do {
+            targettedSpace = getSpace();
+        } while (!(getBoard().isValidWater(targettedSpace)));
+        getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
+        return targettedSpace;
+    }
 }

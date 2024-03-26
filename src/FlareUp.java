@@ -7,13 +7,7 @@ public class FlareUp extends FireCard {
 
     @Override
     public void cardEffect() {
-        System.out.println("Select a space on the board that isn't part of the eternal flame or a fire tower area.");
-        System.out.println("This space must build off of an existing fire space.");
-        Space targettedSpace;
-        do {
-            targettedSpace = getSpace();
-        } while (targettedSpace instanceof Fire || targettedSpace instanceof Firebreak);
-        getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Fire(targettedSpace.getX(), targettedSpace.getY());
+        Space targettedSpace = initialStep();
         String choice = "";
         while (!choice.equals("NORTH") && !choice.equals("EAST") && !choice.equals("SOUTH") && !choice.equals("WEST")) {
             System.out.print("In which direction would you like to build your flare in(NORTH, EAST, SOUTH, WEST)? ");
@@ -30,10 +24,10 @@ public class FlareUp extends FireCard {
             targetWind = WindDirection.WEST;
         }
         Space adjacentSpace = getBoard().checkOrthogonallyAdjacent(targettedSpace, targetWind);
-        if (!(adjacentSpace instanceof Fire) && !(adjacentSpace instanceof Firebreak)) {
+        if (!(getBoard().isValidFire(adjacentSpace))) {
             getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Fire(adjacentSpace.getX(), adjacentSpace.getY());
             Space nextAdjacentSpace = getBoard().checkOrthogonallyAdjacent(targettedSpace, targetWind);
-            if (!(nextAdjacentSpace instanceof Fire) && !(nextAdjacentSpace instanceof Firebreak)) {
+            if (!(getBoard().isValidFire(nextAdjacentSpace))) {
                 getBoard().obtainBoard()[nextAdjacentSpace.getY()][nextAdjacentSpace.getX()] = new Fire(nextAdjacentSpace.getX(), nextAdjacentSpace.getY());
             }
         }

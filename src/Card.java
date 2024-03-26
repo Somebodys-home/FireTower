@@ -30,6 +30,8 @@ public abstract class Card {
 
     public abstract void cardEffect();
 
+    public abstract Space initialStep();
+
     public void setSpace(Scanner scan, Space space) {
         System.out.println("Enter x coordinate:");
         x = getScan().nextInt();

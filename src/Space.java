@@ -9,6 +9,12 @@ public class Space {
         this.y = y;
     }
 
+    public Space(int x, int y) {
+        this.spaceEmoji = "\uD83C\uDF32";
+        this.x = x;
+        this.y = y;
+    }
+
     public String getSpaceEmoji() {
         return spaceEmoji;
     }

@@ -256,6 +256,9 @@ public class GameBoard {
 
     public boolean isValidFireBreak(Space focus) {
         return !(focus instanceof Firebreak);
+    } //might need to check orthogonally
+    public boolean isValidWater(Space focus) {
+        return !(focus instanceof FireTower) && !(focus instanceof EternalFlame);
     }
 
     public Space getSpace(Scanner scan) {
