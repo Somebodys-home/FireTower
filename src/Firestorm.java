@@ -57,4 +57,15 @@ public class Firestorm extends EventCard {
         System.out.println(player.getName() + ", it's your turn to discard and draw cards.");
         // Implement player's ability to discard and draw cards here so need player class
     }
+
+    public Space initialStep() {   //TODO: FIXING REQUIRED
+        System.out.println("The storm itself closes in.");
+        System.out.println("It has formed its own wind system in the form of a fire tornado.");
+        Space targettedSpace;
+        do {
+            targettedSpace = getSpace();
+        } while (!(getBoard().isValidWater(targettedSpace)));
+        getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
+        return targettedSpace;
+    }
 }

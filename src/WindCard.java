@@ -51,4 +51,10 @@ public class WindCard extends Card {
 
         return newDirection;
     }
+
+    public Space initialStep() {
+        System.out.println("The wind blows in the direction it desires.");
+        System.out.println("THE " + windDirection + "ERN WINDS RANGE ON!!!!");
+        return null;
+    }
 }

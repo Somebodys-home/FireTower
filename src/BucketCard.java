@@ -13,7 +13,7 @@ public class BucketCard extends Card {
             System.out.println("Select a fire space to extinguish.");
             Space targetSpace = getBoard().getSpace(getScan());
             if (targetSpace instanceof Fire) {
-                targetSpace = new Space("🌲", targetSpace.getX(), targetSpace.getY()); // replace fire with tree
+                getBoard().obtainBoard()[targetSpace.getY()][targetSpace.getX()] = new Space("🌲", targetSpace.getX(), targetSpace.getY()); // replace fire with tree
                 hasWater = false; // bucket is now empty
                 System.out.println("Fire extinguished!");
             } else {
@@ -22,5 +22,17 @@ public class BucketCard extends Card {
         } else {
             System.out.println("Bucket is empty. Cannot extinguish fire.");
         }
+    }
+
+    @Override
+    public Space initialStep() {  //TODO: FIX STUFF HERE
+        System.out.println("Select a space on your tower space with a flame to extinguish it and two other flames.");
+        System.out.println("Used only once.");
+        Space targettedSpace;
+        do {
+            targettedSpace = getSpace();
+        } while (!(getBoard().isValidWater(targettedSpace)));
+        getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
+        return targettedSpace;
     }
 }

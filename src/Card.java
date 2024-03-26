@@ -38,7 +38,7 @@ public abstract class Card {
         System.out.println("Enter y coordinate:");
         y = getScan().nextInt();
 
-        return getBoard().board[y][x];
+        return getBoard().obtainBoard()[y][x];
     }
 
     public int getX() {

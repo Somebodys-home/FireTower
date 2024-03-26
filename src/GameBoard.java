@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameBoard {
-    Space[][] board;
-    String[][] weatherVane;
-    WindDirection windDirection;
-    ArrayList<Card> deck = new ArrayList<>(60);
-    ArrayList<Card> discard = new ArrayList<>();
+    private Space[][] board;
+    private String[][] weatherVane;
+    private WindDirection windDirection;
+    private ArrayList<Card> deck = new ArrayList<>(60);
+    private ArrayList<Card> discard = new ArrayList<>();
 
     public GameBoard() {
         board = new Space[16][16];
@@ -255,8 +255,14 @@ public class GameBoard {
     }
 
     public boolean isValidFireBreak(Space focus) {
+        WindDirection[] directions = new WindDirection[]{WindDirection.NORTH, WindDirection.WEST, WindDirection.SOUTH, WindDirection.EAST};
+        for (WindDirection windDir: directions) {
+            if (checkOrthogonallyAdjacent(focus, windDir) instanceof Firebreak) {
+                return false;
+            }
+        }
         return !(focus instanceof Firebreak);
-    } //might need to check orthogonally
+    }
     public boolean isValidWater(Space focus) {
         return !(focus instanceof FireTower) && !(focus instanceof EternalFlame);
     }

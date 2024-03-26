@@ -9,4 +9,15 @@ public class ChampionOfTheWood extends EventCard {
     public void cardEffect() {
 
     }
+
+    public Space initialStep() {  //TODO: FIX STUFF HERE
+        System.out.println("You are the champion.");
+        System.out.println("Don't brag now, we don't like braggers.");
+        Space targettedSpace;
+        do {
+            targettedSpace = getSpace();
+        } while (!(getBoard().isValidWater(targettedSpace)));
+        getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
+        return targettedSpace;
+    }
 }

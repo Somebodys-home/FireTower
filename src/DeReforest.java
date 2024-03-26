@@ -14,20 +14,17 @@ public class DeReforest extends FirebreakCard {
         } while (!(answer.equals("de") || !(answer.equals("re"))));
 
         if (answer.equals("de")) {
-            getBoard().board[getBoard().getSpace(getScan()).getX()][getBoard().getSpace(getScan()).getY()] = new Firebreak(getBoard().getSpace(getScan()).getX(), getBoard().getSpace(getScan()).getY());
-        } else if (answer.equals("re")) {
-            Space answer2;
-            int scanX;
-            int scanY;
+            Space targetToDeforest;
             do {
-                System.out.println("Enter x coordinate of firebreak you want removed:");
-                scanX = getScan().nextInt();
-                System.out.println("Enter y coordinate of firebreak you want removed:");
-                scanY = getScan().nextInt();
-                answer2 = getBoard().board[scanX][scanY];
-            } while (!(answer2 instanceof Firebreak));
-
-            getBoard().board[scanX][scanY] = new Space("\uD83D\uDC9B", scanX, scanY);
+                targetToDeforest = getSpace();
+            } while (!(targetToDeforest.getSpaceEmoji().equals("\uD83C\uDF32")));   //checks for a tree to deforest
+            getBoard().obtainBoard()[targetToDeforest.getY()][targetToDeforest.getX()] = new Firebreak(targetToDeforest.getX(), targetToDeforest.getY());
+        } else {
+            Space targetToReforest;
+            do {
+                targetToReforest = getSpace();
+            } while (!(targetToReforest instanceof Firebreak));   //checks for a tree to deforest
+            getBoard().obtainBoard()[targetToReforest.getY()][targetToReforest.getX()] = new Space(targetToReforest.getX(), targetToReforest.getY());
         }
     }
 }
