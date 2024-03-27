@@ -1,8 +1,11 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FireTowerGame {
-    GameBoard board = new GameBoard();
-    Player[] players;
+    private GameBoard board = new GameBoard();
+    private Player[] turnOrder;
+    private Player currentPlayer;
+
     Scanner scan = new Scanner(System.in);
 //    public void setDeck() {
 //        Card card = new FireCard("test", board);
@@ -21,6 +24,58 @@ public class FireTowerGame {
             playerNum = scan.nextInt();
             scan.nextLine();
         }
-        players = new Player[playerNum];
+        turnOrder = new Player[playerNum];
+        ArrayList<String> hearts = new ArrayList<String>();
+        hearts.add("❤️");
+        hearts.add("\uD83D\uDC9C");
+        hearts.add("\uD83D\uDC99");
+        hearts.add("\uD83D\uDC9A");
+        String choice;
+        do {
+            System.out.println("The first player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
+            choice = scan.nextLine();
+        } while (!hearts.contains(choice));
+        if (turnOrder.length == 2) {
+            int otherChoice = hearts.indexOf(choice) + 2;
+            if (otherChoice >= hearts.size()) {
+                otherChoice -= hearts.size();
+            }
+            System.out.println("The other player must now defend " + hearts.get(otherChoice));
+        } else {
+            hearts.remove(choice);
+            do {
+                System.out.println("The second player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
+                choice = scan.nextLine();
+            } while (!hearts.contains(choice));
+            hearts.remove(choice);
+            do {
+                System.out.println("The third player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
+                choice = scan.nextLine();
+            } while (!hearts.contains(choice));
+            if (hearts.size() == 4) {
+                hearts.remove(choice);
+                System.out.println("The fourth player must now defend " + hearts.get(0));
+            }
+        }
+    }
+
+    //PRECONDITION: positionNum will always be between 1 and 3 inclusive
+    private Player turnOrderPosition(int positionNum) {
+        for (int i = 0; i < turnOrder.length; i++) {
+            if (turnOrder[i] == currentPlayer) {
+                if (i + positionNum >= turnOrder.length) {
+                    i -= turnOrder.length;
+                }
+                return turnOrder[i + positionNum];
+            }
+        }
+        return null;
+    }
+
+    //PRECONDITION: heart can only be one of the four emojis representing each tower's vulnerable square
+    private void determinePlayerTowerArea(String heart) {
+        if (heart.equals("\uD83D\uDC9C")) {
+            //TODO: TO BE DONE BY ISFAR LATER
+        }
     }
 }

@@ -4,25 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="fire and water card abilities complete! -Isfar">
+    <list default="true" id="4d85912d-740b-4161-b3da-8de7d3547c49" name="Changes" comment="all card abilities implemented - Isfar">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_12_49_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_12_49_AM_[Changes_by_hypix]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_12_49_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2024_12_49_AM__Changes_by_hypix_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Airdrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Airdrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BucketCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BucketCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChampionOfTheWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChampionOfTheWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DeReforest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeReforest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FirebreakCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirebreakCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Firestorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Firestorm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FlareUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FlareUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MutualAid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MutualAid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScratchLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScratchLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShadowOfTheWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShadowOfTheWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WindCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindCard.java" afterDir="false" />
     </list>
     <list id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="" />
     <list id="5bfa8471-7dde-48c6-9c32-e6d8454c4c27" name="Changes by BT_2N2_04" comment="" />
-    <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="">
+    <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="Changes by Gabriel">
       <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,16 +49,6 @@
         <option name="url" value="https://github.com/Somebodys-home/FireTower.git" />
       </UrlAndAccount>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Card.java">
-      <ranges>
-        <range start1="34" end1="35" start2="34" end2="35" changelist="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" />
-        <range start1="36" end1="37" start2="36" end2="37" changelist="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" />
-        <range start1="38" end1="39" start2="38" end2="39" changelist="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" />
-        <range start1="40" end1="41" start2="40" end2="41" changelist="4d85912d-740b-4161-b3da-8de7d3547c49" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -201,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711425954052</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="all card abilities implemented - Isfar">
+      <option name="closed" value="true" />
+      <created>1711429853792</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711429853792</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +222,8 @@
     <MESSAGE value="random commit" />
     <MESSAGE value="flare up complete by Isfar" />
     <MESSAGE value="fire and water card abilities complete! -Isfar" />
-    <option name="LAST_COMMIT_MESSAGE" value="fire and water card abilities complete! -Isfar" />
+    <MESSAGE value="all card abilities implemented - Isfar" />
+    <MESSAGE value="Changes by Gabriel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Gabriel" />
   </component>
 </project>
