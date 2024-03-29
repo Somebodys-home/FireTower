@@ -23,7 +23,28 @@ public class ShadowOfTheWood extends EventCard {
 
     @Override
     public void cardEffect() {
+        // Discard this card immediately and draw back up to hand size
+        discard(this);
+        drawUpToHandSize();
 
+        // Each eliminated player must choose one of the following actions in turn order
+        for (Player player : turnOrder) {
+            if (player.isEliminated()) {
+                System.out.println("Player " + player.getName() + ", choose an action:");
+                System.out.println("1. Pull a card at random from each active player’s hand and take its action.");
+                System.out.println("2. Roll the wind die three times and place one fire gem orthogonally adjacent to a fire gem on the board in the direction indicated on the die.");
+
+                int action = scan.nextInt();
+                if (action == 1) {
+                    pullCardAndTakeAction(player);
+                } else if (action == 2) {
+                    rollWindDieAndPlaceFireGem(player);
+                }
+            }
+        }
+
+        // If any player eliminations occur, resolve after Shadow of the Wood concludes
+        resolvePlayerEliminations();
     }
 
     public Space initialStep() {   //TODO: THE SHADOWS DESIRE CHANGE
@@ -35,5 +56,19 @@ public class ShadowOfTheWood extends EventCard {
         } while (!(getBoard().isValidWater(targettedSpace)));
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
         return targettedSpace;
+    }
+
+
+
+    private void pullCardAndTakeAction(Player player) {
+        // TODO: Implement this method to pull the card
+    }
+
+    private void rollWindDieAndPlaceFireGem(Player player) {
+        // TODO: Implement this method based to place the firegem
+    }
+
+    private void resolvePlayerEliminations() {
+        // TODO: Implement this method to handle eliminated players (e.g., update scores, check for tower burning)
     }
 }
