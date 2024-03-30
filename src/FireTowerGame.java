@@ -5,8 +5,9 @@ public class FireTowerGame {
     private GameBoard board = new GameBoard();
     private Player[] turnOrder;
     private Player currentPlayer;
-
     Scanner scan = new Scanner(System.in);
+
+    OutputWindow outputWindow = new OutputWindow();
 //    public void setDeck() {
 //        Card card = new FireCard("test", board);
 //        for (int i = 60; i > 0; i--) {

@@ -41,6 +41,13 @@ public abstract class Card {
         return getBoard().obtainBoard()[y][x];
     }
 
+    public Space getSpace() {
+        System.out.println("Enter x coordinate:");
+        x = scan.nextInt();
+        System.out.println("Enter y coordinate:");
+        y = scan.nextInt();
+        return getBoard().obtainBoard()[x][y];
+    }
     public int getX() {
         return x;
     }

@@ -1,3 +1,4 @@
+/*
 import java.util.Scanner;
 
 public class ShadowOfTheWood extends EventCard {
@@ -19,7 +20,7 @@ public class ShadowOfTheWood extends EventCard {
 
     STEP 3: Check for eliminations. If all active towers die, then the shadows win.
 
-     */
+
 
     @Override
     public void cardEffect() {
@@ -72,3 +73,4 @@ public class ShadowOfTheWood extends EventCard {
         // TODO: Implement this method to handle eliminated players (e.g., update scores, check for tower burning)
     }
 }
+*/

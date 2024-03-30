@@ -1,3 +1,8 @@
+import javax.swing.*;
+import javax.swing.text.Style;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,10 +12,11 @@ public class GameBoard {
     private WindDirection windDirection;
     private ArrayList<Card> deck = new ArrayList<>(60);
     private ArrayList<Card> discard = new ArrayList<>();
-
-    public GameBoard() {
+    OutputWindow outputWindow;
+    public void GameBoard() {
         board = new Space[16][16];
         weatherVane = new String[4][4];
+         outputWindow = new OutputWindow();
     }
 
     public void setBoard(Space[][] space)  {
@@ -53,7 +59,8 @@ public class GameBoard {
 
     public void printBoard() {
         for (int i = 0; i < 10; i++) {
-            System.out.print("0\uFE0F⃣");
+            outputWindow.addTextToWindow("0\uFE0F⃣", Color.BLACK);
+            System.out.println("0\uFE0F⃣");
         }
         for (int i = 0; i < 6; i++) {
             System.out.print("1\uFE0F⃣");
