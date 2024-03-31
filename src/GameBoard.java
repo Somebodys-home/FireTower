@@ -13,10 +13,10 @@ public class GameBoard {
     private ArrayList<Card> deck = new ArrayList<>(60);
     private ArrayList<Card> discard = new ArrayList<>();
     OutputWindow outputWindow;
-    public void GameBoard() {
+    public GameBoard() {
         board = new Space[16][16];
         weatherVane = new String[4][4];
-         outputWindow = new OutputWindow();
+        outputWindow = new OutputWindow();
     }
 
     public void setBoard(Space[][] space)  {
@@ -60,7 +60,7 @@ public class GameBoard {
     public void printBoard() {
         for (int i = 0; i < 10; i++) {
             outputWindow.addTextToWindow("0\uFE0F⃣", Color.BLACK);
-            System.out.println("0\uFE0F⃣");
+            System.out.print("0\uFE0F⃣");
         }
         for (int i = 0; i < 6; i++) {
             System.out.print("1\uFE0F⃣");

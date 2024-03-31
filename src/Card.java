@@ -32,22 +32,15 @@ public abstract class Card {
 
     public abstract Space initialStep();
 
-    public void setSpace(Scanner scan, Space space) {
-        System.out.println("Enter x coordinate:");
-        x = getScan().nextInt();
-        System.out.println("Enter y coordinate:");
-        y = getScan().nextInt();
-
-        return getBoard().obtainBoard()[y][x];
-    }
-
     public Space getSpace() {
         System.out.println("Enter x coordinate:");
         x = scan.nextInt();
         System.out.println("Enter y coordinate:");
         y = scan.nextInt();
-        return getBoard().obtainBoard()[x][y];
+
+        return getBoard().obtainBoard()[y][x];
     }
+
     public int getX() {
         return x;
     }

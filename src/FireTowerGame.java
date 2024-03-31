@@ -2,18 +2,26 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FireTowerGame {
-    private GameBoard board = new GameBoard();
+    private GameBoard board;
     private Player[] turnOrder;
     private Player currentPlayer;
-    Scanner scan = new Scanner(System.in);
+    Scanner scan;
 
     OutputWindow outputWindow = new OutputWindow();
+
+
 //    public void setDeck() {
 //        Card card = new FireCard("test", board);
 //        for (int i = 60; i > 0; i--) {
 //            deck.add(Card);
 //        }
 //    }
+
+    public FireTowerGame() {
+        board = new GameBoard();
+        scan = new Scanner(System.in);
+    }
+
     public void start() {
         board.initializeBoard();
         board.setWeatherVane();
