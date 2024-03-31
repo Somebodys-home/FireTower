@@ -8,54 +8,50 @@ public class Firestorm extends EventCard {
 
     @Override
     public void cardEffect() {
-        System.out.println("A Firestorm event has occurred!");
+        System.out.println("A firestorm has started! The fire is spreading in all directions.");
 
-        // Step 1: Discard the Firestorm card and draw back up to hand size
-        //discardCard();  TODO: IMPLEMENTATION PLEASE
+        // Get the current state of the board
+        Space[][] boardState = getBoard().obtainBoard();
 
-        // Step 2: Roll the die for the firestorm wind direction
-        WindDirection firestormWindDirection = rollForNewDirection();
-
-        // Step 3: Place a fire gem on every empty space orthogonally adjacent to every fire gem on the board
-        // and the eternal flame in the firestorm wind direction
-        placeFireGemsInWindDirection(firestormWindDirection);
-
-        // Step 4: Roll again for a new wind direction
-        WindDirection newWindDirection = rollForNewDirection();
-
-        // Step 5: Each player may discard and draw cards
-        for (Player player : getTurnOrder()) {
-            playerDiscardAndDraw(player);
+        // Create a copy of the board state to track changes
+        Space[][] newBoardState = new Space[boardState.length][boardState[0].length];
+        for (int i = 0; i < boardState.length; i++) {
+            System.arraycopy(boardState[i], 0, newBoardState[i], 0, boardState[i].length);
         }
 
-        // Step 6: Resume normal play with the new wind direction
-        System.out.println("Resuming normal play with the new wind direction: " + newWindDirection);
-        getBoard().setWindDirection(newWindDirection);
-    }
-
-    /*private void discardCard() {
-        getDiscard().add(this);    //TODO: ATIF WHERE IS THE ADD METHOD
-    }*/
-
-    private WindDirection rollForNewDirection() {
-        Random random = new Random();
-        return WindDirection.values()[random.nextInt(WindDirection.values().length)];
-    }
-
-    private void placeFireGemsInWindDirection(WindDirection windDirection) {
-        for (int i = 0; i < getBoard().obtainBoard().length; i++) {
-            for (int j = 0; j < getBoard().obtainBoard()[0].length; j++) {
-                if (getBoard().obtainBoard()[i][j] instanceof Fire) {
-                    // Place a fire gem on every empty space orthogonally adjacent to the current fire gem
-                    getBoard().placeFireGemInWindDirection();
+        // Iterate over the entire board
+        for (int i = 0; i < boardState.length; i++) {
+            for (int j = 0; j < boardState[i].length; j++) {
+                // If the current space is a Fire, spread it in all directions
+                if (boardState[i][j] instanceof Fire) {
+                    spreadFire(newBoardState, i, j);
                 }
             }
         }
+
+        // Update the board state
+        getBoard().setBoard(newBoardState);
+
+        System.out.println("The firestorm has ended.");
     }
 
-    private void playerDiscardAndDraw(Player player) {
-        System.out.println(player.getName() + ", it's your turn to discard and draw cards.");
-        // Implement player's ability to discard and draw cards here so need player class
+    private void spreadFire(Space[][] boardState, int x, int y) {
+        // Define the four directions: up, down, left, right
+        int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+        // Spread the fire in all four directions
+        for (int[] direction : directions) {
+            int newX = x + direction[0];
+            int newY = y + direction[1];
+
+            // Check if the new coordinates are within the board
+            if (newX >= 0 && newX < boardState.length && newY >= 0 && newY < boardState[0].length) {
+                // If the new space is not a Fire or a Firebreak, turn it into a Fire
+                if (!(boardState[newX][newY] instanceof Fire) && !(boardState[newX][newY] instanceof Firebreak)) {
+                    boardState[newX][newY] = new Fire(newX, newY);
+                }
+            }
+        }
     }
 
     public Space initialStep() {   //TODO: FIXING REQUIRED
