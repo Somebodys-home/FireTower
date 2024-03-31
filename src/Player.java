@@ -3,12 +3,12 @@ public class Player {
     private GameBoard board;
     private BucketCard bucketCard;
     private boolean burned;
-    private Card[] playerHand;
+    private Deck playerHand;
     private Space[][] towerArea;
     public Player(String name, GameBoard board, BucketCard bucket, int towerAreaX, int towerAreaY) {
         this.name = name;
         this.board = board;
-        playerHand = new Card[5];
+        playerHand = new Deck();
         bucketCard = bucket;
         burned = false;
         towerArea = new Space[3][3];
