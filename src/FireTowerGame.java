@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 public class FireTowerGame {
     private GameBoard board;
@@ -8,6 +9,13 @@ public class FireTowerGame {
     Scanner scan;
 
     OutputWindow outputWindow = new OutputWindow();
+
+    String[] cardTypes = {
+            "Ember", "Explosion", "BurningSnag", "FlareUp", "Airdrop",
+            "FireEngine", "SmokeJumper", "DozerLine", "SmokeJumper", "DeReforest"
+    };
+
+
 
 
 //    public void setDeck() {
@@ -33,6 +41,7 @@ public class FireTowerGame {
             playerNum = scan.nextInt();
             scan.nextLine();
         }
+
         turnOrder = new Player[playerNum];
         ArrayList<String> hearts = new ArrayList<String>();
         hearts.add("❤️");
@@ -71,6 +80,16 @@ public class FireTowerGame {
                 turnOrder[3] = new Player("...", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
             }
         }
+
+        // After initializing players, deal 5 random cards to each player
+        for (Player player : turnOrder) {
+            for (int i = 0; i < 5; i++) {
+                int cardIndex = new Random().nextInt(cardTypes.length);
+                Card card = createCard(cardTypes[cardIndex]);
+                player.addCardToHand(card);
+            }
+        }
+
     }
 
     //PRECONDITION: positionNum will always be between 1 and 3 inclusive
@@ -84,6 +103,30 @@ public class FireTowerGame {
             }
         }
         return null;
+    }
+
+    private Card createCard(String cardType) { //looks at cardType and picks out a random card
+        Card card = null;
+        if (cardType.equals("Ember")) {
+            card = new Ember(board, scan);
+        } else if (cardType.equals("Explosion")) {
+            card = new Explosion(board, scan);
+        } else if (cardType.equals("BurningSnag")) {
+            card = new BurningSnag(board, scan);
+        } else if (cardType.equals("FlareUp")) {
+            card = new FlareUp(board, scan);
+        } else if (cardType.equals("Airdrop")) {
+            card = new Airdrop(board, scan);
+        } else if (cardType.equals("FireEngine")) {
+            card = new FireEngine(board, scan);
+        } else if (cardType.equals("SmokeJumper")) {
+            card = new SmokeJumper(board, scan);
+        } else if (cardType.equals("DozerLine")) {
+            card = new DozerLine(board, scan);
+        } else if (cardType.equals("DeReforest")) {
+            card = new DeReforest(board, scan);
+        }
+        return card;
     }
 
     //PRECONDITION: heart can only be one of the four emojis representing each tower's vulnerable square

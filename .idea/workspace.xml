@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="Changes by babula(boogey man)">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Firestorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Firestorm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="Changes by Gabriel" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,6 +113,9 @@
       <workItem from="1711911951759" duration="153000" />
       <workItem from="1711912232154" duration="1451000" />
       <workItem from="1711914020985" duration="1036000" />
+      <workItem from="1711983502172" duration="2441000" />
+      <workItem from="1711986009765" duration="1449000" />
+      <workItem from="1711987604268" duration="2883000" />
     </task>
     <task id="LOCAL-00001" summary="I tried.&#10;- Gabriel">
       <option name="closed" value="true" />
