@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="Changes by babula(boogey man)">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="Added some code to randomly select 5 cards and give it to a player. - Atif" />
     <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="Changes by Gabriel" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +108,7 @@
       <workItem from="1711914020985" duration="1036000" />
       <workItem from="1711983502172" duration="2441000" />
       <workItem from="1711986009765" duration="1449000" />
-      <workItem from="1711987604268" duration="2883000" />
+      <workItem from="1711987604268" duration="2938000" />
     </task>
     <task id="LOCAL-00001" summary="I tried.&#10;- Gabriel">
       <option name="closed" value="true" />
@@ -205,7 +198,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711516281212</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added some code to randomly select 5 cards and give it to a player.">
+      <option name="closed" value="true" />
+      <created>1711990521257</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711990521257</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added some code to randomly select 5 cards and give it to a player. - Atif">
+      <option name="closed" value="true" />
+      <created>1711990539127</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1711990539127</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +246,8 @@
     <MESSAGE value="all card abilities implemented - Isfar" />
     <MESSAGE value="Changes by Gabriel" />
     <MESSAGE value="players choose which tower they want to defend -Isfar" />
-    <option name="LAST_COMMIT_MESSAGE" value="players choose which tower they want to defend -Isfar" />
+    <MESSAGE value="Added some code to randomly select 5 cards and give it to a player." />
+    <MESSAGE value="Added some code to randomly select 5 cards and give it to a player. - Atif" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some code to randomly select 5 cards and give it to a player. - Atif" />
   </component>
 </project>

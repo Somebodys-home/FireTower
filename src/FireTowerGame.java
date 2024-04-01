@@ -89,7 +89,7 @@ public class FireTowerGame {
                 player.addCardToHand(card);
             }
         }
-// h
+        /player
     }
 
     //PRECONDITION: positionNum will always be between 1 and 3 inclusive
