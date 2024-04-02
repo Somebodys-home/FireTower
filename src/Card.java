@@ -48,4 +48,6 @@ public abstract class Card {
     public int getY() {
         return y;
     }
+
+
 }

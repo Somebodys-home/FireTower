@@ -23,6 +23,10 @@ public abstract class EventCard extends Card {
         return turnOrder;
     }
 
+    public void setDiscard(Card[] discard) {
+        this.discard = discard;
+    }
+
     @Override
     public abstract void cardEffect();
 }

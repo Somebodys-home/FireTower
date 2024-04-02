@@ -7,6 +7,16 @@ public class FireTowerGame {
     private Player currentPlayer;
     Scanner scan;
 
+    OutputWindow outputWindow = new OutputWindow();
+
+
+//    public void setDeck() {
+//        Card card = new FireCard("test", board);
+//        for (int i = 60; i > 0; i--) {
+//            deck.add(Card);
+//        }
+//    }
+
     public FireTowerGame() {
         board = new GameBoard();
         scan = new Scanner(System.in);
@@ -80,39 +90,6 @@ public class FireTowerGame {
     private void determinePlayerTowerArea(String heart) {
         if (heart.equals("\uD83D\uDC9C")) {
             //TODO: TO BE DONE BY ISFAR LATER
-        }
-    }
-
-    public void prolouge() {
-        String answer;
-        do {
-            System.out.println("Before we start, do all players know how to play Fire Tower? (y/n)");
-            answer = scan.next();
-        } while (!(answer.equals("y")) || !(answer.equals("n")));
-
-        if (answer.equals("y")) {
-            System.out.println("Good. Have fun burning alive!");
-        } else {
-            System.out.println("So you've already chosen where you want to start. That represents you in each of your respective towers.");
-            System.out.println("At the start, the wind direction will be randomized, and each of you will get a hand of 5 cards and a bucket.");
-            System.out.println("On your turn you must do 2 things: spread the fire and use your action, in that order.");
-            System.out.println();
-            System.out.println("SPREADING FIRE:");
-            System.out.println("You must place another fire marker on any forest (tree) space that is orthogonally adjacent to another fire, following the wind direction.");
-            System.out.println("Orthogonally adjacent means anything thats directly up, down, left or right to something.");
-            System.out.println("For example: if the wind is blowing north, than you can spread the fire to any spot that's north of an already existing fire space.");
-            System.out.println("The fire at the middle of the board is the eternal flame; that's where you start and it also can't be put out or blocked by any means.");
-            System.out.println("More on that later.");
-            System.out.println();
-            System.out.println("USING YOUR ACTION:");
-            System.out.println("Every turn, you can use your action to play one card from your hand.");
-            System.out.println();
-            System.out.println("There are 4 different card types:");
-            System.out.println("Fire: Puts fire on the board.");
-            System.out.println("Water: Extinguishes fire.");
-            System.out.println("Firebreak: Puts a firebreak on the board, which fire can't spread on.");
-            System.out.println("Wind: Changes the direction of the wind.");
-            System.out.println();
         }
     }
 }
