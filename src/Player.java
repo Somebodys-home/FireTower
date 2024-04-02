@@ -4,12 +4,12 @@ public class Player {
     private GameBoard board;
     private BucketCard bucketCard;
     private boolean burned;
-    private Deck playerHand;
+    private Card[] playerHand;
     private Space[][] towerArea;
     public Player(String name, GameBoard board, BucketCard bucket, int towerAreaX, int towerAreaY) {
         this.name = name;
         this.board = board;
-        playerHand = new Deck();
+        playerHand = new Card[5];
         bucketCard = bucket;
         burned = false;
         towerArea = new Space[3][3];
@@ -31,15 +31,6 @@ public class Player {
                 this.playerHand[i] = card;
                 break;
             }
-        }
-    }
-
-    //randomly assign five cards to the player at the start of the game
-    public void assignStartingHand(Card[] deck) {
-        Random rand = new Random();
-        for (int i = 0; i < this.playerHand.length; i++) {
-            int cardIndex = rand.nextInt(deck.length);
-            this.playerHand[i] = deck[cardIndex];
         }
     }
 }

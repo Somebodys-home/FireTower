@@ -82,4 +82,22 @@ public class FireTowerGame {
             //TODO: TO BE DONE BY ISFAR LATER
         }
     }
+
+    public void dealCards() {
+        Deck gameDeck = new Deck();
+        gameDeck.initalizeGameDeck(board, scan);
+        gameDeck.shuffleDeck();
+
+        for (Player player : turnOrder) {
+            for (int i = 0; i < 5; i++) {
+                if (!gameDeck.deck.isEmpty()) {
+                    Card card = gameDeck.deck.remove(0);
+                    player.addCardToHand(card);
+                }
+            }
+        }
+    }
+
+
+
 }
