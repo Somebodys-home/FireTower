@@ -36,4 +36,16 @@ public class FireEngine extends WaterCard{
             getBoard().obtainBoard()[yCoord][xCoord] = new Space(xCoord, yCoord);
         }
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│ Fire  │",
+                        "│Engine │",
+                        "│       │",
+                        "│ Water │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
 }

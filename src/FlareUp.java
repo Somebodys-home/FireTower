@@ -18,4 +18,16 @@ public class FlareUp extends FireCard {
             }
         }
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│ Flare │",
+                        "│  Up   │",
+                        "│       │",
+                        "│ Fire  │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
 }

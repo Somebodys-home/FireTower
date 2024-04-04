@@ -14,6 +14,10 @@ public class FireTowerGame {
 
     public void start() {
         board.initializeBoard();
+        /*Card card = new Ember(board, scan);    FOR TESTING PURPOSES ONLY
+        for (int i = 0; i < 6; i++) {
+            System.out.println(card.cardDisplay()[i]);
+        }*/
         board.setWeatherVane();
         board.printBoard();
         System.out.println("How many players would like to play? ");

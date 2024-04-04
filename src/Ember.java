@@ -23,4 +23,16 @@ public class Ember extends FireCard {
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space("\uD83C\uDF32", targettedSpace.getX(), targettedSpace.getY());
         getBoard().obtainBoard()[scanY][scanX] = new Fire(scanX, scanY);
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│ Ember │",
+                        "│       │",
+                        "│       │",
+                        "│ Fire  │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
 }
