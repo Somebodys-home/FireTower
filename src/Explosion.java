@@ -24,4 +24,16 @@ public class Explosion extends FireCard {
             }
         }
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│ Explo │",
+                        "│ -sion │",
+                        "│       │",
+                        "│ Fire  │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
 }

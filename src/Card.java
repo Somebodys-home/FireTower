@@ -49,5 +49,16 @@ public abstract class Card {
         return y;
     }
 
+    public String[] cardDisplay() {
+        String[] cardStrings =
+               {"╭───────╮",
+                "│       │",
+                "│       │",
+                "│       │",
+                "│       │",
+                "╰───────╯"};
+        return cardStrings;
+    }
+
 
 }

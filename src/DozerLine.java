@@ -18,4 +18,16 @@ public class DozerLine extends FirebreakCard {
         getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Firebreak(adjacentSpace.getX(), adjacentSpace.getY());
     }
 
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│ Dozer │",
+                        "│ Line  │",
+                        "│       │",
+                        "│ Water │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
+
 }

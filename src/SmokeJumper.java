@@ -23,4 +23,16 @@ public class SmokeJumper extends WaterCard{
             }
         }
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│Smoke- │",
+                        "│Jumper │",
+                        "│       │",
+                        "│ Water │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
 }

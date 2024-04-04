@@ -38,4 +38,16 @@ public class BurningSnag extends FireCard {
             }
         }
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│Burning│",
+                        "│ Snag  │",
+                        "│       │",
+                        "│ Fire  │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
 }
