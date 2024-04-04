@@ -32,6 +32,10 @@ public class Deck {
         }
     }
 
+    public ArrayList<Card> getDeck() {
+        return deck;
+    }
+
     public void shuffleDeck() {
         Collections.shuffle(deck);
     }

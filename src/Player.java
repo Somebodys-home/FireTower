@@ -20,26 +20,27 @@ public class Player {
         }
     }
 
-    public String getName() {
-        return name;
+    public void playCard(int idxOfCard) {
+        playerHand.getDeck().get(idxOfCard).cardEffect();
     }
 
+    // TODO: WHAT THE BULLSHIT IS ALL THIS
     // add a card to the player's hand
-    public void addCardToHand(Card card) {
-        for (int i = 0; i < this.playerHand.length; i++) {
-            if (this.playerHand[i] == null) {
-                this.playerHand[i] = card;
-                break;
-            }
-        }
-    }
-
-    //randomly assign five cards to the player at the start of the game
-    public void assignStartingHand(Card[] deck) {
-        Random rand = new Random();
-        for (int i = 0; i < this.playerHand.length; i++) {
-            int cardIndex = rand.nextInt(deck.length);
-            this.playerHand[i] = deck[cardIndex];
-        }
-    }
+//    public void addCardToHand(Card card) {
+//        for (int i = 0; i < this.playerHand.length; i++) {
+//            if (this.playerHand[i] == null) {
+//                this.playerHand[i] = card;
+//                break;
+//            }
+//        }
+//    }
+//
+//    //randomly assign five cards to the player at the start of the game
+//    public void assignStartingHand(Card[] deck) {
+//        Random rand = new Random();
+//        for (int i = 0; i < this.playerHand.length; i++) {
+//            int cardIndex = rand.nextInt(deck.length);
+//            this.playerHand[i] = deck[cardIndex];
+//        }
+//    }
 }

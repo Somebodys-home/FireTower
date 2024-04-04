@@ -18,8 +18,8 @@ public class GameBoard {
         weatherVane = new String[4][4];
     }
 
-    public void setBoard(Space[][] space)  {
-
+    public ArrayList<Card> getDeck() {
+        return deck;
     }
 
     public Space[][] obtainBoard() {

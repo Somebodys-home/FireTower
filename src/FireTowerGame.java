@@ -82,4 +82,34 @@ public class FireTowerGame {
             //TODO: TO BE DONE BY ISFAR LATER
         }
     }
+
+    public void playerTurn(Player player) {
+        boolean takenAction = false;
+        boolean hasSpreadFire = false;
+        String answer = "";
+        String turnSentence = "";
+        while (!takenAction || !hasSpreadFire) {
+            if (!takenAction && !hasSpreadFire) {
+                turnSentence = "What do you want to do? (Spread (f)ire / Take (a)ction)";
+            } else if (!takenAction && hasSpreadFire) {
+                turnSentence = "What do you want to do? (Take (a)ction)";
+            } else if (takenAction && !hasSpreadFire) {
+                turnSentence = "What do you want to do? (Spread (f)ire)";
+            }
+            do {
+                System.out.println(turnSentence);
+                answer = scan.nextLine();
+            } while (!(answer.equals("f")) && !(answer.equals("a")));
+
+            if (answer.equals("f")) {
+                board.placeFireInWindDirection(scan);
+                hasSpreadFire = true;
+            }
+            if (answer.equals("a")) {
+                System.out.println("Test dialog");
+                player.playCard(scan.nextInt());
+                takenAction = true;
+            }
+        }
+    }
 }
