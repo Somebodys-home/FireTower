@@ -10,7 +10,7 @@ public class GameBoard {
     private Space[][] board;
     private String[][] weatherVane;
     private WindDirection windDirection;
-    private ArrayList<Card> deck = new ArrayList<>(60);
+    private Deck deck;
     private ArrayList<Card> discard = new ArrayList<>();
 
     public GameBoard() {
@@ -18,7 +18,7 @@ public class GameBoard {
         weatherVane = new String[4][4];
     }
 
-    public ArrayList<Card> getDeck() {
+    public Deck getDeck() {
         return deck;
     }
 

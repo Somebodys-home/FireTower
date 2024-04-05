@@ -14,12 +14,9 @@ public class FireTowerGame {
 
     public void start() {
         board.initializeBoard();
-        /*Card card = new Ember(board, scan);    FOR TESTING PURPOSES ONLY
-        for (int i = 0; i < 6; i++) {
-            System.out.println(card.cardDisplay()[i]);
-        }*/
         board.setWeatherVane();
         board.printBoard();
+        board.getDeck().initalizeGameDeck(board, scan);
         System.out.println("How many players would like to play? ");
         int playerNum = 0;
         while (playerNum <= 1 || playerNum > 4) {
@@ -65,6 +62,11 @@ public class FireTowerGame {
                 turnOrder[3] = new Player("...", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
             }
         }
+        for (int i = 0; i < turnOrder.length; i++) {
+            turnOrder[i].addCardsToHand(board.getDeck(), 5);
+        }
+
+        playerTurn(turnOrder[0]); // testing only
     }
 
     //PRECONDITION: positionNum will always be between 1 and 3 inclusive
@@ -87,33 +89,14 @@ public class FireTowerGame {
         }
     }
 
+    // is the method for a singular player turn
     public void playerTurn(Player player) {
-        boolean takenAction = false;
-        boolean hasSpreadFire = false;
-        String answer = "";
-        String turnSentence = "";
-        while (!takenAction || !hasSpreadFire) {
-            if (!takenAction && !hasSpreadFire) {
-                turnSentence = "What do you want to do? (Spread (f)ire / Take (a)ction)";
-            } else if (!takenAction && hasSpreadFire) {
-                turnSentence = "What do you want to do? (Take (a)ction)";
-            } else if (takenAction && !hasSpreadFire) {
-                turnSentence = "What do you want to do? (Spread (f)ire)";
-            }
-            do {
-                System.out.println(turnSentence);
-                answer = scan.nextLine();
-            } while (!(answer.equals("f")) && !(answer.equals("a")));
-
-            if (answer.equals("f")) {
-                board.placeFireInWindDirection(scan);
-                hasSpreadFire = true;
-            }
-            if (answer.equals("a")) {
-                System.out.println("Test dialog");
-                player.playCard(scan.nextInt());
-                takenAction = true;
-            }
+        int answer = -1;
+        // board.placeFireInWindDirection(scan);
+        while (answer < 0 && answer > 4) {
+            System.out.println("Type index of card you want to play (0 - 4)");
+            answer = scan.nextInt();
+            player.playCard(answer);
         }
     }
 }
