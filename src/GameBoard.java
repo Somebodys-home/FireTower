@@ -16,6 +16,7 @@ public class GameBoard {
     public GameBoard() {
         board = new Space[16][16];
         weatherVane = new String[4][4];
+        deck = new Deck();
     }
 
     public Deck getDeck() {
