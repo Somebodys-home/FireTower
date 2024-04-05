@@ -24,23 +24,30 @@ public class Player {
         playerHand.getDeck().get(idxOfCard).cardEffect();
     }
 
-    // TODO: WHAT THE BULLSHIT IS ALL THIS
-    // add a card to the player's hand
-//    public void addCardToHand(Card card) {
-//        for (int i = 0; i < this.playerHand.length; i++) {
-//            if (this.playerHand[i] == null) {
-//                this.playerHand[i] = card;
-//                break;
-//            }
-//        }
-//    }
-//
-//    //randomly assign five cards to the player at the start of the game
-//    public void assignStartingHand(Card[] deck) {
-//        Random rand = new Random();
-//        for (int i = 0; i < this.playerHand.length; i++) {
-//            int cardIndex = rand.nextInt(deck.length);
-//            this.playerHand[i] = deck[cardIndex];
-//        }
-//    }
+    public void crispy() {
+
+    }
+
+    //add a card to the player's hand
+    public void addCardToHand(Card card) {
+        for (int i = 0; i < playerHand.getDeck().size(); i++) {
+            if (playerHand.getDeck().get(i) == null) {
+                playerHand.getDeck().set(i, card);
+                break;
+            }
+        }
+    }
+
+    // PRE-CONDITION: count <= 5
+    public void addCardsToHand(Deck deck, int count) {
+        while (count != 0) {
+            for (int i = 0; i < playerHand.getDeck().size(); i++) {
+                if (playerHand.getDeck().get(i) == null) {
+                    playerHand.getDeck().set(i, deck.getDeck().get(0));
+                    count--;
+                }
+            }
+        }
+
+    }
 }

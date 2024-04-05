@@ -63,30 +63,10 @@ public class FireTowerGame {
         }
     }
 
-    //PRECONDITION: positionNum will always be between 1 and 3 inclusive
-    private Player turnOrderPosition(int positionNum) {
-        for (int i = 0; i < turnOrder.length; i++) {
-            if (turnOrder[i] == currentPlayer) {
-                if (i + positionNum >= turnOrder.length) {
-                    i -= turnOrder.length;
-                }
-                return turnOrder[i + positionNum];
-            }
-        }
-        return null;
-    }
-
-    //PRECONDITION: heart can only be one of the four emojis representing each tower's vulnerable square
-    private void determinePlayerTowerArea(String heart) {
-        if (heart.equals("\uD83D\uDC9C")) {
-            //TODO: TO BE DONE BY ISFAR LATER
-        }
-    }
-
     public void playerTurn(Player player) {
         boolean takenAction = false;
         boolean hasSpreadFire = false;
-        String answer = "";
+        String answer;
         String turnSentence = "";
         while (!takenAction || !hasSpreadFire) {
             if (!takenAction && !hasSpreadFire) {
@@ -110,6 +90,43 @@ public class FireTowerGame {
                 player.playCard(scan.nextInt());
                 takenAction = true;
             }
+        }
+    }
+
+    public void gameplayLoop() {
+
+    }
+
+    // note: it rotates to the right
+    public void rotateTurnOrder() {
+        if (turnOrder.length <= 1) {
+            return;
+        }
+        Player lastPlayer = turnOrder[turnOrder.length - 1];
+        for (int i = turnOrder.length - 1; i > 0; i--) {
+            turnOrder[i] = turnOrder[i - 1];
+        }
+        turnOrder[0] = lastPlayer;
+    }
+
+    //Returns what player is at a designated turn position
+    //PRECONDITION: positionNum will always be between 1 and 3 inclusive
+    private Player turnOrderPosition(int positionNum) {
+        for (int i = 0; i < turnOrder.length; i++) {
+            if (turnOrder[i] == currentPlayer) {
+                if (i + positionNum >= turnOrder.length) {
+                    i -= turnOrder.length;
+                }
+                return turnOrder[i + positionNum];
+            }
+        }
+        return null;
+    }
+
+    //PRECONDITION: heart can only be one of the four emojis representing each tower's vulnerable square
+    private void determinePlayerTowerArea(String heart) {
+        if (heart.equals("\uD83D\uDC9C")) {
+            //TODO: TO BE DONE BY ISFAR LATER
         }
     }
 }
