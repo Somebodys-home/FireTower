@@ -29,9 +29,6 @@ public class Firestorm extends EventCard {
             }
         }
 
-        // Update the board state
-        getBoard().setBoard(newBoardState);
-
         System.out.println("The firestorm has ended.");
     }
 

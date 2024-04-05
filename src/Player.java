@@ -20,6 +20,10 @@ public class Player {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void playCard(int idxOfCard) {
         playerHand.getDeck().get(idxOfCard).cardEffect();
     }
@@ -48,6 +52,9 @@ public class Player {
                 }
             }
         }
+    }
 
+    public boolean isBurned() {
+        return burned;
     }
 }
