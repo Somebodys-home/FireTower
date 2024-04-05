@@ -16,7 +16,7 @@ public class FireTowerGame {
         board.initializeBoard();
         board.setWeatherVane();
         board.printBoard();
-        board.getDeck().initalizeGameDeck(board, scan);
+        board.initalizeGameDeck(board, scan);
         System.out.println("How many players would like to play? ");
         int playerNum = 0;
         while (playerNum <= 1 || playerNum > 4) {
