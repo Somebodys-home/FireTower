@@ -130,6 +130,7 @@ public class GameBoard {
         } else if (direction == 3) {
             windDirection = WindDirection.WEST;
         }
+        updateWeatherVane();
     }
 
     public void setWindDirection(WindDirection direction) {
@@ -142,6 +143,24 @@ public class GameBoard {
         } else if (direction == WindDirection.WEST) {
             windDirection = WindDirection.WEST;
         }
+        updateWeatherVane();
+    }
+
+    private void updateWeatherVane() {
+        setWeatherVane();
+        if (windDirection == WindDirection.NORTH) {
+            weatherVane[0][1] = "⬆️";
+            weatherVane[0][2] = "⬆️";
+        } else if (windDirection == WindDirection.SOUTH) {
+            weatherVane[3][1] = "⬇️";
+            weatherVane[3][2] = "⬇️";
+        } else if (windDirection == WindDirection.EAST) {
+            weatherVane[1][3] = "➡️";
+            weatherVane[2][3] = "➡️";
+        } else if (windDirection == WindDirection.WEST) {
+            weatherVane[1][0] = "⬅️";
+            weatherVane[2][0] = "⬅️";
+        }
     }
 
     public Space checkOrthogonallyAdjacent(Space space) {
@@ -151,8 +170,8 @@ public class GameBoard {
     public Space checkOrthogonallyAdjacent(Space space, WindDirection direction) {
         int rowOffset = 0;
         int colOffset = 0;
-        System.out.println(windDirection == WindDirection.NORTH);
-        System.out.println(windDirection);
+        //System.out.println(windDirection == WindDirection.NORTH);
+        //System.out.println(windDirection);
         if (windDirection == WindDirection.NORTH) {
             rowOffset = -1;
         } else if (windDirection == WindDirection.SOUTH) {
@@ -165,9 +184,6 @@ public class GameBoard {
         int newRow = space.getY() + rowOffset;
         int newCol = space.getX() + colOffset;
         if (isValidPosition(board[newRow][newCol])) {
-            if (space == board[newRow][newCol]) {
-                System.out.println("cooooooooooooooooooooooooooooooool");
-            }
             return board[newRow][newCol];
         }
         return null;
@@ -182,14 +198,14 @@ public class GameBoard {
                 }
             }
         }
-        System.out.println( " TTTTTTTTTTTTTTTT: " + validFire.get(0));
+        //System.out.println( " TTTTTTTTTTTTTTTT: " + validFire.get(0));
         for (Space eachValidFire : validFire) {
             Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()], windDirection);
-            System.out.println(eachValidFire);
-            System.out.println(targetSpace);
+            //System.out.println(eachValidFire);
+            //System.out.println(targetSpace);
             board[targetSpace.getY()][targetSpace.getX()].setSpaceEmoji("⭕");  //still a tree
         }
-        printBoard();
+        //printBoard();
         selectFirePlacement(scan);
         printBoard(); //MAYBE DELETE LATER
     }

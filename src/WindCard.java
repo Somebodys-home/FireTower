@@ -24,7 +24,7 @@ public class WindCard extends Card {
         } else if (option == 2) {
             // Roll the die for a new wind direction
             WindDirection newDirection = rollForNewDirection(currentDirection);
-            board.setWindDirection();
+            board.setWindDirection(newDirection);
             System.out.println("The wind direction has been changed to: " + newDirection);
         } else if (option == 3) {
             // Place a fire gem on an empty space orthogonally adjacent to a fire gem or the eternal flame
