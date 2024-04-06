@@ -35,35 +35,35 @@ public class FireTowerGame {
             System.out.println("The first player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
             choice = scan.nextLine();
         } while (!hearts.contains(choice));
-        turnOrder[0] = new Player("...", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
+        turnOrder[0] = new Player("Player 1", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
         if (turnOrder.length == 2) {
             int otherChoice = hearts.indexOf(choice) + 2;
             if (otherChoice >= hearts.size()) {
                 otherChoice -= hearts.size();
             }
             System.out.println("The other player must now defend " + hearts.get(otherChoice));
-            turnOrder[1] = new Player("...", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
+            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
         } else {
             hearts.remove(choice);
             do {
                 System.out.println("The second player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
                 choice = scan.nextLine();
             } while (!hearts.contains(choice));
-            turnOrder[1] = new Player("...", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
+            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
             hearts.remove(choice);
             do {
                 System.out.println("The third player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
                 choice = scan.nextLine();
             } while (!hearts.contains(choice));
-            turnOrder[2] = new Player("...", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
+            turnOrder[2] = new Player("Player 3", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
             if (hearts.size() == 4) {
                 hearts.remove(choice);
                 System.out.println("The fourth player must now defend " + hearts.get(0));
-                turnOrder[3] = new Player("...", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
+                turnOrder[3] = new Player("Player 4", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
             }
         }
-        for (int i = 0; i < turnOrder.length; i++) {
-            turnOrder[i].addCardsToHand(board.getDeck(), 5);
+        for (Player player : turnOrder) {
+            player.addCardsToHand(board.getDeck(), 5);
         }
 
         playerTurn(turnOrder[0]); // testing only
@@ -92,11 +92,34 @@ public class FireTowerGame {
     // is the method for a singular player turn
     public void playerTurn(Player player) {
         int answer = -1;
-        // board.placeFireInWindDirection(scan);
-        while (answer < 0 && answer > 4) {
-            System.out.println("Type index of card you want to play (0 - 4)");
-            answer = scan.nextInt();
-            player.playCard(answer);
+        board.placeFireInWindDirection(scan);
+        System.out.println("Type index of card you want to play (0 - 4)");
+        answer = scan.nextInt();
+        if (answer < 0 && answer > 4) {
+            while (answer < 0 && answer > 4) {
+                System.out.println("Type index of card you want to play (0 - 4)");
+                answer = scan.nextInt();
+                player.playCard(answer);
+            }
         }
+    }
+
+    public void rotatePlayerTurns() {
+        // Store the last element of the array
+        Player last = turnOrder[turnOrder.length - 1];
+
+        // Shift each element to the right by one position starting from the end
+        for (int i = turnOrder.length - 1; i > 0; i--) {
+            turnOrder[i] = turnOrder[i - 1];
+        }
+
+        // Place the last element at the beginning of the array
+        turnOrder[0] = last;
+    }
+    public void gameplayLoop() {
+        Player currentPlayer = turnOrder[0];
+        board.placeFireInWindDirection(scan);
+        playerTurn(currentPlayer);
+        rotatePlayerTurns();
     }
 }

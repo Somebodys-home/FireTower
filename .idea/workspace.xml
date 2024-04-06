@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="make the method for a singular player turn, also edited a couple other things and deleted unused methods&#10;- Gabriel">
+    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="a skeleton's favorite instrument is the xyloBONE&#10;- Gabriel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
     </list>
     <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="Changes by Gabriel" />
     <list id="44477df0-6c96-4d38-b872-17444aca12fc" name="Changes by Isfar Babul" comment="" />
@@ -56,6 +54,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.FireTowerGameRunner.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
