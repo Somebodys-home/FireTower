@@ -44,7 +44,7 @@ public class Player {
 
     // PRE-CONDITION: count <= 5
     public void addCardsToHand(Deck deck, int count) {
-        while (count != 0) {
+        if (count > 0) {
             for (int i = 0; i < playerHand.getDeck().size(); i++) {
                 if (playerHand.getDeck().get(i) == null) {
                     playerHand.getDeck().set(i, deck.getDeck().remove(0));

@@ -151,6 +151,8 @@ public class GameBoard {
     public Space checkOrthogonallyAdjacent(Space space, WindDirection direction) {
         int rowOffset = 0;
         int colOffset = 0;
+        System.out.println(windDirection == WindDirection.NORTH);
+        System.out.println(windDirection);
         if (windDirection == WindDirection.NORTH) {
             rowOffset = -1;
         } else if (windDirection == WindDirection.SOUTH) {
@@ -163,21 +165,33 @@ public class GameBoard {
         int newRow = space.getY() + rowOffset;
         int newCol = space.getX() + colOffset;
         if (isValidPosition(board[newRow][newCol])) {
+            if (space == board[newRow][newCol]) {
+                System.out.println("cooooooooooooooooooooooooooooooool");
+            }
             return board[newRow][newCol];
         }
         return null;
     }
 
     public void placeFireInWindDirection(Scanner scan) {   //does step 1 of a turn
+        ArrayList<Space> validFire = new ArrayList<Space>();
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                Space targetSpace = checkOrthogonallyAdjacent(board[j][i], windDirection);
-                if (targetSpace != null && isValidFire(targetSpace)) {
-                    targetSpace.setSpaceEmoji("⭕");  //still a tree
+                if (isValidFire(board[j][i])) {
+                    validFire.add(board[j][i]);
                 }
             }
         }
+        System.out.println( " TTTTTTTTTTTTTTTT: " + validFire.get(0));
+        for (Space eachValidFire : validFire) {
+            Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()], windDirection);
+            System.out.println(eachValidFire);
+            System.out.println(targetSpace);
+            board[targetSpace.getY()][targetSpace.getX()].setSpaceEmoji("⭕");  //still a tree
+        }
+        printBoard();
         selectFirePlacement(scan);
+        printBoard(); //MAYBE DELETE LATER
     }
 
     public void placeFireAnyWhere(Scanner scan) {
@@ -187,7 +201,7 @@ public class GameBoard {
                 for (int k = 0; k < winds.length; k++) {
                     Space targetSpace = checkOrthogonallyAdjacent(board[j][i], windDirection);
                     if (targetSpace != null && isValidFire(targetSpace)) {
-                        targetSpace.setSpaceEmoji("⭕");  //still a tree
+                        board[targetSpace.getY()][targetSpace.getX()].setSpaceEmoji("⭕");  //still a tree
                     }
                 }
             }
@@ -198,12 +212,15 @@ public class GameBoard {
     private void selectFirePlacement(Scanner scan) {
         printBoard();
         Space selectedSpace = new Space("", -1, -1);
-        while (!selectedSpace.getSpaceEmoji().equals("⭕")) {
+        while (!(selectedSpace.getSpaceEmoji().equals("⭕"))) {
             System.out.println("Please select a space with a \"⭕\" to spread the fire to.");
             selectedSpace = getSpace(scan);
         }
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
+                if (board[j][i] != selectedSpace) {
+                    //System.out.println(board[j][i].getSpaceEmoji().equals("⭕"));
+                }
                 if (board[j][i].getSpaceEmoji().equals("⭕") && board[j][i] != selectedSpace) {
                     selectedSpace.setSpaceEmoji("\uD83C\uDF32"); //goes back to displaying a tree
                 } else if (board[j][i] == selectedSpace) {
@@ -257,7 +274,8 @@ public class GameBoard {
     }
 
     public boolean isValidFire(Space focus) {
-        return isValidFireBreak(focus) && !(focus instanceof EternalFlame);
+        return focus instanceof Fire || focus instanceof EternalFlame;
+        //return isValidFireBreak(focus) && !(focus instanceof EternalFlame);
     }
 
     public boolean isValidFireBreak(Space focus) {

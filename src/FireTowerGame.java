@@ -22,6 +22,16 @@ public class FireTowerGame {
         board.printBoard();
         board.initalizeGameDeck(board, scan);
         selectPlayerTower();
+        setupPlayerHands();
+        System.out.println(board);
+    }
+
+    private void setupPlayerHands() {
+        for (Player player : turnOrder) {
+            player.addCardsToHand(board.getDeck(), 5);
+        }
+
+        playerTurn(turnOrder[0]); // testing only
     }
 
     private void selectPlayerTower() {
@@ -70,11 +80,6 @@ public class FireTowerGame {
                 turnOrder[3] = new Player("...", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
             }
         }
-        for (int i = 0; i < turnOrder.length; i++) {
-            turnOrder[i].addCardsToHand(board.getDeck(), 5);
-        }
-
-        playerTurn(turnOrder[0]); // testing only
     }
 
     //PRECONDITION: positionNum will always be between 1 and 3 inclusive
@@ -100,8 +105,8 @@ public class FireTowerGame {
     // is the method for a singular player turn
     public void playerTurn(Player player) {
         int answer = -1;
-        // board.placeFireInWindDirection(scan);
-        while (answer < 0 && answer > 4) {
+        board.placeFireInWindDirection(scan);
+        while (answer < 0 || answer > 4) {
             System.out.println("Type index of card you want to play (0 - 4)");
             answer = scan.nextInt();
             player.playCard(answer);
