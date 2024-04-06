@@ -170,8 +170,6 @@ public class GameBoard {
     public Space checkOrthogonallyAdjacent(Space space, WindDirection direction) {
         int rowOffset = 0;
         int colOffset = 0;
-        //System.out.println(windDirection == WindDirection.NORTH);
-        //System.out.println(windDirection);
         if (windDirection == WindDirection.NORTH) {
             rowOffset = -1;
         } else if (windDirection == WindDirection.SOUTH) {
@@ -198,16 +196,16 @@ public class GameBoard {
                 }
             }
         }
-        //System.out.println( " TTTTTTTTTTTTTTTT: " + validFire.get(0));
         for (Space eachValidFire : validFire) {
-            Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()], windDirection);
-            //System.out.println(eachValidFire);
-            //System.out.println(targetSpace);
-            board[targetSpace.getY()][targetSpace.getX()].setSpaceEmoji("⭕");  //still a tree
+            Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()]);
+            System.out.println(eachValidFire);
+            System.out.println(targetSpace.getX() + ", " + targetSpace.getY());
+            if (!(isValidFire(targetSpace))) {
+                board[targetSpace.getY()][targetSpace.getX()].setSpaceEmoji("⭕");  //still a tree
+            }
         }
-        //printBoard();
         selectFirePlacement(scan);
-        printBoard(); //MAYBE DELETE LATER
+        printBoard();
     }
 
     public void placeFireAnyWhere(Scanner scan) {
@@ -215,7 +213,7 @@ public class GameBoard {
             for (int j = 0; j < board[0].length; j++) {
                 WindDirection[] winds = new WindDirection[]{WindDirection.NORTH, WindDirection.EAST, WindDirection.SOUTH, WindDirection.WEST};
                 for (int k = 0; k < winds.length; k++) {
-                    Space targetSpace = checkOrthogonallyAdjacent(board[j][i], windDirection);
+                    Space targetSpace = checkOrthogonallyAdjacent(board[j][i]);
                     if (targetSpace != null && isValidFire(targetSpace)) {
                         board[targetSpace.getY()][targetSpace.getX()].setSpaceEmoji("⭕");  //still a tree
                     }
@@ -234,13 +232,10 @@ public class GameBoard {
         }
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                if (board[j][i] != selectedSpace) {
-                    //System.out.println(board[j][i].getSpaceEmoji().equals("⭕"));
-                }
-                if (board[j][i].getSpaceEmoji().equals("⭕") && board[j][i] != selectedSpace) {
-                    selectedSpace.setSpaceEmoji("\uD83C\uDF32"); //goes back to displaying a tree
-                } else if (board[j][i] == selectedSpace) {
-                    selectedSpace = new Fire(selectedSpace.getX(), selectedSpace.getY());  //evolves into fire
+                board[selectedSpace.getY()][selectedSpace.getX()] = new Fire(selectedSpace.getX(), selectedSpace.getY());  //evolves into fire
+                System.out.println("" + j + i + board[j][i].getSpaceEmoji().equals("⭕"));
+                if (board[j][i].getSpaceEmoji().equals("⭕")) {
+                    board[j][i].setSpaceEmoji("\uD83C\uDF32"); //goes back to displaying a tree
                 }
             }
         }
@@ -313,7 +308,7 @@ public class GameBoard {
         System.out.println("Enter y coordinate:");
         int scanY = scan.nextInt();
 
-        return obtainBoard()[scanX][scanY];
+        return obtainBoard()[scanY][scanX];
     }
 
     public WindDirection chooseDirection(Scanner scan) {
