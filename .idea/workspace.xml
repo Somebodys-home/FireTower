@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="make the method for a singular player turn, also edited a couple other things and deleted unused methods&#10;- Gabriel">
+    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="rebooted ShadowOfTheWood - Isfar">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FireCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Firestorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Firestorm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShadowOfTheWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShadowOfTheWood.java" afterDir="false" />
     </list>
     <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="Changes by Gabriel" />
     <list id="44477df0-6c96-4d38-b872-17444aca12fc" name="Changes by Isfar Babul" comment="" />
@@ -197,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711516281212</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="rebooted ShadowOfTheWood - Isfar">
+      <option name="closed" value="true" />
+      <created>1712283368832</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712283368832</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +236,7 @@
     <MESSAGE value="all card abilities implemented - Isfar" />
     <MESSAGE value="Changes by Gabriel" />
     <MESSAGE value="players choose which tower they want to defend -Isfar" />
-    <option name="LAST_COMMIT_MESSAGE" value="players choose which tower they want to defend -Isfar" />
+    <MESSAGE value="rebooted ShadowOfTheWood - Isfar" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebooted ShadowOfTheWood - Isfar" />
   </component>
 </project>

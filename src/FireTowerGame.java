@@ -20,6 +20,10 @@ public class FireTowerGame {
         }*/
         board.setWeatherVane();
         board.printBoard();
+        selectPlayerTower();
+    }
+
+    private void selectPlayerTower() {
         System.out.println("How many players would like to play? ");
         int playerNum = 0;
         while (playerNum <= 1 || playerNum > 4) {
