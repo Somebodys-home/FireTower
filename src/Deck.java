@@ -16,4 +16,14 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
+    public ArrayList<Card> dealCards(int numberOfCards) {
+        ArrayList<Card> dealtCards = new ArrayList<>();
+        for (int i = 0; i < numberOfCards; i++) {
+            if (!deck.isEmpty()) {
+                dealtCards.add(deck.remove(0));
+            }
+        }
+        return dealtCards;
+    }
+
 }

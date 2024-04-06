@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="a skeleton's favorite instrument is the xyloBONE&#10;- Gabriel">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="Changes by Gabriel" />
     <list id="44477df0-6c96-4d38-b872-17444aca12fc" name="Changes by Isfar Babul" comment="" />
@@ -106,6 +108,7 @@
       <workItem from="1711678898422" duration="4000" />
       <workItem from="1711678940091" duration="77000" />
       <workItem from="1711681567892" duration="3417000" />
+      <workItem from="1712423916206" duration="1492000" />
     </task>
     <task id="LOCAL-00001" summary="I tried.&#10;- Gabriel">
       <option name="closed" value="true" />

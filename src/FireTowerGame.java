@@ -17,6 +17,8 @@ public class FireTowerGame {
         board.setWeatherVane();
         board.printBoard();
         board.initalizeGameDeck(board, scan);
+
+        System.out.println();
         System.out.println("How many players would like to play? ");
         int playerNum = 0;
         while (playerNum <= 1 || playerNum > 4) {
@@ -62,9 +64,16 @@ public class FireTowerGame {
                 turnOrder[3] = new Player("Player 4", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
             }
         }
+        board.setWindDirection();
+        System.out.println("Wind Direction: " + board.getWindDirection());
+
+        board.getDeck().shuffleDeck(); //shuffle deck first
         for (Player player : turnOrder) {
-            player.addCardsToHand(board.getDeck(), 5);
+            ArrayList<Card> cardsToDeal = board.getDeck().dealCards(5);
+            player.addCardsToHand(cardsToDeal);
         }
+
+        System.out.println(turnOrder[0].getCards()); //printing out the cards to check if it picks card properly
 
         playerTurn(turnOrder[0]); // testing only
     }

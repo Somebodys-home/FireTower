@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 public class Player {
     private String name;
     private GameBoard board;
@@ -33,14 +34,17 @@ public class Player {
     }
 
     //add a card to the player's hand
-    public void addCardToHand(Card card) {
-        for (int i = 0; i < playerHand.getDeck().size(); i++) {
-            if (playerHand.getDeck().get(i) == null) {
-                playerHand.getDeck().set(i, card);
-                break;
-            }
+    public void addCardsToHand(ArrayList<Card> newCards) {
+        for (Card card : newCards) {
+            playerHand.getDeck().add(card);
         }
     }
+
+    public ArrayList<Card> getCards() {
+        return playerHand.getDeck();
+    }
+
+
 
     // PRE-CONDITION: count <= 5
     public void addCardsToHand(Deck deck, int count) {
