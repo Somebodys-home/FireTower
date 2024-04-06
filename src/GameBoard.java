@@ -10,15 +10,16 @@ public class GameBoard {
     private Space[][] board;
     private String[][] weatherVane;
     private WindDirection windDirection;
-    private ArrayList<Card> deck = new ArrayList<>(60);
+    private Deck deck;
     private ArrayList<Card> discard = new ArrayList<>();
 
     public GameBoard() {
         board = new Space[16][16];
         weatherVane = new String[4][4];
+        deck = new Deck();
     }
 
-    public ArrayList<Card> getDeck() {
+    public Deck getDeck() {
         return deck;
     }
 
@@ -298,5 +299,29 @@ public class GameBoard {
             targetWind = WindDirection.WEST;
         }
         return targetWind;
+    }
+
+    public void initalizeGameDeck(GameBoard board, Scanner scanner){
+        addCard(new Ember(board, scanner), 2);
+        addCard(new Explosion(board, scanner), 4);
+        addCard(new BurningSnag(board, scanner), 4);
+        addCard(new FlareUp(board, scanner), 4);
+        addCard(new Airdrop(board, scanner), 4);
+        addCard(new FireEngine(board, scanner), 4);
+        addCard(new SmokeJumper(board, scanner), 4);
+        addCard(new DozerLine(board, scanner), 3);
+        addCard(new SmokeJumper(board, scanner), 3);
+        addCard(new DeReforest(board, scanner), 4);
+        addCard(new WindCard("North", board.getWindDirection(), board, scanner), 2);
+        addCard(new WindCard("South", board.getWindDirection(), board, scanner), 2);
+        addCard(new WindCard("East", board.getWindDirection(), board, scanner), 2);
+        addCard(new WindCard("West", board.getWindDirection(), board, scanner), 2);
+    }
+
+    // Specifically so I don't have to use a lotta loops, don't use this method outside of this class
+    public void addCard(Card card, int count) {
+        for (int i = count; i > 0; i--) {
+            deck.getDeck().add(card);
+        }
     }
 }

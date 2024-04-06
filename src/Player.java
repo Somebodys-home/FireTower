@@ -47,7 +47,7 @@ public class Player {
         while (count != 0) {
             for (int i = 0; i < playerHand.getDeck().size(); i++) {
                 if (playerHand.getDeck().get(i) == null) {
-                    playerHand.getDeck().set(i, deck.getDeck().get(0));
+                    playerHand.getDeck().set(i, deck.getDeck().remove(0));
                     count--;
                 }
             }
