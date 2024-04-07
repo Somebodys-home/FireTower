@@ -7,19 +7,34 @@ public class Player {
     private boolean burned;
     private Deck playerHand;
     private Space[][] towerArea;
+    private int towerAreaX;
+    private int towerAreaY;
     public Player(String name, GameBoard board, BucketCard bucket, int towerAreaX, int towerAreaY) {
         this.name = name;
         this.board = board;
+        this.towerAreaX = towerAreaX;
+        this.towerAreaY = towerAreaY;
         playerHand = new Deck();
         bucketCard = bucket;
         burned = false;
         towerArea = new Space[3][3];
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                towerArea[j][i] = board.obtainBoard()[towerAreaY + j][towerAreaX + i];
-            }
-        }
+//        for (int i = 0; i < 3; i++) {
+//            for (int j = 0; j < 3; j++) {
+//                towerArea[j][i] = board.obtainBoard()[towerAreaY + j][towerAreaX + i];
+//            }
+//        }
     }
+    public int getTowerAreaX() {
+        return towerAreaX;
+    }
+    public int getTowerAreaY() {
+        return towerAreaY;
+    }
+
+    public boolean isBurned() {
+        return burned;
+    }
+
 
     public void printPlayerCards() {
         ArrayList<Card> hand = playerHand.getDeck();
@@ -67,12 +82,9 @@ public class Player {
         return playerHand.getDeck();
     }
 
-
-
-    // PRE-CONDITION: count <= 5
-
-
-    public boolean isBurned() {
-        return burned;
+    public boolean isHeartOnFire(Player player) {
+        return false;
     }
+
+
 }

@@ -5,6 +5,7 @@ public class FireTowerGame {
     private GameBoard board;
     private Player[] turnOrder;
     private Player currentPlayer;
+    private int playerNum;
     Scanner scan;
 
     public FireTowerGame() {
@@ -42,7 +43,6 @@ public class FireTowerGame {
 
     private void selectPlayerTower() {
         System.out.println("How many players would like to play? ");
-        int playerNum = 0;
         while (playerNum <= 1 || playerNum > 4) {
             System.out.println("Please select an amount between 2 and 4 inclusive.");
             playerNum = scan.nextInt();
@@ -59,36 +59,59 @@ public class FireTowerGame {
             System.out.println("The first player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
             choice = scan.nextLine();
         } while (!hearts.contains(choice));
-        turnOrder[0] = new Player("Player 1", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
+        turnOrder[0] = new Player("Player 1", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1]); //TODO: HIGHLIGHTED
         if (turnOrder.length == 2) {
             int otherChoice = hearts.indexOf(choice) + 2;
             if (otherChoice >= hearts.size()) {
                 otherChoice -= hearts.size();
             }
             System.out.println("The other player must now defend " + hearts.get(otherChoice));
-            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
+            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), getHeartCoordinates(hearts.get(otherChoice))[0], getHeartCoordinates(hearts.get(otherChoice))[1]); //TODO: HIGHLIGHTED
         } else {
             hearts.remove(choice);
             do {
                 System.out.println("The second player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
                 choice = scan.nextLine();
             } while (!hearts.contains(choice));
-            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
+            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1]); //TODO: HIGHLIGHTED
             hearts.remove(choice);
             do {
                 System.out.println("The third player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
                 choice = scan.nextLine();
             } while (!hearts.contains(choice));
-            turnOrder[2] = new Player("Player 3", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
-            if (hearts.size() == 4) {
+            turnOrder[2] = new Player("Player 3", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1]); //TODO: HIGHLIGHTED
+            if (playerNum == 4) {
                 hearts.remove(choice);
                 System.out.println("The fourth player must now defend " + hearts.get(0));
-                turnOrder[3] = new Player("Player 4", board, new BucketCard(board, scan), 0, 0); //TODO: HIGHLIGHTED
+                turnOrder[3] = new Player("Player 4", board, new BucketCard(board, scan), getHeartCoordinates(hearts.get(0))[0], getHeartCoordinates(hearts.get(0))[1]); //TODO: HIGHLIGHTED
             }
         }
         board.setWindDirection();
         System.out.println("Wind Direction: " + board.getWindDirection());
     }
+
+    private int[] getHeartCoordinates(String heart) {
+        int[] coordinates = new int[2];
+        if ("❤️".equals(heart)) {
+            coordinates[0] = 0; // X coordinate
+            coordinates[1] = 0; // Y coordinate
+        } else if ("💜".equals(heart)) {
+            coordinates[0] = 15;
+            coordinates[1] = 0;
+        } else if ("💚".equals(heart)) {
+            coordinates[0] = 0;
+            coordinates[1] = 15;
+        } else if ("💙".equals(heart)) {
+            coordinates[0] = 15;
+            coordinates[1] = 15;
+        } else {
+            coordinates[0] = -1;
+            coordinates[1] = -1;
+        }
+        return coordinates;
+    }
+
+
 
     //PRECONDITION: positionNum will always be between 1 and 3 inclusive
     private Player turnOrderPosition(int positionNum) {
@@ -146,10 +169,27 @@ public class FireTowerGame {
     }
 
     public void gameplayLoop() {
-        while (true) {
+        while (turnOrder.length > 1) {
             Player currentPlayer = turnOrder[0];
             playerTurn(currentPlayer);
             rotatePlayerTurns();
         }
+    }
+
+    private void eliminatePlayer(int playerIndex) { //removes a player from the turn order
+        Player[] newTurnOrder = new Player[turnOrder.length - 1];
+        for (int i = 0, j = 0; i < turnOrder.length; i++) {
+            if (i != playerIndex) {
+                newTurnOrder[j++] = turnOrder[i];
+            }
+        }
+        turnOrder = newTurnOrder;
+    }
+
+
+
+    public boolean isHeartOnFire(Player player) {
+
+        return false;
     }
 }
