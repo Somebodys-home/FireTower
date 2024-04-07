@@ -4,7 +4,7 @@ public class WindCard extends Card {
     private WindDirection windDirection;
 
     public WindCard(String name, WindDirection direction, GameBoard board, Scanner scan) {
-        super(name, board, scan);
+        super(name, board, "\033[0;37m", scan);
         windDirection = direction;
     }
 
@@ -56,5 +56,40 @@ public class WindCard extends Card {
         System.out.println("The wind blows in the direction it desires.");
         System.out.println("THE " + windDirection + "ERN WINDS RANGE ON!!!!");
         return null;
+    }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings;
+        if (windDirection == WindDirection.NORTH) {
+            cardStrings = new String[] {"╭───────╮",
+                                        "│ North │",
+                                        "│       │",
+                                        "│       │",
+                                        "│ Wind  │",
+                                        "╰───────╯"};
+        } else if (windDirection == WindDirection.SOUTH) {
+            cardStrings = new String[] {"╭───────╮",
+                                        "│ South │",
+                                        "│       │",
+                                        "│       │",
+                                        "│ Wind  │",
+                                        "╰───────╯"};
+        } else if (windDirection == WindDirection.EAST) {
+            cardStrings = new String[] {"╭───────╮",
+                                        "│ East  │",
+                                        "│       │",
+                                        "│       │",
+                                        "│  Wind │",
+                                        "╰───────╯"};
+        } else {
+            cardStrings = new String[] {"╭───────╮",
+                                        "│ West  │",
+                                        "│       │",
+                                        "│       │",
+                                        "│  Wind │",
+                                        "╰───────╯"};
+        }
+        return cardStrings;
     }
 }

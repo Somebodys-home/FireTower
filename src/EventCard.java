@@ -5,7 +5,7 @@ public abstract class EventCard extends Card {
     private Card[] discard;
     private Player[] turnOrder;
     public EventCard(String name, GameBoard board, Card[] deck, Card[] discard, Player[] turnOrder, Scanner scan) {
-        super(name, board, scan);
+        super(name, board, "\033[0;32m", scan);
         this.deck = deck;
         this.discard = discard;
         this.turnOrder = turnOrder;

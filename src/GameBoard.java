@@ -198,8 +198,8 @@ public class GameBoard {
         }
         for (Space eachValidFire : validFire) {
             Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()]);
-            System.out.println(eachValidFire);
-            System.out.println(targetSpace.getX() + ", " + targetSpace.getY());
+            //System.out.println(eachValidFire);
+            //System.out.println(targetSpace.getX() + ", " + targetSpace.getY());
             if (!(isValidFire(targetSpace))) {
                 board[targetSpace.getY()][targetSpace.getX()].setSpaceEmoji("⭕");  //still a tree
             }
@@ -233,7 +233,6 @@ public class GameBoard {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 board[selectedSpace.getY()][selectedSpace.getX()] = new Fire(selectedSpace.getX(), selectedSpace.getY());  //evolves into fire
-                System.out.println("" + j + i + board[j][i].getSpaceEmoji().equals("⭕"));
                 if (board[j][i].getSpaceEmoji().equals("⭕")) {
                     board[j][i].setSpaceEmoji("\uD83C\uDF32"); //goes back to displaying a tree
                 }

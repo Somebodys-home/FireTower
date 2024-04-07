@@ -27,4 +27,16 @@ public class DeReforest extends FirebreakCard {
             getBoard().obtainBoard()[targetToReforest.getY()][targetToReforest.getX()] = new Space(targetToReforest.getX(), targetToReforest.getY());
         }
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│ De/Re │",
+                        "│ Forest│",
+                        "│ Fire- │",
+                        "│ Break │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
 }

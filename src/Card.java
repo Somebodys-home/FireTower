@@ -3,12 +3,14 @@ import java.util.Scanner;
 public abstract class Card {
     private String name;
     private GameBoard board;
+    private String cardColor;
     private Scanner scan;
     private int x;
     private int y;
-    public Card(String name, GameBoard board, Scanner scan) {
+    public Card(String name, GameBoard board, String cardColor, Scanner scan) {
         this.name = name;
         this.board = board;
+        this.cardColor = cardColor;
         this.scan = scan;
     }
 
@@ -18,6 +20,14 @@ public abstract class Card {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCardColor() {
+        return cardColor;
+    }
+
+    public void setCardColor(String cardColor) {
+        this.cardColor = cardColor;
     }
 
     public Scanner getScan() {
@@ -52,10 +62,10 @@ public abstract class Card {
     public String[] cardDisplay() {
         String[] cardStrings =
                {"╭───────╮",
+                "│ Empty │",
                 "│       │",
                 "│       │",
-                "│       │",
-                "│       │",
+                "│ Card  │",
                 "╰───────╯"};
         return cardStrings;
     }

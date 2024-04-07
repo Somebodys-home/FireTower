@@ -20,4 +20,16 @@ public class ChampionOfTheWood extends EventCard {
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
         return targettedSpace;
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭────────╮",
+                        "│Champion│",
+                        "│ of the │",
+                        "│  Wood  │",
+                        "│ WinCon │",
+                        "╰────────╯"};
+        return cardStrings;
+    }
 }

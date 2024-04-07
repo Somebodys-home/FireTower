@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
 public abstract class FireCard extends Card {
-    private static String cardColor = "\033[0;31m";
     public FireCard(String name, GameBoard board, Scanner scan) {
-        super(name, board, scan);
+        super(name, board, "\033[0;31m", scan);
     }
 
     @Override

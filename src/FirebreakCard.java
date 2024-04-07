@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public abstract class FirebreakCard extends Card {
     public FirebreakCard(String name, GameBoard board, Scanner scan) {
-        super(name, board, scan);
+        super(name, board, "\033[0;35m", scan);
     }
 
     @Override

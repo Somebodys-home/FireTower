@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class ShadowOfTheWood extends EventCard {
     public ShadowOfTheWood(GameBoard board, Card[] deck, Card[] discard, Player[] turnOrder, Scanner scan) {
-        super("Shadow of The Wood", board, deck, discard, turnOrder, scan);
+        super("Shadow Of The Wood", board, deck, discard, turnOrder, scan);
     }
 
 
@@ -70,5 +70,17 @@ public class ShadowOfTheWood extends EventCard {
 
     private void resolvePlayerEliminations() {
         // TODO: Implement this method to handle eliminated players (e.g., update scores, check for tower burning)
+    }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│ Shadow│",
+                        "│ of the│",
+                        "│ Wood  │",
+                        "│ Event │",
+                        "╰───────╯"};
+        return cardStrings;
     }
 }

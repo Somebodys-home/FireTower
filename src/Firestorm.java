@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Firestorm extends EventCard {
     public Firestorm(GameBoard board, Card[] deck, Card[] discard, Player[] turnOrder, Scanner scan) {
-        super("Fire Storm", board, deck, discard, turnOrder, scan);
+        super("Firestorm", board, deck, discard, turnOrder, scan);
     }
 
     @Override
@@ -60,5 +60,17 @@ public class Firestorm extends EventCard {
         } while (!(getBoard().isValidWater(targettedSpace)));
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
         return targettedSpace;
+    }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│ Fire- │",
+                        "│ Storm │",
+                        "│       │",
+                        "│ Event │",
+                        "╰───────╯"};
+        return cardStrings;
     }
 }

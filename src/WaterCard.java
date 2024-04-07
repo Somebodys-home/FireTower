@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public abstract class WaterCard extends Card {
     public WaterCard(String name, GameBoard board, Scanner scan) {
-        super(name, board, scan);
+        super(name, board, "\033[0;34m", scan);
     }
 
     @Override

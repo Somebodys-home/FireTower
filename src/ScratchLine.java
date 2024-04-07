@@ -15,5 +15,17 @@ public class ScratchLine extends FirebreakCard {
             getBoard().obtainBoard()[nextAdjacentSpace.getY()][nextAdjacentSpace.getX()] = new Firebreak(nextAdjacentSpace.getX(), nextAdjacentSpace.getY());
         }
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│Scratch│",
+                        "│ Line  │",
+                        "│ Fire- │",
+                        "│ Break │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
 }
 

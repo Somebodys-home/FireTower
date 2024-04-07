@@ -21,6 +21,22 @@ public class Player {
         }
     }
 
+    public void printPlayerCards() {
+        ArrayList<Card> hand = playerHand.getDeck();
+        for (int i = 0; i < 6; i++) {
+            for (Card card : hand) {
+                System.out.print(card.getCardColor());
+                System.out.print(card.cardDisplay()[i]);
+                System.out.print(Colors.RESET);
+            }
+            System.out.print(Colors.BLACK);
+            System.out.print("|");
+            System.out.print(bucketCard.getCardColor());
+            System.out.print(bucketCard.cardDisplay()[i]);
+            System.out.println(Colors.RESET);
+        }
+    }
+
     public String getName() {
         return name;
     }

@@ -14,9 +14,12 @@ public class FireTowerGame {
 
     public void start() {
         board.initializeBoard();
-        /*Card card = new Ember(board, scan);    FOR TESTING PURPOSES ONLY
+        /*BucketCard card = new BucketCard(board, scan);
+        card.emptyWater();
         for (int i = 0; i < 6; i++) {
-            System.out.println(card.cardDisplay()[i]);
+            System.out.print(Colors.BLACK);
+            System.out.print(card.cardDisplay()[i]);
+            System.out.println(Colors.RESET);
         }*/
         board.setWeatherVane();
         board.printBoard();
@@ -118,8 +121,9 @@ public class FireTowerGame {
 
     // is the method for a singular player turn
     public void playerTurn(Player player) {
-        int answer = -1;
+        int answer;
         board.placeFireInWindDirection(scan);
+        player.printPlayerCards();
         System.out.println("Type index of card you want to play (0 - 4)");
         answer = scan.nextInt();
         if (answer < 0 || answer > 4) {

@@ -4,9 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="weathervane display done">
+    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Airdrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Airdrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BucketCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BucketCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChampionOfTheWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChampionOfTheWood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeReforest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeReforest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DozerLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DozerLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FireCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirebreakCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirebreakCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Firestorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Firestorm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MutualAid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MutualAid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScratchLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScratchLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShadowOfTheWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShadowOfTheWood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WindCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindCard.java" afterDir="false" />
     </list>
     <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="Changes by Gabriel" />
     <list id="44477df0-6c96-4d38-b872-17444aca12fc" name="Changes by Isfar Babul" comment="" />
@@ -210,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712436895728</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar">
+      <option name="closed" value="true" />
+      <created>1712439211053</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1712439211053</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +269,7 @@
     <MESSAGE value="players choose which tower they want to defend -Isfar" />
     <MESSAGE value="progress made by the esta lejos" />
     <MESSAGE value="weathervane display done" />
-    <option name="LAST_COMMIT_MESSAGE" value="weathervane display done" />
+    <MESSAGE value="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar" />
+    <option name="LAST_COMMIT_MESSAGE" value="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar" />
   </component>
 </project>

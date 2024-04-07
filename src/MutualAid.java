@@ -2,14 +2,13 @@ import java.util.Scanner;
 
 public class MutualAid extends EventCard {
     public MutualAid(
-            String name,
             GameBoard board,
             Card[] deck,
             Card[] discard,
             Player[] turnOrder,
             Scanner scan
     ) {
-        super(name, board, deck, discard, turnOrder, scan);
+        super("Mutual Aid", board, deck, discard, turnOrder, scan);
     }
 
     @Override
@@ -26,5 +25,17 @@ public class MutualAid extends EventCard {
         } while (!(getBoard().isValidWater(targettedSpace)));
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
         return targettedSpace;
+    }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│ Mutual│",
+                        "│  Aid  │",
+                        "│       │",
+                        "│ Event │",
+                        "╰───────╯"};
+        return cardStrings;
     }
 }

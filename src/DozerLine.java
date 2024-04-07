@@ -24,8 +24,8 @@ public class DozerLine extends FirebreakCard {
                        {"╭───────╮",
                         "│ Dozer │",
                         "│ Line  │",
-                        "│       │",
-                        "│ Water │",
+                        "│ Fire- │",
+                        "│ Break │",
                         "╰───────╯"};
         return cardStrings;
     }

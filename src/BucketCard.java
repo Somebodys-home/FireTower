@@ -3,8 +3,13 @@ import java.util.Scanner;
 public class BucketCard extends Card {
     private boolean hasWater;
     public BucketCard(GameBoard board, Scanner scanner) {
-        super("Bucket", board, scanner);
+        super("Bucket", board, "\033[0;36m", scanner);
         hasWater = true;
+    }
+
+    public void emptyWater() {
+        hasWater = false;
+        setCardColor("\033[0;33m");
     }
 
     @Override
@@ -34,5 +39,26 @@ public class BucketCard extends Card {
         } while (!(getBoard().isValidWater(targettedSpace)));
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
         return targettedSpace;
+    }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings;
+        if (hasWater) {
+            cardStrings = new String[]{"╭───────╮",
+                                       "│Bucket │",
+                                       "│       │",
+                                       "│       │",
+                                       "│ Bucket│",
+                                       "╰───────╯"};
+        } else {
+            cardStrings = new String[]{"╭───────╮",
+                                       "│Reck-  │",
+                                       "│  -less│",
+                                       "│       │",
+                                       "│Abandon│",
+                                       "╰───────╯"};
+        }
+        return cardStrings;
     }
 }

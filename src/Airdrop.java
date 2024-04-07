@@ -18,4 +18,16 @@ public class Airdrop extends WaterCard {
             }
         }
     }
+
+    @Override
+    public String[] cardDisplay() {
+        String[] cardStrings =
+                       {"╭───────╮",
+                        "│Airdrop│",
+                        "│       │",
+                        "│       │",
+                        "│ Water │",
+                        "╰───────╯"};
+        return cardStrings;
+    }
 }
