@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="TowerAreaX and TowerArea Y gets the X and Y of the heart.">
+    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
@@ -53,23 +53,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/hypix/IdeaProjects/Fire Tower/src/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.FireTowerGameRunner.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "C:/Users/hypix/IdeaProjects/Fire Tower/src/Main.java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="FireTowerGameRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FireTowerGameRunner" />
@@ -106,10 +107,6 @@
       <workItem from="1711678898422" duration="4000" />
       <workItem from="1711678940091" duration="77000" />
       <workItem from="1711681567892" duration="3417000" />
-      <workItem from="1712459619740" duration="728000" />
-      <workItem from="1712460506892" duration="5134000" />
-      <workItem from="1712498694476" duration="3504000" />
-      <workItem from="1712502250511" duration="6708000" />
     </task>
     <task id="LOCAL-00001" summary="I tried.&#10;- Gabriel">
       <option name="closed" value="true" />
@@ -223,39 +220,7 @@
       <option name="project" value="LOCAL" />
       <updated>1712439211053</updated>
     </task>
-    <task id="LOCAL-00015" summary="I made the cards put into effect. We may need to fix a few cards. -Atif">
-      <option name="closed" value="true" />
-      <created>1712461427314</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1712461427314</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Need to fix the game loop">
-      <option name="closed" value="true" />
-      <created>1712465645915</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1712465645915</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Need to create a win condition - Atif">
-      <option name="closed" value="true" />
-      <created>1712500014928</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1712500014928</updated>
-    </task>
-    <task id="LOCAL-00018" summary="TowerAreaX and TowerArea Y gets the X and Y of the heart.">
-      <option name="closed" value="true" />
-      <created>1712508107826</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1712508107827</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,10 +255,6 @@
     <MESSAGE value="progress made by the esta lejos" />
     <MESSAGE value="weathervane display done" />
     <MESSAGE value="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar" />
-    <MESSAGE value="I made the cards put into effect. We may need to fix a few cards. -Atif" />
-    <MESSAGE value="Need to fix the game loop" />
-    <MESSAGE value="Need to create a win condition - Atif" />
-    <MESSAGE value="TowerAreaX and TowerArea Y gets the X and Y of the heart." />
-    <option name="LAST_COMMIT_MESSAGE" value="TowerAreaX and TowerArea Y gets the X and Y of the heart." />
+    <option name="LAST_COMMIT_MESSAGE" value="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar" />
   </component>
 </project>

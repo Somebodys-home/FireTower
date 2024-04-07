@@ -182,6 +182,7 @@ public class FireTowerGame {
             if (turnOrder.length > 1) {
                 Player currentPlayer = turnOrder[0];
                 playerTurn(currentPlayer);
+                currentPlayer.addCardsToHand(board.getDeck().dealCards(currentPlayer.getPlayerHand().getDeck().size() - 5));
                 rotatePlayerTurns();
             } else {
                 System.out.println("Congratulations You have won!");

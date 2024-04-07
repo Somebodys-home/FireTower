@@ -9,6 +9,7 @@ public class Player {
     private Space[][] towerArea;
     private int towerAreaX;
     private int towerAreaY;
+
     public Player(String name, GameBoard board, BucketCard bucket, int towerAreaX, int towerAreaY) {
         this.name = name;
         this.board = board;
@@ -18,12 +19,9 @@ public class Player {
         bucketCard = bucket;
         burned = false;
         towerArea = new Space[3][3];
-//        for (int i = 0; i < 3; i++) {
-//            for (int j = 0; j < 3; j++) {
-//                towerArea[j][i] = board.obtainBoard()[towerAreaY + j][towerAreaX + i];
-//            }
-//        }
+
     }
+
     public int getTowerAreaX() {
         return towerAreaX;
     }
@@ -68,8 +66,9 @@ public class Player {
     }
 
 
-    public void crispy() {
-
+    public void crispified() {
+        System.out.printf("As " + name + " would've said: ashes to ashes, dust to dust.");
+        burned = true;
     }
 
     //add a card to the player's hand
@@ -83,5 +82,7 @@ public class Player {
         return playerHand.getDeck();
     }
 
-
+    public Deck getPlayerHand() {
+        return playerHand;
+    }
 }
