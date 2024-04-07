@@ -32,7 +32,8 @@ public class Player {
     }
 
     public boolean isBurned() {
-        return burned;
+        Space towerSpace = board.obtainBoard()[towerAreaY][towerAreaX];
+        return towerSpace instanceof Fire || towerSpace instanceof EternalFlame;
     }
 
 
@@ -80,10 +81,6 @@ public class Player {
 
     public ArrayList<Card> getCards() {
         return playerHand.getDeck();
-    }
-
-    public boolean isHeartOnFire(Player player) {
-        return false;
     }
 
 

@@ -170,9 +170,23 @@ public class FireTowerGame {
 
     public void gameplayLoop() {
         while (turnOrder.length > 1) {
-            Player currentPlayer = turnOrder[0];
-            playerTurn(currentPlayer);
-            rotatePlayerTurns();
+            for (int i = 0; i < turnOrder.length; i++) {
+                if (turnOrder[i].isBurned()) {
+                    System.out.println(turnOrder[i].getName() + " has been eliminated!");
+                    eliminatePlayer(i);
+                    i--;
+                }
+            }
+
+            // Proceed with the game if there are still players left
+            if (turnOrder.length > 1) {
+                Player currentPlayer = turnOrder[0];
+                playerTurn(currentPlayer);
+                rotatePlayerTurns();
+            } else {
+                System.out.println("Congratulations You have won!");
+                break;
+            }
         }
     }
 
@@ -184,12 +198,5 @@ public class FireTowerGame {
             }
         }
         turnOrder = newTurnOrder;
-    }
-
-
-
-    public boolean isHeartOnFire(Player player) {
-
-        return false;
     }
 }
