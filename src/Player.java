@@ -42,8 +42,15 @@ public class Player {
     }
 
     public void playCard(int idxOfCard) {
-        playerHand.getDeck().get(idxOfCard).cardEffect();
+        if (idxOfCard >= 0 && idxOfCard < this.playerHand.getDeck().size()) {
+            Card cardToPlay = this.playerHand.getDeck().get(idxOfCard);
+            cardToPlay.cardEffect(); // Execute the card's effect
+            this.playerHand.getDeck().remove(idxOfCard); // Remove the card from the hand
+        } else {
+            System.out.println("Invalid card index.");
+        }
     }
+
 
     public void crispy() {
 

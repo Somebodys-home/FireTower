@@ -126,14 +126,16 @@ public class FireTowerGame {
         player.printPlayerCards();
         System.out.println("Type index of card you want to play (0 - 4)");
         answer = scan.nextInt();
-        if (answer < 0 || answer > 4) {
-            while (answer < 0 || answer > 4) {
-                System.out.println("Type index of card you want to play (0 - 4)");
-                answer = scan.nextInt();
-                player.playCard(answer);
-            }
+        scan.nextLine(); // Consume the newline character to avoid input issues
+        if (answer >= 0 && answer < player.getCards().size()) {
+            player.playCard(answer);
+            player.getCards().remove(answer); // Remove the card after playing it
+            // Add any additional logic needed after playing the card
+        } else {
+            System.out.println("Invalid card index. Please try again.");
         }
     }
+
 
     public void rotatePlayerTurns() {
         // Store the last element of the array
