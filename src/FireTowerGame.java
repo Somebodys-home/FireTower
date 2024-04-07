@@ -93,10 +93,7 @@ public class FireTowerGame {
             ArrayList<Card> cardsToDeal = board.getDeck().dealCards(5);
             player.addCardsToHand(cardsToDeal);
         }
-
-        System.out.println(turnOrder[0].getCards()); //printing out the cards to check if it picks card properly
-
-        playerTurn(turnOrder[0]); // testing only
+        gameplayLoop();
     }
 
     //PRECONDITION: positionNum will always be between 1 and 3 inclusive
@@ -123,14 +120,15 @@ public class FireTowerGame {
     public void playerTurn(Player player) {
         int answer;
         board.placeFireInWindDirection(scan);
+        System.out.println(player.getName());
         player.printPlayerCards();
-        System.out.println("Type index of card you want to play (0 - 4)");
+        int numberOfCards = player.getCards().size();
+        System.out.println("Type index of card you want to play (0 - " + (numberOfCards - 1) + ")");
         answer = scan.nextInt();
-        scan.nextLine(); // Consume the newline character to avoid input issues
-        if (answer >= 0 && answer < player.getCards().size()) {
+        scan.nextLine();
+        if (answer >= 0 && answer < numberOfCards) {
             player.playCard(answer);
             player.getCards().remove(answer); // Remove the card after playing it
-            // Add any additional logic needed after playing the card
         } else {
             System.out.println("Invalid card index. Please try again.");
         }
@@ -149,9 +147,9 @@ public class FireTowerGame {
         // Place the last element at the beginning of the array
         turnOrder[0] = last;
     }
+
     public void gameplayLoop() {
         Player currentPlayer = turnOrder[0];
-        board.placeFireInWindDirection(scan);
         playerTurn(currentPlayer);
         rotatePlayerTurns();
     }

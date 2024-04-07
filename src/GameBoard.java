@@ -352,4 +352,16 @@ public class GameBoard {
             deck.getDeck().add(card);
         }
     }
+
+    @Override
+    public String toString() {
+        String boardString = "";
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                boardString += board[i][j].toString();
+            }
+            boardString += "\n";
+        }
+        return boardString;
+    }
 }
