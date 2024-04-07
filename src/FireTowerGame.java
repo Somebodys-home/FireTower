@@ -28,15 +28,16 @@ public class FireTowerGame {
         System.out.println();
         selectPlayerTower();
         setupPlayerHands();
+        gameplayLoop();
         System.out.println(board);
     }
 
     private void setupPlayerHands() {
+        board.getDeck().shuffleDeck();
         for (Player player : turnOrder) {
-            player.addCardsToHand(board.getDeck(), 5);
+            ArrayList<Card> cardsToDeal = board.getDeck().dealCards(5);
+            player.addCardsToHand(cardsToDeal);
         }
-
-        playerTurn(turnOrder[0]); // testing only
     }
 
     private void selectPlayerTower() {
@@ -87,13 +88,6 @@ public class FireTowerGame {
         }
         board.setWindDirection();
         System.out.println("Wind Direction: " + board.getWindDirection());
-
-        board.getDeck().shuffleDeck(); //shuffle deck first
-        for (Player player : turnOrder) {
-            ArrayList<Card> cardsToDeal = board.getDeck().dealCards(5);
-            player.addCardsToHand(cardsToDeal);
-        }
-        gameplayLoop();
     }
 
     //PRECONDITION: positionNum will always be between 1 and 3 inclusive
@@ -121,8 +115,11 @@ public class FireTowerGame {
         int answer;
         board.placeFireInWindDirection(scan);
         System.out.println(player.getName());
-        player.printPlayerCards();
         int numberOfCards = player.getCards().size();
+        if (numberOfCards == 0) {
+            setupPlayerHands();
+        }
+        player.printPlayerCards();
         System.out.println("Type index of card you want to play (0 - " + (numberOfCards - 1) + ")");
         answer = scan.nextInt();
         scan.nextLine();
@@ -149,8 +146,10 @@ public class FireTowerGame {
     }
 
     public void gameplayLoop() {
-        Player currentPlayer = turnOrder[0];
-        playerTurn(currentPlayer);
-        rotatePlayerTurns();
+        while (true) {
+            Player currentPlayer = turnOrder[0];
+            playerTurn(currentPlayer);
+            rotatePlayerTurns();
+        }
     }
 }

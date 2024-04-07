@@ -37,9 +37,4 @@ public class Space {
         }
     }
 
-    @Override
-    public String toString() {
-        return " ";
-    }
-
 }

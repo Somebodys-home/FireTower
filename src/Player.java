@@ -70,16 +70,7 @@ public class Player {
 
 
     // PRE-CONDITION: count <= 5
-    public void addCardsToHand(Deck deck, int count) {
-        if (count > 0) {
-            for (int i = 0; i < playerHand.getDeck().size(); i++) {
-                if (playerHand.getDeck().get(i) == null) {
-                    playerHand.getDeck().set(i, deck.getDeck().remove(0));
-                    count--;
-                }
-            }
-        }
-    }
+
 
     public boolean isBurned() {
         return burned;
