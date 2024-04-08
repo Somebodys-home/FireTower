@@ -278,7 +278,7 @@ public class GameBoard {
         return focus.getY() >= 0 && focus.getY() < board.length && focus.getX() >= 0 && focus.getX() < board[0].length;
     }
 
-    public boolean isValidFire(Space focus) {     //CHECKS IF THIS IS A VALID FIRE ALL OTHER VALID RELATED METHODS CHECK IF THEIR PLACEMENT IS VALID THIS HAPPENED DUE TO POOR PLANNING
+    public boolean isValidFire(Space focus) {
         return focus instanceof Fire || focus instanceof EternalFlame;
         //return isValidFireBreak(focus) && !(focus instanceof EternalFlame);
     }

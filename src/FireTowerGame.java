@@ -15,13 +15,6 @@ public class FireTowerGame {
 
     public void start() {
         board.initializeBoard();
-        /*BucketCard card = new BucketCard(board, scan);
-        card.emptyWater();
-        for (int i = 0; i < 6; i++) {
-            System.out.print(Colors.BLACK);
-            System.out.print(card.cardDisplay()[i]);
-            System.out.println(Colors.RESET);
-        }*/
         board.setWeatherVane();
         board.printBoard();
         board.initalizeGameDeck(board, scan);
@@ -137,8 +130,8 @@ public class FireTowerGame {
     // is the method for a singular player turn
     public void playerTurn(Player player) {
         int answer;
+        System.out.println(player.getName() + "'s turn");
         board.placeFireInWindDirection(scan);
-        System.out.println(player.getName());
         int numberOfCards = player.getCards().size();
         if (numberOfCards == 0) {
             setupPlayerHands();
