@@ -43,6 +43,7 @@ public class FireTowerGame {
 
     private void selectPlayerTower() {
         System.out.println("How many players would like to play? ");
+        int playerNum = 0;
         while (playerNum <= 1 || playerNum > 4) {
             System.out.println("Please select an amount between 2 and 4 inclusive.");
             playerNum = scan.nextInt();
@@ -148,7 +149,6 @@ public class FireTowerGame {
         scan.nextLine();
         if (answer >= 0 && answer < numberOfCards) {
             player.playCard(answer);
-            player.getCards().remove(answer); // Remove the card after playing it
         } else {
             System.out.println("Invalid card index. Please try again.");
         }
@@ -181,6 +181,8 @@ public class FireTowerGame {
             // Proceed with the game if there are still players left
             if (turnOrder.length > 1) {
                 Player currentPlayer = turnOrder[0];
+                currentPlayer.getPlayerHand().getDeck().set(0, new DeReforest(board, scan));  //DELETE PLEASE ISFAR LATER
+                currentPlayer.getPlayerHand().getDeck().set(1, new FlareUp(board, scan));  //DELETE PLEASE ISFAR LATER
                 playerTurn(currentPlayer);
                 currentPlayer.addCardsToHand(board.getDeck().dealCards(currentPlayer.getPlayerHand().getDeck().size() - 5));
                 rotatePlayerTurns();

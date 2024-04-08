@@ -14,7 +14,7 @@ public abstract class FirebreakCard extends Card {
         Space targettedSpace;
         do {
             targettedSpace = getSpace();
-        } while (!(getBoard().isValidFireBreak(targettedSpace)));
+        } while (!(getBoard().isValidFireBreakPlacement(targettedSpace)));
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Firebreak(targettedSpace.getX(), targettedSpace.getY());
         return targettedSpace;
     }

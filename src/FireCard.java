@@ -10,11 +10,11 @@ public abstract class FireCard extends Card {
 
     public Space initialStep() {
         System.out.println("Select a space on the board that isn't part of the eternal flame or a fire tower area.");
-        System.out.println("This space must build off of an existing fire space.");
         Space targettedSpace;
         do {
+            System.out.println("This space must build off of an existing fire space.");
             targettedSpace = getSpace();
-        } while (!(getBoard().isValidFire(targettedSpace)));
+        } while (!(getBoard().buildsOffFire(targettedSpace)));
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Fire(targettedSpace.getX(), targettedSpace.getY());
         return targettedSpace;
     }

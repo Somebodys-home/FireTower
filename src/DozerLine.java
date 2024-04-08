@@ -8,7 +8,7 @@ public class DozerLine extends FirebreakCard {
     @Override
     public void cardEffect() {
         Space target = getSpace();
-        while (getBoard().isValidFireBreak(target)) {
+        while (getBoard().isValidFireBreakPlacement(target)) {
             System.out.println("Select a valid square!");
             target = getSpace();
         }

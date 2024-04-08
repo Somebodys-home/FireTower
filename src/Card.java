@@ -43,10 +43,16 @@ public abstract class Card {
     public abstract Space initialStep();
 
     public Space getSpace() {
-        System.out.println("Enter x coordinate:");
-        x = scan.nextInt();
-        System.out.println("Enter y coordinate:");
-        y = scan.nextInt();
+        int x = -1;
+        int y = -1;
+        while(x < 0 || x > 15 || y < 0 || y > 15) {
+            System.out.println("Enter x coordinate:");
+            x = scan.nextInt();
+            System.out.println("Enter y coordinate:");
+            y = scan.nextInt();
+        }
+
+        scan.nextLine();
 
         return getBoard().obtainBoard()[y][x];
     }

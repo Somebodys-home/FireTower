@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Firestorm extends EventCard {
@@ -57,7 +56,7 @@ public class Firestorm extends EventCard {
         Space targettedSpace;
         do {
             targettedSpace = getSpace();
-        } while (!(getBoard().isValidWater(targettedSpace)));
+        } while (!(getBoard().isValidWaterPlacement(targettedSpace)));
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
         return targettedSpace;
     }

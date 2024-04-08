@@ -1,8 +1,3 @@
-import javax.swing.*;
-import javax.swing.text.Style;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -170,13 +165,13 @@ public class GameBoard {
     public Space checkOrthogonallyAdjacent(Space space, WindDirection direction) {
         int rowOffset = 0;
         int colOffset = 0;
-        if (windDirection == WindDirection.NORTH) {
+        if (direction == WindDirection.NORTH) {
             rowOffset = -1;
-        } else if (windDirection == WindDirection.SOUTH) {
+        } else if (direction == WindDirection.SOUTH) {
             rowOffset = 1;
-        } else if (windDirection == WindDirection.EAST) {
+        } else if (direction == WindDirection.EAST) {
             colOffset = 1;
-        } else if (windDirection == WindDirection.WEST) {
+        } else if (direction == WindDirection.WEST) {
             colOffset = -1;
         }
         int newRow = space.getY() + rowOffset;
@@ -200,7 +195,7 @@ public class GameBoard {
             Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()]);
             //System.out.println(eachValidFire);
             //System.out.println(targetSpace.getX() + ", " + targetSpace.getY());
-            if (!(isValidFire(targetSpace))) {
+            if (!(isValidFire(targetSpace)) && !(targetSpace instanceof Firebreak)) {
                 board[targetSpace.getY()][targetSpace.getX()].setSpaceEmoji("⭕");  //still a tree
             }
         }
@@ -283,12 +278,16 @@ public class GameBoard {
         return focus.getY() >= 0 && focus.getY() < board.length && focus.getX() >= 0 && focus.getX() < board[0].length;
     }
 
-    public boolean isValidFire(Space focus) {
+    public boolean isValidFire(Space focus) {     //CHECKS IF THIS IS A VALID FIRE ALL OTHER VALID RELATED METHODS CHECK IF THEIR PLACEMENT IS VALID THIS HAPPENED DUE TO POOR PLANNING
         return focus instanceof Fire || focus instanceof EternalFlame;
         //return isValidFireBreak(focus) && !(focus instanceof EternalFlame);
     }
 
-    public boolean isValidFireBreak(Space focus) {
+    public boolean isValidFirePlacement(Space focus) {
+        return !(isValidFire(focus)) && !(focus instanceof Firebreak);
+    }
+
+    public boolean isValidFireBreakPlacement(Space focus) {
         WindDirection[] directions = new WindDirection[]{WindDirection.NORTH, WindDirection.WEST, WindDirection.SOUTH, WindDirection.EAST};
         for (WindDirection windDir: directions) {
             if (checkOrthogonallyAdjacent(focus, windDir) instanceof Firebreak) {
@@ -297,23 +296,29 @@ public class GameBoard {
         }
         return !(focus instanceof Firebreak);
     }
-    public boolean isValidWater(Space focus) {
-        return !(focus instanceof FireTower) && !(focus instanceof EternalFlame);
+    public boolean isValidWaterPlacement(Space focus) {
+        return !(focus instanceof FireTower) && !(focus instanceof EternalFlame) && !(focus instanceof Firebreak);
     }
 
     public Space getSpace(Scanner scan) {
-        System.out.println("Enter x coordinate:");
-        int scanX = scan.nextInt();
-        System.out.println("Enter y coordinate:");
-        int scanY = scan.nextInt();
+        int x = -1;
+        int y = -1;
+        while(x < 0 || x > 15 || y < 0 || y > 15) {
+            System.out.println("Enter x coordinate:");
+            x = scan.nextInt();
+            System.out.println("Enter y coordinate:");
+            y = scan.nextInt();
+        }
 
-        return obtainBoard()[scanY][scanX];
+        scan.nextLine();
+
+        return obtainBoard()[y][x];
     }
 
     public WindDirection chooseDirection(Scanner scan) {
         String choice = "";
         while (!choice.equals("NORTH") && !choice.equals("EAST") && !choice.equals("SOUTH") && !choice.equals("WEST")) {
-            System.out.print("In which direction would you like to build your flare in(NORTH, EAST, SOUTH, WEST)? ");
+            System.out.print("In which direction would you like to build toward(NORTH, EAST, SOUTH, WEST)? ");
             choice = scan.nextLine();
         }
         WindDirection targetWind;
@@ -351,5 +356,19 @@ public class GameBoard {
         for (int i = count; i > 0; i--) {
             deck.getDeck().add(card);
         }
+    }
+
+    public boolean buildsOffFire(Space focus) {
+        if (isValidFire(focus)) {
+            return false;
+        }
+        int[] offsetX = {-1, 0, 1, 0};
+        int[] offsetY = {0, -1, 0, 1};
+        for (int i = 0; i < offsetX.length; i++) {
+            if (isValidFire(board[focus.getY() + offsetY[i]][focus.getX() + offsetX[i]])) {
+                return true;
+            }
+        }
+        return false;
     }
 }

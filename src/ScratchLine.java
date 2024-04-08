@@ -11,7 +11,7 @@ public class ScratchLine extends FirebreakCard {
         WindDirection targetWind = getBoard().chooseDirection(getScan());
         Space adjacentSpace = getBoard().checkOrthogonallyAdjacent(targettedSpace, targetWind);
         Space nextAdjacentSpace = getBoard().checkOrthogonallyAdjacent(adjacentSpace, targetWind);
-        if (getBoard().isValidFireBreak(nextAdjacentSpace)) {
+        if (getBoard().isValidFireBreakPlacement(nextAdjacentSpace)) {
             getBoard().obtainBoard()[nextAdjacentSpace.getY()][nextAdjacentSpace.getX()] = new Firebreak(nextAdjacentSpace.getX(), nextAdjacentSpace.getY());
         }
     }

@@ -7,21 +7,18 @@ public class Ember extends FireCard {
 
     @Override
     public void cardEffect() {
-        Space targettedSpace;
-        do {
-            targettedSpace = getBoard().getSpace(getScan());
-        } while (!(targettedSpace instanceof Fire));
-
         Space ember;
         do {
+            System.out.println("Choose a fire token to move.");
             ember = getBoard().getSpace(getScan());
-        } while (!(getBoard().isValidFire(ember)));
-        System.out.println("What x coordinate do you want this fire space at?");
-        int scanX = getScan().nextInt();
-        System.out.println("What y coordinate do you want this fire space at?");
-        int scanY = getScan().nextInt();
-        getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space("\uD83C\uDF32", targettedSpace.getX(), targettedSpace.getY());
-        getBoard().obtainBoard()[scanY][scanX] = new Fire(scanX, scanY);
+        } while (!(ember instanceof Fire));
+        Space targetSpace;
+        do {
+            System.out.println("Select a valid space to move the fire token to.");
+            targetSpace = getSpace();
+        } while (!getBoard().buildsOffFire(targetSpace));
+        getBoard().obtainBoard()[ember.getY()][ember.getX()] = new Space(ember.getX(), ember.getY());
+        getBoard().obtainBoard()[targetSpace.getY()][targetSpace.getX()] = new Fire(targetSpace.getX(), targetSpace.getY());
     }
 
     @Override

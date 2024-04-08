@@ -7,13 +7,14 @@ public class Airdrop extends WaterCard {
 
     @Override
     public void cardEffect() {
+        System.out.println("Choose a space following the rule below. Then, indicate a direction. Afterward, the fire tokens will begone.");
         Space targettedSpace = initialStep();
         WindDirection targetWind = getBoard().chooseDirection(getScan());
         Space adjacentSpace = getBoard().checkOrthogonallyAdjacent(targettedSpace, targetWind);
-        if (getBoard().isValidWater(adjacentSpace)) {
+        if (getBoard().isValidWaterPlacement(adjacentSpace)) {
             getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Space(adjacentSpace.getX(), adjacentSpace.getY());
             Space nextAdjacentSpace = getBoard().checkOrthogonallyAdjacent(adjacentSpace, targetWind);
-            if (getBoard().isValidWater(nextAdjacentSpace)) {
+            if (getBoard().isValidWaterPlacement(nextAdjacentSpace)) {
                 getBoard().obtainBoard()[nextAdjacentSpace.getY()][nextAdjacentSpace.getX()] = new Space(nextAdjacentSpace.getX(), nextAdjacentSpace.getY());
             }
         }

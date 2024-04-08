@@ -7,13 +7,14 @@ public class FlareUp extends FireCard {
 
     @Override
     public void cardEffect() {
+        System.out.println("Choose a space following the rule below. Then, indicate a direction. Afterward, your flare will build itself.");
         Space targettedSpace = initialStep();
         WindDirection targetWind = getBoard().chooseDirection(getScan());
         Space adjacentSpace = getBoard().checkOrthogonallyAdjacent(targettedSpace, targetWind);
-        if (getBoard().isValidFire(adjacentSpace)) {
+        if (getBoard().isValidFirePlacement(adjacentSpace)) {
             getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Fire(adjacentSpace.getX(), adjacentSpace.getY());
             Space nextAdjacentSpace = getBoard().checkOrthogonallyAdjacent(adjacentSpace, targetWind);
-            if (getBoard().isValidFire(nextAdjacentSpace)) {
+            if (getBoard().isValidFirePlacement(nextAdjacentSpace)) {
                 getBoard().obtainBoard()[nextAdjacentSpace.getY()][nextAdjacentSpace.getX()] = new Fire(nextAdjacentSpace.getX(), nextAdjacentSpace.getY());
             }
         }
