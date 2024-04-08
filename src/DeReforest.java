@@ -7,7 +7,7 @@ public class DeReforest extends FirebreakCard {
 
     @Override
     public void cardEffect() {
-        String answer;
+        String answer = "";
         do {
             System.out.println("(de)forest or (re)forest?");
             answer = getScan().nextLine().toLowerCase();

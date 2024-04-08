@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar">
+    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="bleh&#10;- gabriel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeReforest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeReforest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
     </list>
     <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="Changes by Gabriel" />
-    <list id="44477df0-6c96-4d38-b872-17444aca12fc" name="Changes by Isfar Babul" comment="" />
+    <list id="44477df0-6c96-4d38-b872-17444aca12fc" name="Changes by Isfar Babul" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +46,14 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/GameBoard.java">
+      <ranges>
+        <range start1="300" end1="301" start2="300" end2="301" changelist="f30db3ac-e005-4b95-a7af-2ffba43a379c" />
+        <range start1="309" end1="309" start2="309" end2="311" changelist="44477df0-6c96-4d38-b872-17444aca12fc" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -55,7 +67,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.FireTowerGameRunner.executor": "Run",
+    "Application.FireTowerGameRunner.executor": "Debug",
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -220,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712439211053</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="bleh&#10;- gabriel">
+      <option name="closed" value="true" />
+      <created>1712527626823</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712527626823</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +275,7 @@
     <MESSAGE value="progress made by the esta lejos" />
     <MESSAGE value="weathervane display done" />
     <MESSAGE value="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar" />
-    <option name="LAST_COMMIT_MESSAGE" value="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar" />
+    <MESSAGE value="bleh&#10;- gabriel" />
+    <option name="LAST_COMMIT_MESSAGE" value="bleh&#10;- gabriel" />
   </component>
 </project>
