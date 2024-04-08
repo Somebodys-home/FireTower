@@ -12,7 +12,7 @@ public class Explosion extends FireCard {
         Space targettedSpace;
         do {
             targettedSpace = getBoard().getSpace(getScan());
-        } while (!(getBoard().isValidFire(targettedSpace)));
+        } while (getBoard().isValidFirePlacement(targettedSpace));
         getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Firebreak(targettedSpace.getX(), targettedSpace.getY()); // firebreak
         int[] offsetX = {-1, -1, 0, 1, 1, 1, 0, -1};
         int[] offsetY = {0, -1, -1, -1, 0, 1, 1, 1};

@@ -68,6 +68,7 @@ public class Player {
             Card cardToPlay = this.playerHand.getDeck().get(idxOfCard);
             cardToPlay.cardEffect(); // Execute the card's effect
             this.playerHand.getDeck().remove(idxOfCard); // Remove the card from the hand
+
         } else {
             System.out.println("Invalid card index.");
         }
