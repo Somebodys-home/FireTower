@@ -53,31 +53,31 @@ public class FireTowerGame {
             System.out.println("The first player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
             choice = scan.nextLine();
         } while (!hearts.contains(choice));
-        turnOrder[0] = new Player("Player 1", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1]); //TODO: HIGHLIGHTED
+        turnOrder[0] = new Player("Player 1", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1], getHeartCoordinates(choice)[2], getHeartCoordinates(choice)[3]); //TODO: HIGHLIGHTED
         if (turnOrder.length == 2) {
             int otherChoice = hearts.indexOf(choice) + 2;
             if (otherChoice >= hearts.size()) {
                 otherChoice -= hearts.size();
             }
             System.out.println("The other player must now defend " + hearts.get(otherChoice));
-            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), getHeartCoordinates(hearts.get(otherChoice))[0], getHeartCoordinates(hearts.get(otherChoice))[1]); //TODO: HIGHLIGHTED
+            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1], getHeartCoordinates(choice)[2], getHeartCoordinates(choice)[3]); //TODO: HIGHLIGHTED
         } else {
             hearts.remove(choice);
             do {
                 System.out.println("The second player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
                 choice = scan.nextLine();
             } while (!hearts.contains(choice));
-            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1]); //TODO: HIGHLIGHTED
+            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1], getHeartCoordinates(choice)[2], getHeartCoordinates(choice)[3]); //TODO: HIGHLIGHTED
             hearts.remove(choice);
             do {
                 System.out.println("The third player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
                 choice = scan.nextLine();
             } while (!hearts.contains(choice));
-            turnOrder[2] = new Player("Player 3", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1]); //TODO: HIGHLIGHTED
+            turnOrder[2] = new Player("Player 3", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1], getHeartCoordinates(choice)[2], getHeartCoordinates(choice)[3]); //TODO: HIGHLIGHTED
             if (playerNum == 4) {
                 hearts.remove(choice);
                 System.out.println("The fourth player must now defend " + hearts.get(0));
-                turnOrder[3] = new Player("Player 4", board, new BucketCard(board, scan), getHeartCoordinates(hearts.get(0))[0], getHeartCoordinates(hearts.get(0))[1]); //TODO: HIGHLIGHTED
+                turnOrder[3] = new Player("Player 4", board, new BucketCard(board, scan), getHeartCoordinates(hearts.get(0))[0], getHeartCoordinates(hearts.get(0))[1], getHeartCoordinates(choice)[2], getHeartCoordinates(choice)[3]); //TODO: HIGHLIGHTED
             }
         }
         board.setWindDirection();
@@ -85,22 +85,32 @@ public class FireTowerGame {
     }
 
     private int[] getHeartCoordinates(String heart) {
-        int[] coordinates = new int[2];
+        int[] coordinates = new int[4];
         if ("❤️".equals(heart)) {
             coordinates[0] = 0; // X coordinate
             coordinates[1] = 0; // Y coordinate
+            coordinates[2] = 0;
+            coordinates[3] = 0;
         } else if ("💜".equals(heart)) {
             coordinates[0] = 15;
             coordinates[1] = 0;
+            coordinates[2] = 13;
+            coordinates[3] = 0;
         } else if ("💚".equals(heart)) {
             coordinates[0] = 0;
             coordinates[1] = 15;
+            coordinates[2] = 0;
+            coordinates[3] = 13;
         } else if ("💙".equals(heart)) {
             coordinates[0] = 15;
             coordinates[1] = 15;
+            coordinates[2] = 13;
+            coordinates[3] = 13;
         } else {
             coordinates[0] = -1;
             coordinates[1] = -1;
+            coordinates[2] = -1;
+            coordinates[3] = -1;
         }
         return coordinates;
     }
@@ -162,37 +172,31 @@ public class FireTowerGame {
     }
 
     public void gameplayLoop() {
-        while (turnOrder.length > 1) {
-            for (int i = 0; i < turnOrder.length; i++) {
-                if (turnOrder[i].isBurned()) {
-                    System.out.println(turnOrder[i].getName() + " has been eliminated!");
-                    eliminatePlayer(i);
-                    i--;
-                }
-            }
+        boolean win = false;
 
-            // Proceed with the game if there are still players left
-            if (turnOrder.length > 1) {
-                Player currentPlayer = turnOrder[0];
+        while (!win) {
+            Player currentPlayer = turnOrder[0];
+            if (!(currentPlayer.isBurned())) {
                 currentPlayer.getPlayerHand().getDeck().set(0, new DeReforest(board, scan));  //DELETE PLEASE ISFAR LATER
                 currentPlayer.getPlayerHand().getDeck().set(1, new FlareUp(board, scan));  //DELETE PLEASE ISFAR LATER
                 playerTurn(currentPlayer);
                 currentPlayer.addCardsToHand(board.getDeck().dealCards(currentPlayer.getPlayerHand().getDeck().size() - 5));
-                rotatePlayerTurns();
-            } else {
-                System.out.println("Congratulations You have won!");
-                break;
+                int lastOneStanding = 0;
+
+                for (Player player : turnOrder) {
+                    if (player.isBurned()) {
+                        lastOneStanding++;
+                    }
+                }
+                if (lastOneStanding == 3) {
+                    win = true;
+                }
             }
+            rotatePlayerTurns();
         }
     }
 
-    private void eliminatePlayer(int playerIndex) { //removes a player from the turn order
-        Player[] newTurnOrder = new Player[turnOrder.length - 1];
-        for (int i = 0, j = 0; i < turnOrder.length; i++) {
-            if (i != playerIndex) {
-                newTurnOrder[j++] = turnOrder[i];
-            }
-        }
-        turnOrder = newTurnOrder;
+    public void winnerWinnerBurntChickenDinner() {
+        System.out.println("gg");
     }
 }
