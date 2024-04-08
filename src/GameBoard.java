@@ -294,10 +294,10 @@ public class GameBoard {
                 return false;
             }
         }
-        return !(focus instanceof Firebreak);
+        return !(focus instanceof Firebreak) && !(focus instanceof EternalFlame);
     }
     public boolean isValidWaterPlacement(Space focus) {
-        return !(focus instanceof FireTower) && !(focus instanceof EternalFlame) && !(focus instanceof Firebreak);
+        return !(focus instanceof FireTower) && !(focus instanceof EternalFlame);
     }
 
     public Space getSpace(Scanner scan) {

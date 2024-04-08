@@ -174,8 +174,8 @@ public class FireTowerGame {
             // Proceed with the game if there are still players left
             if (turnOrder.length > 1) {
                 Player currentPlayer = turnOrder[0];
-                currentPlayer.getPlayerHand().getDeck().set(0, new DeReforest(board, scan));  //DELETE PLEASE ISFAR LATER
-                currentPlayer.getPlayerHand().getDeck().set(1, new FlareUp(board, scan));  //DELETE PLEASE ISFAR LATER
+                currentPlayer.getPlayerHand().getDeck().set(0, new DozerLine(board, scan));  //DELETE PLEASE ISFAR LATER
+                currentPlayer.getPlayerHand().getDeck().set(1, new ScratchLine(board, scan));  //DELETE PLEASE ISFAR LATER
                 playerTurn(currentPlayer);
                 currentPlayer.addCardsToHand(board.getDeck().dealCards(currentPlayer.getPlayerHand().getDeck().size() - 5));
                 rotatePlayerTurns();
