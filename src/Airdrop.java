@@ -12,10 +12,14 @@ public class Airdrop extends WaterCard {
         WindDirection targetWind = getBoard().chooseDirection(getScan());
         Space adjacentSpace = getBoard().checkOrthogonallyAdjacent(targettedSpace, targetWind);
         if (getBoard().isValidWaterPlacement(adjacentSpace)) {
-            getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Space(adjacentSpace.getX(), adjacentSpace.getY());
+            if (!(adjacentSpace instanceof Firebreak)) {
+                getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Space(adjacentSpace.getX(), adjacentSpace.getY());
+            }
             Space nextAdjacentSpace = getBoard().checkOrthogonallyAdjacent(adjacentSpace, targetWind);
             if (getBoard().isValidWaterPlacement(nextAdjacentSpace)) {
-                getBoard().obtainBoard()[nextAdjacentSpace.getY()][nextAdjacentSpace.getX()] = new Space(nextAdjacentSpace.getX(), nextAdjacentSpace.getY());
+                if (!(nextAdjacentSpace instanceof Firebreak)) {
+                    getBoard().obtainBoard()[nextAdjacentSpace.getY()][nextAdjacentSpace.getX()] = new Space(nextAdjacentSpace.getX(), nextAdjacentSpace.getY());
+                }
             }
         }
     }

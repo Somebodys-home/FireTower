@@ -11,7 +11,7 @@ public class DeReforest extends FirebreakCard {
         do {
             System.out.println("(de)forest or (re)forest?");
             answer = getScan().nextLine().toLowerCase();
-        } while (!(answer.equals("de") || !(answer.equals("re"))));
+        } while (!(answer.equals("de") || answer.equals("re")));
 
         if (answer.equals("de")) {
             Space targetToDeforest;
