@@ -54,6 +54,8 @@ public abstract class Card {
 
         scan.nextLine();
 
+        scan.nextLine();
+
         return getBoard().obtainBoard()[y][x];
     }
 

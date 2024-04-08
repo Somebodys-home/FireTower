@@ -67,7 +67,7 @@ public class FireTowerGame {
                 System.out.println("The second player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
                 choice = scan.nextLine();
             } while (!hearts.contains(choice));
-            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1]); //TODO: HIGHLIGHTED
+            turnOrder[1] = new Player("Player 2", board, new BucketCard(board, scan), getHeartCoordinates(choice)[0], getHeartCoordinates(choice)[1],); //TODO: HIGHLIGHTED
             hearts.remove(choice);
             do {
                 System.out.println("The third player may choose from the available hearts to defend(copy paste the heart to choose it): " + hearts);
