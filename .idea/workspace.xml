@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="fixed all firebreaks -isfar">
+    <list default="true" id="f30db3ac-e005-4b95-a7af-2ffba43a379c" name="Changes by BT_2N2_02" comment="we are done with this im just not feeling it -isfar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DeReforest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeReforest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Explosion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FireTowerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTowerGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FireTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WinCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WinCondition.java" afterDir="false" />
     </list>
     <list id="8f2986a1-ad8a-4dfd-8b86-e82a939507cc" name="Changes by Gabriel" comment="Changes by Gabriel" />
     <list id="44477df0-6c96-4d38-b872-17444aca12fc" name="Changes by Isfar Babul" comment="" />
@@ -223,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712439211053</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="we are done with this im just not feeling it -isfar">
+      <option name="closed" value="true" />
+      <created>1712556476211</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712556476211</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +264,7 @@
     <MESSAGE value="progress made by the esta lejos" />
     <MESSAGE value="weathervane display done" />
     <MESSAGE value="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar" />
-    <option name="LAST_COMMIT_MESSAGE" value="alright, finished everything, just waiting for gabriel to get his stuff workin - isfar" />
+    <MESSAGE value="we are done with this im just not feeling it -isfar" />
+    <option name="LAST_COMMIT_MESSAGE" value="we are done with this im just not feeling it -isfar" />
   </component>
 </project>
