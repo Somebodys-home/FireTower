@@ -125,6 +125,7 @@ public class GameBoard {
         } else if (direction == 3) {
             windDirection = WindDirection.WEST;
         }
+        System.out.println("The wind direction has been changed to: " + windDirection);
         updateWeatherVane();
     }
 
@@ -138,6 +139,7 @@ public class GameBoard {
         } else if (direction == WindDirection.WEST) {
             windDirection = WindDirection.WEST;
         }
+        System.out.println("The wind direction has been changed to: " + windDirection);
         updateWeatherVane();
     }
 
@@ -182,7 +184,11 @@ public class GameBoard {
         return null;
     }
 
-    public void placeFireInWindDirection(Scanner scan) {   //does step 1 of a turn
+    public void placeFireInWindDirection(Scanner scan) {
+        placeFireInAnyDirection(scan, windDirection);
+    }
+
+    public void placeFireInAnyDirection(Scanner scan, WindDirection direction) {   //does step 1 of a turn
         ArrayList<Space> validFire = new ArrayList<Space>();
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
@@ -192,7 +198,7 @@ public class GameBoard {
             }
         }
         for (Space eachValidFire : validFire) {
-            Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()]);
+            Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()], direction);
             //System.out.println(eachValidFire);
             //System.out.println(targetSpace.getX() + ", " + targetSpace.getY());
             if (!(isValidFire(targetSpace)) && !(targetSpace instanceof Firebreak)) {
@@ -229,7 +235,11 @@ public class GameBoard {
             for (int j = 0; j < board[0].length; j++) {
                 board[selectedSpace.getY()][selectedSpace.getX()] = new Fire(selectedSpace.getX(), selectedSpace.getY());  //evolves into fire
                 if (board[j][i].getSpaceEmoji().equals("⭕")) {
-                    board[j][i].setSpaceEmoji("\uD83C\uDF32"); //goes back to displaying a tree
+                    if (board[j][i] instanceof FireTower) {
+                        board[j][i].setSpaceEmoji("\uD83C\uDFEF"); //goes back to displaying a fire tower
+                    } else {
+                        board[j][i].setSpaceEmoji("\uD83C\uDF32"); //goes back to displaying a tree
+                    }
                 }
             }
         }
@@ -349,10 +359,10 @@ public class GameBoard {
         addCard(new DozerLine(board, scanner), 3);
         addCard(new SmokeJumper(board, scanner), 3);
         addCard(new DeReforest(board, scanner), 4);
-        addCard(new WindCard("North", board.getWindDirection(), board, scanner), 2);
-        addCard(new WindCard("South", board.getWindDirection(), board, scanner), 2);
-        addCard(new WindCard("East", board.getWindDirection(), board, scanner), 2);
-        addCard(new WindCard("West", board.getWindDirection(), board, scanner), 2);
+        addCard(new WindCard("North", WindDirection.NORTH, board, scanner), 2);
+        addCard(new WindCard("South", WindDirection.SOUTH, board, scanner), 2);
+        addCard(new WindCard("East", WindDirection.EAST, board, scanner), 2);
+        addCard(new WindCard("West", WindDirection.WEST, board, scanner), 2);
     }
 
     // Specifically so I don't have to use a lotta loops, don't use this method outside of this class
