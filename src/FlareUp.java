@@ -12,10 +12,10 @@ public class FlareUp extends FireCard {
         WindDirection targetWind = getBoard().chooseDirection(getScan());
         Space adjacentSpace = getBoard().checkOrthogonallyAdjacent(targettedSpace, targetWind);
         if (getBoard().isValidFirePlacement(adjacentSpace)) {
-            getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Fire(adjacentSpace.getX(), adjacentSpace.getY());
+            getBoard().placeFire(adjacentSpace);
             Space nextAdjacentSpace = getBoard().checkOrthogonallyAdjacent(adjacentSpace, targetWind);
             if (getBoard().isValidFirePlacement(nextAdjacentSpace)) {
-                getBoard().obtainBoard()[nextAdjacentSpace.getY()][nextAdjacentSpace.getX()] = new Fire(nextAdjacentSpace.getX(), nextAdjacentSpace.getY());
+                getBoard().placeSpace(nextAdjacentSpace);
             }
         }
     }

@@ -36,8 +36,8 @@ public class BurningSnag extends FireCard {
         for (int offsetValue : offsetValues) {
             int xCoord = targettedSpace.getX() + offsetX[offsetValue];
             int yCoord = targettedSpace.getY() + offsetY[offsetValue];
-            if (getBoard().isValidFirePlacement(getBoard().obtainBoard()[yCoord][xCoord])) {
-                getBoard().obtainBoard()[yCoord][xCoord] = new Fire(xCoord, yCoord);
+            if (getBoard().isSpaceInBounds(xCoord, yCoord)) {
+                getBoard().placeFire(getBoard().obtainBoard()[yCoord][xCoord]); //places fire
             }
         }
     }

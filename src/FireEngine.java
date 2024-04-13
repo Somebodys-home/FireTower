@@ -36,8 +36,8 @@ public class FireEngine extends WaterCard{
         for (int offsetValue : offsetValues) {
             int xCoord = targettedSpace.getX() + offsetX[offsetValue];
             int yCoord = targettedSpace.getY() + offsetY[offsetValue];
-            if (!(getBoard().obtainBoard()[yCoord][xCoord] instanceof Firebreak)) {
-                getBoard().obtainBoard()[yCoord][xCoord] = new Space(xCoord, yCoord);
+            if (getBoard().isSpaceInBounds(xCoord, yCoord) && !(getBoard().obtainBoard()[yCoord][xCoord] instanceof Firebreak)) {
+                getBoard().removeFire(getBoard().obtainBoard()[yCoord][xCoord]);
             }
         }
     }

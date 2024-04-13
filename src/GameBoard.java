@@ -279,7 +279,7 @@ public class GameBoard {
     }
 
     public boolean isValidFire(Space focus) {
-        return focus instanceof Fire || focus instanceof EternalFlame;
+        return (focus.getSpaceEmoji().equals("\uD83D\uDD25") || focus instanceof EternalFlame) && isSpaceInBounds(focus.getX(), focus.getY());
         //return isValidFireBreak(focus) && !(focus instanceof EternalFlame);
     }
 
@@ -294,16 +294,16 @@ public class GameBoard {
                 return false;
             }
         }
-        return !(focus instanceof Firebreak) && !(focus instanceof EternalFlame);
+        return !(focus instanceof FireTower) && !(focus instanceof Firebreak) && !(focus instanceof EternalFlame) && isSpaceInBounds(focus.getX(), focus.getY());
     }
     public boolean isValidWaterPlacement(Space focus) {
-        return !(focus instanceof FireTower) && !(focus instanceof EternalFlame);
+        return !(focus instanceof FireTower) && !(focus instanceof EternalFlame) && isSpaceInBounds(focus.getX(), focus.getY());
     }
 
     public Space getSpace(Scanner scan) {
         int x = -1;
         int y = -1;
-        while(x < 0 || x > 15 || y < 0 || y > 15) {
+        while(!isSpaceInBounds(x, y)) {
             System.out.println("Enter x coordinate:");
             x = scan.nextInt();
             System.out.println("Enter y coordinate:");
@@ -313,6 +313,10 @@ public class GameBoard {
         scan.nextLine();
 
         return obtainBoard()[y][x];
+    }
+
+    public boolean isSpaceInBounds(int x, int y) { //could've had single parameter, but I want both coordinates checked in a space for convenience
+        return x >= 0 && x <= 15 && y >= 0 && y <= 15;
     }
 
     public WindDirection chooseDirection(Scanner scan) {
@@ -334,7 +338,7 @@ public class GameBoard {
         return targetWind;
     }
 
-    public void initalizeGameDeck(GameBoard board, Scanner scanner){
+    public void initializeGameDeck(GameBoard board, Scanner scanner){
         addCard(new Ember(board, scanner), 2);
         addCard(new Explosion(board, scanner), 4);
         addCard(new BurningSnag(board, scanner), 4);
@@ -370,5 +374,33 @@ public class GameBoard {
             }
         }
         return false;
+    }
+
+    public void placeFire(Space target) {
+        if (isValidFirePlacement(target)) {
+            if (target instanceof FireTower) {
+                target.setSpaceEmoji("\uD83D\uDD25");
+            } else {
+                board[target.getY()][target.getX()] = new Fire(target.getX(), target.getY());
+            }
+        }
+    }
+
+    public void placeSpace(Space target) {
+        if (!(target instanceof FireTower)) {
+            board[target.getY()][target.getX()] = new Space(target.getX(), target.getY());
+        }
+    }
+
+    public void removeFire(Space target) {
+        if (isValidWaterPlacement(target)) {
+            board[target.getY()][target.getX()] = new Space(target.getX(), target.getY());
+        }
+    }
+
+    public void placeFireBreak(Space target) {
+        if (isValidFireBreakPlacement(target)) {
+            board[target.getY()][target.getX()] = new Firebreak(target.getX(), target.getY());
+        }
     }
 }

@@ -18,13 +18,13 @@ public class DeReforest extends FirebreakCard {
             do {
                 targetToDeforest = getSpace();
             } while (!(targetToDeforest.getSpaceEmoji().equals("\uD83C\uDF32")));   //checks for a tree to deforest
-            getBoard().obtainBoard()[targetToDeforest.getY()][targetToDeforest.getX()] = new Firebreak(targetToDeforest.getX(), targetToDeforest.getY());
+            getBoard().placeFireBreak(targetToDeforest);
         } else {
             Space targetToReforest;
             do {
                 targetToReforest = getSpace();
             } while (!(targetToReforest instanceof Firebreak));   //checks for a tree to deforest
-            getBoard().obtainBoard()[targetToReforest.getY()][targetToReforest.getX()] = new Space(targetToReforest.getX(), targetToReforest.getY());
+            getBoard().placeSpace(targetToReforest);
         }
     }
 

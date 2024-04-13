@@ -12,10 +12,10 @@ public class DozerLine extends FirebreakCard {
             System.out.println("Select a valid square!");
             target = getSpace();
         }
-        getBoard().obtainBoard()[target.getY()][target.getX()] = new Firebreak(target.getX(), target.getY());
+        getBoard().placeFireBreak(target);
         WindDirection windDir = getBoard().chooseDirection(getScan());
         Space adjacentSpace = getBoard().checkOrthogonallyAdjacent(target, windDir);
-        getBoard().obtainBoard()[adjacentSpace.getY()][adjacentSpace.getX()] = new Firebreak(adjacentSpace.getX(), adjacentSpace.getY());
+        getBoard().placeFireBreak(adjacentSpace);
     }
 
     @Override
