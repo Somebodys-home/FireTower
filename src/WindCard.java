@@ -14,39 +14,49 @@ public class WindCard extends Card {
         GameBoard board = getBoard();
         WindDirection currentDirection = board.getWindDirection();
         System.out.println();
-        int option = (int) (Math.random() * 3) + 1;
+        System.out.println("Pick one of the options:");
+        System.out.println("1-Change the direction to " + windDirection + ".");
+        System.out.println("2-Change the direction to a random direction.");
+        System.out.println("3-Spread the fire toward the " + windDirection + ".");
+        int option = 0;
+        while (option < 1 || option > 3) {
+            System.out.print("Make your selection: ");
+            option = getScan().nextInt();
+            getScan().nextLine();
+            if (option < 1 || option > 3) {
+                System.out.println("Invalid option.");
+            }
+        }
 
         // Perform action based on the chosen option using if statements
         if (option == 1) {
             // Change the wind direction to the direction indicated on the card
-            board.setWindDirection();
-            System.out.println("The wind direction has been changed to: " + windDirection);
+            board.setWindDirection(windDirection);
         } else if (option == 2) {
             // Roll the die for a new wind direction
-            WindDirection newDirection = rollForNewDirection(currentDirection);
-            board.setWindDirection(newDirection);
-            System.out.println("The wind direction has been changed to: " + newDirection);
-        } else if (option == 3) {
+            board.setWindDirection();
+        } else {
             // Place a fire gem on an empty space orthogonally adjacent to a fire gem or the eternal flame
             // in the wind direction indicated on the card
-        } else {
-            System.out.println("Invalid option");
+            board.placeFireInAnyDirection(getScan(), windDirection);
         }
     }
 
     private WindDirection rollForNewDirection(WindDirection currentDirection) {
         WindDirection newDirection = currentDirection;
-        int direction = (int) (Math.random() * 4);       //TODO: POSSIBLE RE-ROLL?
+        while (newDirection == currentDirection) {
+            int direction = (int) (Math.random() * 4);       //TODO: POSSIBLE RE-ROLL?
 
-        // Ensure the new direction is different from the current direction
-        if (direction == 0 && currentDirection != WindDirection.NORTH) {
-            newDirection = WindDirection.NORTH;
-        } else if (direction == 1 && currentDirection != WindDirection.SOUTH) {
-            newDirection = WindDirection.SOUTH;
-        } else if (direction == 2 && currentDirection != WindDirection.EAST) {
-            newDirection = WindDirection.EAST;
-        } else if (direction == 3 && currentDirection != WindDirection.WEST) {
-            newDirection = WindDirection.WEST;
+            // Ensure the new direction is different from the current direction
+            if (direction == 0) {
+                newDirection = WindDirection.NORTH;
+            } else if (direction == 1) {
+                newDirection = WindDirection.SOUTH;
+            } else if (direction == 2) {
+                newDirection = WindDirection.EAST;
+            } else if (direction == 3) {
+                newDirection = WindDirection.WEST;
+            }
         }
 
         return newDirection;

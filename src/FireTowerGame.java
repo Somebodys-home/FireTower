@@ -18,7 +18,7 @@ public class FireTowerGame {
         board.initializeBoard();
         board.setWeatherVane();
         board.printBoard();
-        board.initalizeGameDeck(board, scan);
+        board.initializeGameDeck(board, scan);
 
         System.out.println();
         selectPlayerTower();

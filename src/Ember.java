@@ -12,13 +12,13 @@ public class Ember extends FireCard {
             System.out.println("Choose a fire token to move.");
             ember = getBoard().getSpace(getScan());
         } while (!(ember instanceof Fire));
+        getBoard().placeSpace(ember);
         Space targetSpace;
         do {
             System.out.println("Select a valid space to move the fire token to.");
             targetSpace = getSpace();
         } while (!getBoard().buildsOffFire(targetSpace));
-        getBoard().obtainBoard()[ember.getY()][ember.getX()] = new Space(ember.getX(), ember.getY());
-        getBoard().obtainBoard()[targetSpace.getY()][targetSpace.getX()] = new Fire(targetSpace.getX(), targetSpace.getY());
+        getBoard().placeFire(targetSpace);   //places fire
     }
 
     @Override

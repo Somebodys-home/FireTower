@@ -125,6 +125,7 @@ public class GameBoard {
         } else if (direction == 3) {
             windDirection = WindDirection.WEST;
         }
+        System.out.println("The wind direction has been changed to: " + windDirection);
         updateWeatherVane();
     }
 
@@ -138,6 +139,7 @@ public class GameBoard {
         } else if (direction == WindDirection.WEST) {
             windDirection = WindDirection.WEST;
         }
+        System.out.println("The wind direction has been changed to: " + windDirection);
         updateWeatherVane();
     }
 
@@ -182,7 +184,11 @@ public class GameBoard {
         return null;
     }
 
-    public void placeFireInWindDirection(Scanner scan) {   //does step 1 of a turn
+    public void placeFireInWindDirection(Scanner scan) {
+        placeFireInAnyDirection(scan, windDirection);
+    }
+
+    public void placeFireInAnyDirection(Scanner scan, WindDirection direction) {   //does step 1 of a turn
         ArrayList<Space> validFire = new ArrayList<Space>();
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
@@ -192,7 +198,7 @@ public class GameBoard {
             }
         }
         for (Space eachValidFire : validFire) {
-            Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()]);
+            Space targetSpace = checkOrthogonallyAdjacent(board[eachValidFire.getY()][eachValidFire.getX()], direction);
             //System.out.println(eachValidFire);
             //System.out.println(targetSpace.getX() + ", " + targetSpace.getY());
             if (!(isValidFire(targetSpace)) && !(targetSpace instanceof Firebreak)) {
@@ -229,7 +235,11 @@ public class GameBoard {
             for (int j = 0; j < board[0].length; j++) {
                 board[selectedSpace.getY()][selectedSpace.getX()] = new Fire(selectedSpace.getX(), selectedSpace.getY());  //evolves into fire
                 if (board[j][i].getSpaceEmoji().equals("⭕")) {
-                    board[j][i].setSpaceEmoji("\uD83C\uDF32"); //goes back to displaying a tree
+                    if (board[j][i] instanceof FireTower) {
+                        board[j][i].setSpaceEmoji("\uD83C\uDFEF"); //goes back to displaying a fire tower
+                    } else {
+                        board[j][i].setSpaceEmoji("\uD83C\uDF32"); //goes back to displaying a tree
+                    }
                 }
             }
         }
@@ -279,7 +289,7 @@ public class GameBoard {
     }
 
     public boolean isValidFire(Space focus) {
-        return focus instanceof Fire || focus instanceof EternalFlame;
+        return (focus.getSpaceEmoji().equals("\uD83D\uDD25") || focus instanceof EternalFlame) && isSpaceInBounds(focus.getX(), focus.getY());
         //return isValidFireBreak(focus) && !(focus instanceof EternalFlame);
     }
 
@@ -294,16 +304,16 @@ public class GameBoard {
                 return false;
             }
         }
-        return !(focus instanceof Firebreak) && !(focus instanceof EternalFlame);
+        return !(focus instanceof FireTower) && !(focus instanceof Firebreak) && !(focus instanceof EternalFlame) && isSpaceInBounds(focus.getX(), focus.getY());
     }
     public boolean isValidWaterPlacement(Space focus) {
-        return !(focus instanceof FireTower) && !(focus instanceof EternalFlame);
+        return !(focus instanceof FireTower) && !(focus instanceof EternalFlame) && isSpaceInBounds(focus.getX(), focus.getY());
     }
 
     public Space getSpace(Scanner scan) {
         int x = -1;
         int y = -1;
-        while(x < 0 || x > 15 || y < 0 || y > 15) {
+        while(!isSpaceInBounds(x, y)) {
             System.out.println("Enter x coordinate:");
             x = scan.nextInt();
             System.out.println("Enter y coordinate:");
@@ -313,6 +323,10 @@ public class GameBoard {
         scan.nextLine();
 
         return obtainBoard()[y][x];
+    }
+
+    public boolean isSpaceInBounds(int x, int y) { //could've had single parameter, but I want both coordinates checked in a space for convenience
+        return x >= 0 && x <= 15 && y >= 0 && y <= 15;
     }
 
     public WindDirection chooseDirection(Scanner scan) {
@@ -334,7 +348,7 @@ public class GameBoard {
         return targetWind;
     }
 
-    public void initalizeGameDeck(GameBoard board, Scanner scanner){
+    public void initializeGameDeck(GameBoard board, Scanner scanner){
         addCard(new Ember(board, scanner), 2);
         addCard(new Explosion(board, scanner), 4);
         addCard(new BurningSnag(board, scanner), 4);
@@ -345,10 +359,10 @@ public class GameBoard {
         addCard(new DozerLine(board, scanner), 3);
         addCard(new SmokeJumper(board, scanner), 3);
         addCard(new DeReforest(board, scanner), 4);
-        addCard(new WindCard("North", board.getWindDirection(), board, scanner), 2);
-        addCard(new WindCard("South", board.getWindDirection(), board, scanner), 2);
-        addCard(new WindCard("East", board.getWindDirection(), board, scanner), 2);
-        addCard(new WindCard("West", board.getWindDirection(), board, scanner), 2);
+        addCard(new WindCard("North", WindDirection.NORTH, board, scanner), 2);
+        addCard(new WindCard("South", WindDirection.SOUTH, board, scanner), 2);
+        addCard(new WindCard("East", WindDirection.EAST, board, scanner), 2);
+        addCard(new WindCard("West", WindDirection.WEST, board, scanner), 2);
     }
 
     // Specifically so I don't have to use a lotta loops, don't use this method outside of this class
@@ -370,5 +384,33 @@ public class GameBoard {
             }
         }
         return false;
+    }
+
+    public void placeFire(Space target) {
+        if (isValidFirePlacement(target)) {
+            if (target instanceof FireTower) {
+                target.setSpaceEmoji("\uD83D\uDD25");
+            } else {
+                board[target.getY()][target.getX()] = new Fire(target.getX(), target.getY());
+            }
+        }
+    }
+
+    public void placeSpace(Space target) {
+        if (!(target instanceof FireTower)) {
+            board[target.getY()][target.getX()] = new Space(target.getX(), target.getY());
+        }
+    }
+
+    public void removeFire(Space target) {
+        if (isValidWaterPlacement(target)) {
+            board[target.getY()][target.getX()] = new Space(target.getX(), target.getY());
+        }
+    }
+
+    public void placeFireBreak(Space target) {
+        if (isValidFireBreakPlacement(target)) {
+            board[target.getY()][target.getX()] = new Firebreak(target.getX(), target.getY());
+        }
     }
 }

@@ -15,7 +15,9 @@ public abstract class WaterCard extends Card {
         do {
             targettedSpace = getSpace();
         } while (!(getBoard().isValidWaterPlacement(targettedSpace)));
-        getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
+        if (!(targettedSpace instanceof Firebreak)) {
+            getBoard().obtainBoard()[targettedSpace.getY()][targettedSpace.getX()] = new Space(targettedSpace.getX(), targettedSpace.getY());
+        }
         return targettedSpace;
     }
 }
